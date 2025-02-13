@@ -14,6 +14,12 @@
   }
 }
 
+html {
+  span, input, ul, li {
+    @apply font-gotham-pro;
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
