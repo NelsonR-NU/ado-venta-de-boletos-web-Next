@@ -3,19 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  /* span,
+  input,
+  ul,
+  li {
+    @apply text-gray-800;
+    @apply font-gotham-pro;
+  } */
+
+  div,
+  img,
+  label,
+  button,
+  span,
+  a,
+  form,
+  svg,
+  ol {
+    display: flex;
+    transition: all 300ms ease-in-out;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .global-transition div {
+    display: flex;
+    transition: all 300ms ease-in-out;
+  }
+
+  span:has(> .react-loading-skeleton) {
+    width: 100%;
   }
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
+  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

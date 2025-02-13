@@ -1,0 +1,12 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "prettier/prettier": true,
+    "order/properties-alphabetical-order": true,
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "no-empty-source": true,
+    "at-rule-no-unknown": null
+  }
+}
