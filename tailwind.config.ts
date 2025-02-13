@@ -14,12 +14,12 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        'gotham-pro': ['var(--font-gotham-pro)', 'sans-serif'],
+        "gotham-pro": ["var(--font-gotham-pro)", "sans-serif"],
       },
       fontWeight: {
-        regular: '400',
-        medium: '500',
-        bold: '700',
+        regular: "400",
+        medium: "500",
+        bold: "700",
       },
     },
   },

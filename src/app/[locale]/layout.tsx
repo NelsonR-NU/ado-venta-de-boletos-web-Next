@@ -4,12 +4,9 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import { persistor, store } from "../../redux/store";
 import "../globals.css";
-import "./globals.css";
 import Container from "@/components/Container";
+import ClientProvider from "@/components/clientProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,13 +42,11 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <NextIntlClientProvider messages={messages}>
-              <Container>{children}</Container>
-            </NextIntlClientProvider>
-          </PersistGate>
-        </Provider>
+        <ClientProvider>
+          <NextIntlClientProvider messages={messages}>
+            <Container>{children}</Container>
+          </NextIntlClientProvider>
+        </ClientProvider>
       </body>
     </html>
   );

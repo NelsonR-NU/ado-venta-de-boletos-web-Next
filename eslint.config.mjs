@@ -60,6 +60,12 @@ const eslintConfig = [
         },
       ],
 
+      "regexp/no-super-linear-backtracking": "error",
+      "regexp/no-useless-escape": "error",
+      "regexp/strict": "error",
+      "regexp/no-trailing-spaces-in-regexp": "error",
+      "regexp/no-lazy-ends": "error",
+
       "@typescript-eslint/no-shadow": ["error"],
       "no-console": "error",
       "no-inline-comments": "error",
