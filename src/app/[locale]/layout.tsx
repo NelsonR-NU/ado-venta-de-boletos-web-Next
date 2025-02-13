@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Container from "@/components/Container";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: {locale: string};
+  params: { locale: string };
 }>) {
 
   const { locale } = await params;
@@ -35,7 +36,7 @@ export default async function RootLayout({
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
- 
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
@@ -46,7 +47,9 @@ export default async function RootLayout({
         className=" font-gotham-pro antialiased"
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Container>
+            {children}
+          </Container>
         </NextIntlClientProvider>
       </body>
     </html>
