@@ -1,6 +1,9 @@
-import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const nextConfig: NextConfig = {
+const withNextIntl = createNextIntlPlugin();
+
+/** @type {import('next').NextConfig} */
+const nextConfig: import('next').NextConfig = {
   reactStrictMode: true,
   experimental: {
     turbo: {
@@ -8,7 +11,6 @@ const nextConfig: NextConfig = {
         "@/": "./src/",
       },
     },
-  },
-};
+  },};
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
