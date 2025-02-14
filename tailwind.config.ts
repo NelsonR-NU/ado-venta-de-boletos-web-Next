@@ -10,6 +10,11 @@ export default {
     extend: {
       colors: {
         "ado-background": "#FFFFFF",
+        "ado-red": "#E11F2A",
+        "ado-purple": "#5F2167",
+        "ado-green": "#258910",
+        "ado-light-green": "#87CE77",
+        "ado-golden": "#D1820B",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
