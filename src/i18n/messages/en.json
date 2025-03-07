@@ -1,7 +1,45 @@
 {
-    "home": {
-      "title": "Welcome to our website!",
-      "description": "Click for About Page"
+  "home": {
+    "title": "Welcome to our website!",
+    "description": "Click for About Page"
+  },
+  "accessibility_bar": {
+    "size": "Size",
+    "supportText": {
+      "desktop": "Customer Support HELLO",
+      "mobile": "Hello"
+    },
+    "currency": {
+      "MXN": {
+        "value": "MXN - Mexican Pesos",
+        "label": "MXN - Mexican Pesos"
+      },
+      "USD": {
+        "value": "USD - Dollars",
+        "label": "USD - Dollars"
+      }
+    },
+    "language": {
+      "ES": {
+        "value": "ES - Spanish",
+        "label": "ES - Spanish"
+      },
+      "EN": {
+        "value": "EN - English",
+        "label": "EN - English"
+      }
+    }
+  },
+    "header": {
+      "button": {
+        "login": "Login",
+        "register": "Register"
+      },
+      "menu_items": {
+        "travel": "Travel",
+        "my_trips": "My Trips",
+        "follow_my_journey": "Follow My Journey",
+        "briefcase": "Brief case"
+      }
     }
 }
-  

@@ -1,7 +1,46 @@
 {
-    "home": {
-      "title": "¡Bienvenido a nuestro sitio web!",
-      "description": "Haga clic para ver la página Acerca de"
+  "home": {
+    "title": "¡Bienvenido a nuestro sitio web!",
+    "description": "Haga clic para ver la página Acerca de"
+  },
+  "accessibility_bar": {
+    "size": "Tamaño",
+    "supportText": {
+      "desktop": "Atención a clientes HOLA",
+      "mobile": "Hola"
+    },
+    "currency": {
+      "MXN": {
+        "value": "MXN - Pesos Mexicanos",
+        "label": "MXN - Pesos Mexicanos"
+      },
+      "USD": {
+        "value": "USD - Dólares",
+        "label": "USD - Dólares"
+      }
+    },
+    "language": {
+      "ES": {
+        "value": "ES - Español",
+        "label": "ES - Español"
+      },
+      "EN": {
+        "value": "EN - Inglés",
+        "label": "EN - Inglés"
+      }
     }
-}
+  },
+    "header": {
+      "button": {
+        "login": "Iniciar sesión",
+        "register": "Registrarse"
+      },
+      "menu_items": {
+        "travel": "Viajar",
+        "my_trips": "Mis viajes",
+        "follow_my_journey": "Seguir mi viaje",
+        "briefcase": "Cartera"
+      }
+  }
   
+}

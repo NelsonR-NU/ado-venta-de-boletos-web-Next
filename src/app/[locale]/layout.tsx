@@ -6,6 +6,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import ClientProvider from "@/components/clientProvider";
+import Container from "@/components/Container";
+import AccessibilityBar from "@/components/accessibilityBar/AccessibilityBar";
+import Header from "@/components/header/Header";
 
 const gothamProFont = localFont({
   src: [
@@ -54,7 +57,13 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${gothamProFont.variable} antialiased`}>
         <ClientProvider>
-          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>
+            <AccessibilityBar />
+            <Header />
+            <Container>
+              {children}
+            </Container>
+          </NextIntlClientProvider>
         </ClientProvider>
       </body>
     </html>

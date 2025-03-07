@@ -1,11 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import consoleLoggerReducer from "./features/consoleLogger"
 
-// Combine all reducers
-const rootReducer = combineReducers({});
 
-// Persist the entire root reducer
+const rootReducer = combineReducers({
+  consoleLogger: consoleLoggerReducer,
+});
+
 const persistConfig = {
   key: "root",
   storage,
