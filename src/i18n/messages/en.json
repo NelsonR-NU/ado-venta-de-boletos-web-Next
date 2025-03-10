@@ -2,6 +2,42 @@
     "home": {
       "title": "Welcome to our website!",
       "description": "Click for About Page"
+    },
+    "searchResults": {
+      "roundTrip": "Round Trip",
+      "oneWay": "One Way",
+      "origin": "Origin",
+      "destination": "Destination",
+      "dummyValueOne": "Central Mexico North",
+      "dummyValueTwo": "Acapulco Costera, Gro",
+      "ida": "Ida",
+      "return": "Return",
+      "sampleDate": "Fri. Nov 13",
+      "sampleDate2": "Mar. Nov. 17",
+      "passengers": "Passengers",
+      "adult": "1 adult",
+      "modifyTrip": "Modify Trip",
+      "dropDownText": "We will show you the available terminals according to the origin you choose.",
+      "recentSearches": "Recent Searches",
+      "originTerminals": "Origin terminals by state",
+      "whoTravels": "Who Travels?",
+      "adults": "Adult",
+      "adultDescription": "More than 12 years",
+      "children": "Child",
+      "childrenDescription": "From 5 to 12 years",
+      "inapam": "INAPAM",
+      "inapamDescription": "With valid credential",
+      "teacher": "Teacher",
+      "teacherDescription": "With valid credential",
+      "student": "Student",
+      "studentDescription": "With valid credential",
+      "ready": "Ready",
+      "calendarTitle": "Select the date of your trip",
+      "calendarPromo1": "Take advantage of your advance purchase",
+      "calendarPromo2": "and get up to",
+      "calendarPromo3": "50% discount",
+      "calendarPromo4": "on your trips.",
+      "calendarCheckBox": "I want my departure date to be the same when I return."
     }
 }
   

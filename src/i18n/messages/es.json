@@ -2,6 +2,41 @@
     "home": {
       "title": "¡Bienvenido a nuestro sitio web!",
       "description": "Haga clic para ver la página Acerca de"
+    },
+    "searchResults": {
+      "roundTrip": "Ida y regreso",
+      "oneWay": "Solo ida",
+      "origin": "Origen",
+      "destination": "Destino",
+      "dummyValueOne": "Central México Norte",
+      "dummyValueTwo": "Acapulco Costera, Gro",
+      "ida": "Ida",
+      "return": "Regreso",
+      "sampleDate": "Vier. 13 de nov.",
+      "sampleDate2": "Mar. 17 de nov.",
+      "passengers": "Pasajeros",
+      "adult": "1 adulto",
+      "modifyTrip": "Modificar viaje",
+      "dropDownText": "Te mostraremos las terminales disponibles de acuerdo al origen que elijas.",
+      "recentSearches": "Búsquedas recientes",
+      "originTerminals": "Terminales origen por estado",
+      "whoTravels": "¿Quiénes viajan?",
+      "adults": "Adulto",
+      "adultDescription": "Más de 12 años",
+      "children": "Niño",
+      "childrenDescription": "De 5 a 12 años",
+      "inapam": "INAPAM",
+      "inapamDescription": "Con credencial vigente",
+      "teacher": "Maestro",
+      "teacherDescription": "Con credencial vigente",
+      "student": "Estudiante",
+      "studentDescription": "Con credencial vigente",
+      "ready": "Listo",
+      "calendarTitle": "Selecciona la fecha de tu viaje",
+      "calendarPromo1": "Aprovecha tu compra anticipada",
+      "calendarPromo2": "y obten hasta un",
+      "calendarPromo3": "50% de descuento",
+      "calendarPromo4": "en tus viajes.",
+      "calendarCheckBox": "Quiero que mi fecha de ida sea la misma de regreso."
     }
 }
-  
