@@ -2,6 +2,7 @@
     "home": {
       "title": "¡Bienvenido a nuestro sitio web!",
       "description": "Haga clic para ver la página Acerca de"
-    }
+    },
+    "days":{"Sun":"Dom", "Mon":"Lun", "Tue":"Mar", "Wed":"Mié", "Thur":"Jue","Thu":"Jue", "Fri":"Vie", "Sat":"Sáb"}
 }
   

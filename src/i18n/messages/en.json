@@ -1,7 +1,8 @@
 {
     "home": {
       "title": "Welcome to our website!",
-      "description": "Click for About Page"
+      "description": "Click for About Page",
+      "days":{"Sun":"Sun", "Mon":"Mon", "Tue":"Tue", "Wed":"Wed", "Thur":"Thur","Thu":"Thur", "Fri":"Fri", "Sat":"Sat"}
     }
 }
   

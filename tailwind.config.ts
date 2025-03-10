@@ -15,6 +15,8 @@ export default {
         "ado-green": "#258910",
         "ado-light-green": "#87CE77",
         "ado-golden": "#D1820B",
+        "ado-white":"#FAFBFD",
+        "ado-bg-light-gray":"#ECEFF6",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
