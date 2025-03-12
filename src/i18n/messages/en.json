@@ -1,8 +1,88 @@
 {
-    "home": {
-      "title": "Welcome to our website!",
-      "description": "Click for About Page",
-      "days":{"Sun":"Sun", "Mon":"Mon", "Tue":"Tue", "Wed":"Wed", "Thur":"Thur","Thu":"Thur", "Fri":"Fri", "Sat":"Sat"}
+  "home": {
+    "title": "Welcome to our website!",
+    "description": "Click for About Page",
+    "tripType": "Choose your one-way ticket",
+    "sortedBy": "Sorted by",
+    "filters": "Filters",
+    "days": {
+      "Sun": "Sun",
+      "Mon": "Mon",
+      "Tue": "Tue",
+      "Wed": "Wed",
+      "Thur": "Thur",
+      "Thu": "Thur",
+      "Fri": "Fri",
+      "Sat": "Sat"
+    },
+    "sortedTrip": {
+      "First_to_depart": "First to depart",
+      "Last_to_depart": "Last to depart",
+      "Lowest_price": "Lowest price",
+      "Highest_price": "Highest price",
+      "Shortest_trip": "Shortest trip",
+      "Longest_trip": "Longest trip"
+    },
+    "filter_content": {
+      "filters": "Filters",
+      "filter_results": "Filter results",
+      "close": "Close",
+      "filter_by": "Filter by",
+      "by_promotion": "By promotion",
+      "by_departure_time": "By departure time",
+      "by_price": "By price",
+      "by_type_of_trip": "By type of trip",
+      "by_brand": "By brand",
+      "source_terminal": "Source terminal",
+      "destination_terminal": "Destination terminal",
+      "reset_filters": "RESET FILTERS",
+      "apply_filters": "APPLY FILTERS",
+      "by_promotion_type": {
+        "discount": "Discount"
+      },
+      "by_departure_time_type": {
+        "early_morning": {
+          "label": "Early Morning",
+          "time": "00:00 - 06:59"
+        },
+        "morning": {
+          "label": "Morning",
+          "time": "07:00 - 11:59"
+        },
+        "afternoon": {
+          "label": "Afternoon",
+          "time": "12:00 - 18:59"
+        },
+        "night": {
+          "label": "Night",
+          "time": "19:00 - 23:59"
+        }
+      },
+      "by_price_type": {
+        "from": "From",
+        "to": "To"
+      },
+      "by_type_of_trip_type": {
+        "local": {
+          "label": "Local",
+          "description": "The route of the trip starts at this origin."
+        },
+        "transfer": {
+          "label": "Transfer",
+          "description": "The route of the trip started at another terminal."
+        }
+      },
+      "source_terminal_type": {
+        "airport_national_arrivals": "Airport National Arrivals",
+        "central_mexico_north": "Central Mexico North",
+        "executive_south": "Executive of the South",
+        "temporal_angel": "Temporal Terminal of the Angel",
+        "mexico_tapo": "Mexico TAPO",
+        "santa_martha_acatitla": "Santa Martha Acatitla"
+      },
+      "destination_terminal_type": {
+        "veracruz": "Veracruz"
+      }
     }
+  }
 }
-  

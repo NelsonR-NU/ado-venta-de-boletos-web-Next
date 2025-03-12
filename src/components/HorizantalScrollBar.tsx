@@ -12,10 +12,7 @@ type DateItem = {
   future: boolean;
 };
 
-const getSpanishDay = (dayIndex: number): string => {
-  const daysInSpanish = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
-  return daysInSpanish[dayIndex] || "";
-};
+ 
 
 const generateDates = (): DateItem[] => {
   const dates=["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
@@ -45,7 +42,7 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [showArrows, setShowArrows] = useState<boolean>(window.innerWidth > 768);
-  const t = useTranslations("days");
+  const t = useTranslations("home"); 
   useLayoutEffect(() => {
     const handleResize = () => {
       setShowArrows(window.innerWidth > 768);
@@ -68,8 +65,7 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
   const handleSelectDate = (index: number) => {
     if (dates[index].past) return;
     setSelectedIndex(index);
-    onDateSelect({date:dates[index].date,day:dates[index].day});
-    console.log("dates[index]",dates[index])
+    onDateSelect({date:dates[index].date,day:dates[index].day}); 
     if (scrollRef.current) {
       const selectedElement = scrollRef.current.children[index] as HTMLElement;
       if (selectedElement) {
@@ -95,7 +91,7 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
               onClick={() => handleSelectDate(index)}
               disabled={past}
             >
-              <span className={`text-sm capitalize ${past ? "text-gray-300" : "text-gray-600"}`}>{t(day)}. {new Date(date).getDate()}</span>
+              <span className={`text-sm capitalize ${past ? "text-gray-300" : "text-gray-600"}`}>{t(`days.${day}`)}. {new Date(date).getDate()}</span>
             </button> 
           ))}
         </div>

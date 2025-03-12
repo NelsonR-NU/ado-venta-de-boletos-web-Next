@@ -1,8 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import React, { useState, useEffect, useRef } from "react";
-import { ChevronDown, SlidersHorizontal } from "lucide-react";
-import CustomDrawer from "./CustomDrawer";
+import { ChevronDown, SlidersHorizontal } from "lucide-react"; 
 import TemporaryDrawer from "./Drawer";
 
 interface FilterProps {
@@ -13,12 +12,11 @@ interface FilterProps {
 }
 
 const Filter: React.FC<FilterProps> = ({ date }) => {
-  const [selectedSort, setSelectedSort] = useState("Primero en salir");
-  const [open, setOpen] = useState(false);
+  const t = useTranslations("home");
+  const [selectedSort, setSelectedSort] = useState(t("sortedTrip.First_to_depart"));
   const [draweropen, setDrawerOpen] = useState(false);
   const [isSortDropdownOpen, setIsSortDropdownOpen] = useState(false);
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
-  const t = useTranslations("days");
   const filterRef = useRef<HTMLDivElement>(null);
   const sortRef = useRef<HTMLDivElement>(null);
 
@@ -42,15 +40,16 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
   }, []);
 
   const handleFilterClick = () => {
-    setDrawerOpen(false);  // Close first (force update)
-    setTimeout(() => setDrawerOpen(true), 10);  // Reopen after a short delay
+    setDrawerOpen(false);
+    setTimeout(() => setDrawerOpen(true), 10);
   };
+  const sortedTrip = t.raw("sortedTrip") as Record<string, string>;
   return (
     <div className="flex flex-col sm:flex-row justify-between items-center p-4 bg-white shadow-md rounded-md space-y-4 sm:space-y-0">
       <p className="flex text-gray-700 text-sm text-center sm:text-left w-full">
-        <span className="font-medium">Elige tu boleto de ida:</span>
+        <span className="font-medium">{t('tripType')}</span>
         <span className="ml-2 text-gray-900 font-semibold">
-          {t(`${date?.day}`)},{new Date(date?.date).toLocaleDateString("es-ES", { day: "2-digit" })} de{" "}
+          {t(`days.${date?.day}`)},{new Date(date?.date).toLocaleDateString("es-ES", { day: "2-digit" })} de{" "}
           {new Date(date?.date).toLocaleDateString("es-ES", { month: "short" })}
         </span>
       </p>
@@ -64,11 +63,11 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
             aria-expanded={isFilterDropdownOpen}
           >
             <SlidersHorizontal size={16} className="mr-2" />
-            <span>Filtros</span>
+            <span>{t('filters')}</span>
             <ChevronDown size={16} className={`ml-2 transition-transform ${isFilterDropdownOpen ? "rotate-180" : ""}`} />
           </button>
         </div>
-      
+
         {/* Sort Button */}
         <div className="relative w-full sm:w-auto max-[500px]:!m-0" ref={sortRef}>
           <button
@@ -79,7 +78,7 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
             }}
             aria-expanded={isSortDropdownOpen}
           >
-            <span className="hidden sm:inline">Ordenado por</span>
+            <span className="hidden sm:inline">{t('sortedBy')}</span>
             <span className="font-semibold mx-1">{selectedSort}</span>
             <ChevronDown size={16} className={`transition-transform ${isSortDropdownOpen ? "rotate-180" : ""}`} />
           </button>
@@ -88,18 +87,18 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
           {isSortDropdownOpen && (
             <div className="absolute top-full right-0 mt-1 w-48 bg-white border rounded-md shadow-md z-10">
               <ul className="text-sm text-gray-700 w-full" role="menu">
-                {["Primero en salir", "Último en salir", "Precio más bajo", "Precio más alto", "Viaje más corto", "Viaje más largo"].map((option) => (
+                {Object.entries(sortedTrip).map(([key, value]) => (
                   <li
-                    key={option}
-                    className={`px-4 py-3 m-2 hover:bg-gray-100 cursor-pointer text-center ${selectedSort === option ? "bg-ado-purple rounded-lg text-white font-semibold" : ""
+                    key={key}
+                    className={`px-4 py-3 m-2 hover:bg-gray-100 cursor-pointer text-center ${selectedSort === value ? "bg-ado-purple rounded-lg text-white font-semibold" : ""
                       }`}
                     role="menuitem"
                     onClick={() => {
-                      setSelectedSort(option);
+                      setSelectedSort(value);
                       setIsSortDropdownOpen(false);
                     }}
                   >
-                    {option}
+                    {value}
                   </li>
                 ))}
               </ul>
