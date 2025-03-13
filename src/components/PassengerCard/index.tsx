@@ -19,13 +19,13 @@ function PassengerCard({imageSrc, cardName, cardDescription, value, updatePassen
 
   return (
     <div className=' w-[350px] flex justify-between '>
-        <div className=' w-[50%] ' >
+        <div className=' w-[50%] flex ' >
             <div className=' bg-[#F1F3F9] h-[45px] w-[45px] flex justify-center items-center rounded-[4px] ' >
                 <Image src={imageSrc} alt="Adult Icon" />
             </div>
             <div className=' flex flex-col ml-[8px] justify-center ' >
                 <p className=' text-[14px] font-medium ' >{cardName}</p>
-                <div>
+                <div className=' flex ' >
                     <p className=' text-[12px] text-[#808391] truncate w-full ' title={cardDescription} >{cardDescription}</p>
                     <Image src={Info} alt="Adult Icon" className=' ml-[3px] w-[12px] h-[12px] ' />
                 </div>

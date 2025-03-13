@@ -1,7 +1,89 @@
 {
     "home": {
       "title": "¡Bienvenido a nuestro sitio web!",
-      "description": "Haga clic para ver la página Acerca de"
+      "description": "Haga clic para ver la página Acerca de",
+      "sortedBy": "Ordenado por",
+      "tripType": "Elige tu boleto de ida",
+      "filters": "filtros",
+      "days": {
+        "Sun": "Dom",
+        "Mon": "Lun",
+        "Tue": "Mar",
+        "Wed": "Mié",
+        "Thur": "Jue",
+        "Thu": "Jue",
+        "Fri": "Vie",
+        "Sat": "Sáb"
+      },
+      "sortedTrip": {
+        "First_to_depart": "Primero en salir",
+        "Last_to_depart": "Último en salir",
+        "Lowest_price": "Precio más bajo",
+        "Highest_price": "Precio más alto",
+        "Shortest_trip": "Viaje más corto",
+        "Longest_trip": "Viaje más largo"
+      },
+      "filter_content": {
+        "filters": "Filtros",
+        "filter_results": "Filtrar resultados",
+        "close": "Cerrar",
+        "filter_by": "Filtrar por",
+        "by_promotion": "Por promoción",
+        "by_departure_time": "Por horario de salida",
+        "by_price": "Por precio",
+        "by_type_of_trip": "Por tipo de viaje",
+        "by_brand": "Por marca",
+        "source_terminal": "Terminal de origen",
+        "destination_terminal": "Terminal de destino",
+        "reset_filters": "RESTABLECER FILTROS",
+        "apply_filters": "APLICAR FILTROS",
+        "by_promotion_type": {
+          "discount": "Descuento"
+        },
+        "by_departure_time_type": {
+          "early_morning": {
+            "label": "Madrugada",
+            "time": "00:00 - 06:59"
+          },
+          "morning": {
+            "label": "Mañana",
+            "time": "07:00 - 11:59"
+          },
+          "afternoon": {
+            "label": "Tarde",
+            "time": "12:00 - 18:59"
+          },
+          "night": {
+            "label": "Noche",
+            "time": "19:00 - 23:59"
+          }
+        },
+        "by_price_type": {
+          "from": "Desde",
+          "to": "Hasta"
+        },
+        "by_type_of_trip_type": {
+          "local": {
+            "label": "Local",
+            "description": "La ruta del viaje comienza en este origen."
+          },
+          "transfer": {
+            "label": "Paso",
+            "description": "La ruta del viaje comenzó en otra terminal."
+          }
+        },
+        "source_terminal_type": {
+          "airport_national_arrivals": "Aeropuerto llegadas nacionales",
+          "central_mexico_north": "Central México Norte",
+          "executive_south": "Ejecutiva del sur",
+          "temporal_angel": "Temporales del Ángel",
+          "mexico_tapo": "México TAPO",
+          "santa_martha_acatitla": "Santa Martha Acatitla"
+        },
+        "destination_terminal_type": {
+          "veracruz": "Veracruz"
+        }
+      }
     },
     "searchResults": {
       "roundTrip": "Ida y regreso",
@@ -38,5 +120,14 @@
       "calendarPromo3": "50% de descuento",
       "calendarPromo4": "en tus viajes.",
       "calendarCheckBox": "Quiero que mi fecha de ida sea la misma de regreso."
+    },
+    "calendar": {
+      "sunday": "DI",
+      "monday": "LU",
+      "tuesday": "MA",
+      "wednesday": "ME",
+      "thursday": "JE",
+      "friday": "VE",
+      "saturday": "SA"
     }
 }

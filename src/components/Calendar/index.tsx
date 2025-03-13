@@ -1,15 +1,19 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useLocale } from 'next-intl';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers-pro/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
 import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
 import { DateRange } from '@mui/x-date-pickers-pro/models'; // Correct import
 import dayjs, { Dayjs } from 'dayjs';
+import 'dayjs/locale/es';
 
 
 function Calendar() {
+
+  const locale = useLocale();
 
   const [selectedDateRange, setSelectedDateRange] = useState<DateRange<Dayjs>>([null, null]);
 
@@ -18,9 +22,11 @@ function Calendar() {
     console.log(newValue);
   };
 
+  const dayJsLocale = locale || 'en';
+
   return (
     <>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={dayJsLocale} >
         <DemoContainer components={['DateRangeCalendar']}>
           <DateRangeCalendar
             value={selectedDateRange}
