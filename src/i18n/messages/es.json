@@ -6,15 +6,53 @@
     "tripType": "Elige tu boleto de ida",
     "filters": "filtros",
     "days": {
-      "Sun": "Dom",
-      "Mon": "Lun",
-      "Tue": "Mar",
-      "Wed": "Mié",
-      "Thur": "Jue",
-      "Thu": "Jue",
-      "Fri": "Vie",
-      "Sat": "Sáb"
+      "Sun": [
+        "Dom",
+        "Domingo"
+      ],
+      "Mon": [
+        "Lun",
+        "Lunes"
+      ],
+      "Tue": [
+        "Mar",
+        "Martes"
+      ],
+      "Wed": [
+        "Mié",
+        "Miércoles"
+      ],
+      "Thu": [
+        "Jue",
+        "Jueves"
+      ],
+      "Thur":[
+        "Jue",
+        "Jueves"
+      ],
+      "Fri": [
+        "Vie",
+        "Viernes"
+      ],
+      "Sat": [
+        "Sáb",
+        "Sábado"
+      ]
     },
+    "months": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ],
     "sortedTrip": {
       "First_to_depart": "Primero en salir",
       "Last_to_depart": "Último en salir",
@@ -83,6 +121,18 @@
       "destination_terminal_type": {
         "veracruz": "Veracruz"
       }
+    },
+    "promotion": {
+      "title": "Promoción de otoño",
+      "description": "Explora un lugar diferente y ahorra hasta un 20% en tu siguiente viaje.",
+      "btnText": "Me interesa"
+    },
+    "date_popup": {
+      "title": "Cambio de fecha",
+      "content": "Tu fecha de ida cambiará al",
+      "continue_link": "¿Quieres continuar?",
+      "cancel": "No, cancelar",
+      "continue_btn": "Sí, continuar"
     }
   }
 }

@@ -49,7 +49,7 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
       <p className="flex text-gray-700 text-sm text-center sm:text-left w-full">
         <span className="font-medium">{t('tripType')}</span>
         <span className="ml-2 text-gray-900 font-semibold">
-          {t(`days.${date?.day}`)},{new Date(date?.date).toLocaleDateString("es-ES", { day: "2-digit" })} de{" "}
+          {t.raw(`days.${date?.day}`)[0]},{new Date(date?.date).toLocaleDateString("es-ES", { day: "2-digit" })} de{" "}
           {new Date(date?.date).toLocaleDateString("es-ES", { month: "short" })}
         </span>
       </p>
