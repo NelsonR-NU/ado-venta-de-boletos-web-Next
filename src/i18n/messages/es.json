@@ -1,133 +1,159 @@
 {
-    "home": {
-      "title": "¡Bienvenido a nuestro sitio web!",
-      "description": "Haga clic para ver la página Acerca de",
-      "sortedBy": "Ordenado por",
-      "tripType": "Elige tu boleto de ida",
-      "filters": "filtros",
-      "days": {
-        "Sun": "Dom",
-        "Mon": "Lun",
-        "Tue": "Mar",
-        "Wed": "Mié",
-        "Thur": "Jue",
-        "Thu": "Jue",
-        "Fri": "Vie",
-        "Sat": "Sáb"
+  "home": {
+    "title": "¡Bienvenido a nuestro sitio web!",
+    "description": "Haga clic para ver la página Acerca de",
+    "sortedBy": "Ordenado por",
+    "tripType": "Elige tu boleto de ida",
+    "filters": "Filtros",
+    "days": {
+      "Sun": ["Dom", "Domingo"],
+      "Mon": ["Lun", "Lunes"],
+      "Tue": ["Mar", "Martes"],
+      "Wed": ["Mié", "Miércoles"],
+      "Thu": ["Jue", "Jueves"],
+      "Thur": ["Jue", "Jueves"],
+      "Fri": ["Vie", "Viernes"],
+      "Sat": ["Sáb", "Sábado"]
+    },
+    "months": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ],
+    "sortedTrip": {
+      "First_to_depart": "Primero en salir",
+      "Last_to_depart": "Último en salir",
+      "Lowest_price": "Precio más bajo",
+      "Highest_price": "Precio más alto",
+      "Shortest_trip": "Viaje más corto",
+      "Longest_trip": "Viaje más largo"
+    },
+    "filter_content": {
+      "filters": "Filtros",
+      "filter_results": "Filtrar resultados",
+      "close": "Cerrar",
+      "filter_by": "Filtrar por",
+      "by_promotion": "Por promoción",
+      "by_departure_time": "Por horario de salida",
+      "by_price": "Por precio",
+      "by_type_of_trip": "Por tipo de viaje",
+      "by_brand": "Por marca",
+      "source_terminal": "Terminal de origen",
+      "destination_terminal": "Terminal de destino",
+      "reset_filters": "Restablecer filtros",
+      "apply_filters": "Aplicar filtros",
+      "by_promotion_type": {
+        "discount": "Descuento"
       },
-      "sortedTrip": {
-        "First_to_depart": "Primero en salir",
-        "Last_to_depart": "Último en salir",
-        "Lowest_price": "Precio más bajo",
-        "Highest_price": "Precio más alto",
-        "Shortest_trip": "Viaje más corto",
-        "Longest_trip": "Viaje más largo"
-      },
-      "filter_content": {
-        "filters": "Filtros",
-        "filter_results": "Filtrar resultados",
-        "close": "Cerrar",
-        "filter_by": "Filtrar por",
-        "by_promotion": "Por promoción",
-        "by_departure_time": "Por horario de salida",
-        "by_price": "Por precio",
-        "by_type_of_trip": "Por tipo de viaje",
-        "by_brand": "Por marca",
-        "source_terminal": "Terminal de origen",
-        "destination_terminal": "Terminal de destino",
-        "reset_filters": "RESTABLECER FILTROS",
-        "apply_filters": "APLICAR FILTROS",
-        "by_promotion_type": {
-          "discount": "Descuento"
+      "by_departure_time_type": {
+        "early_morning": {
+          "label": "Madrugada",
+          "time": "00:00 - 06:59"
         },
-        "by_departure_time_type": {
-          "early_morning": {
-            "label": "Madrugada",
-            "time": "00:00 - 06:59"
-          },
-          "morning": {
-            "label": "Mañana",
-            "time": "07:00 - 11:59"
-          },
-          "afternoon": {
-            "label": "Tarde",
-            "time": "12:00 - 18:59"
-          },
-          "night": {
-            "label": "Noche",
-            "time": "19:00 - 23:59"
-          }
+        "morning": {
+          "label": "Mañana",
+          "time": "07:00 - 11:59"
         },
-        "by_price_type": {
-          "from": "Desde",
-          "to": "Hasta"
+        "afternoon": {
+          "label": "Tarde",
+          "time": "12:00 - 18:59"
         },
-        "by_type_of_trip_type": {
-          "local": {
-            "label": "Local",
-            "description": "La ruta del viaje comienza en este origen."
-          },
-          "transfer": {
-            "label": "Paso",
-            "description": "La ruta del viaje comenzó en otra terminal."
-          }
-        },
-        "source_terminal_type": {
-          "airport_national_arrivals": "Aeropuerto llegadas nacionales",
-          "central_mexico_north": "Central México Norte",
-          "executive_south": "Ejecutiva del sur",
-          "temporal_angel": "Temporales del Ángel",
-          "mexico_tapo": "México TAPO",
-          "santa_martha_acatitla": "Santa Martha Acatitla"
-        },
-        "destination_terminal_type": {
-          "veracruz": "Veracruz"
+        "night": {
+          "label": "Noche",
+          "time": "19:00 - 23:59"
         }
+      },
+      "by_price_type": {
+        "from": "Desde",
+        "to": "Hasta"
+      },
+      "by_type_of_trip_type": {
+        "local": {
+          "label": "Local",
+          "description": "La ruta del viaje comienza en este origen."
+        },
+        "transfer": {
+          "label": "Paso",
+          "description": "La ruta del viaje comenzó en otra terminal."
+        }
+      },
+      "source_terminal_type": {
+        "airport_national_arrivals": "Aeropuerto llegadas nacionales",
+        "central_mexico_north": "Central México Norte",
+        "executive_south": "Ejecutiva del sur",
+        "temporal_angel": "Temporales del Ángel",
+        "mexico_tapo": "México TAPO",
+        "santa_martha_acatitla": "Santa Martha Acatitla"
+      },
+      "destination_terminal_type": {
+        "veracruz": "Veracruz"
       }
     },
-    "searchResults": {
-      "roundTrip": "Ida y regreso",
-      "oneWay": "Solo ida",
-      "origin": "Origen",
-      "destination": "Destino",
-      "dummyValueOne": "Central México Norte",
-      "dummyValueTwo": "Acapulco Costera, Gro",
-      "ida": "Ida",
-      "return": "Regreso",
-      "sampleDate": "Vier. 13 de nov.",
-      "sampleDate2": "Mar. 17 de nov.",
-      "passengers": "Pasajeros",
-      "adult": "1 adulto",
-      "modifyTrip": "Modificar viaje",
-      "dropDownText": "Te mostraremos las terminales disponibles de acuerdo al origen que elijas.",
-      "recentSearches": "Búsquedas recientes",
-      "originTerminals": "Terminales origen por estado",
-      "whoTravels": "¿Quiénes viajan?",
-      "adults": "Adulto",
-      "adultDescription": "Más de 12 años",
-      "children": "Niño",
-      "childrenDescription": "De 5 a 12 años",
-      "inapam": "INAPAM",
-      "inapamDescription": "Con credencial vigente",
-      "teacher": "Maestro",
-      "teacherDescription": "Con credencial vigente",
-      "student": "Estudiante",
-      "studentDescription": "Con credencial vigente",
-      "ready": "Listo",
-      "calendarTitle": "Selecciona la fecha de tu viaje",
-      "calendarPromo1": "Aprovecha tu compra anticipada",
-      "calendarPromo2": "y obten hasta un",
-      "calendarPromo3": "50% de descuento",
-      "calendarPromo4": "en tus viajes.",
-      "calendarCheckBox": "Quiero que mi fecha de ida sea la misma de regreso."
+    "promotion": {
+      "title": "Promoción de otoño",
+      "description": "Explora un lugar diferente y ahorra hasta un 20% en tu siguiente viaje.",
+      "btnText": "Me interesa"
     },
-    "calendar": {
-      "sunday": "DI",
-      "monday": "LU",
-      "tuesday": "MA",
-      "wednesday": "ME",
-      "thursday": "JE",
-      "friday": "VE",
-      "saturday": "SA"
+    "date_popup": {
+      "title": "Cambio de fecha",
+      "content": "Tu fecha de ida cambiará al",
+      "continue_link": "¿Quieres continuar?",
+      "cancel": "No, cancelar",
+      "continue_btn": "Sí, continuar"
     }
+  },
+  "searchResults": {
+    "roundTrip": "Ida y regreso",
+    "oneWay": "Solo ida",
+    "origin": "Origen",
+    "destination": "Destino",
+    "dummyValueOne": "Central México Norte",
+    "dummyValueTwo": "Acapulco Costera, Gro",
+    "ida": "Ida",
+    "return": "Regreso",
+    "sampleDate": "Vier. 13 de nov.",
+    "sampleDate2": "Mar. 17 de nov.",
+    "passengers": "Pasajeros",
+    "adult": "1 adulto",
+    "modifyTrip": "Modificar viaje",
+    "dropDownText": "Te mostraremos las terminales disponibles de acuerdo al origen que elijas.",
+    "recentSearches": "Búsquedas recientes",
+    "originTerminals": "Terminales origen por estado",
+    "whoTravels": "¿Quiénes viajan?",
+    "adults": "Adulto",
+    "adultDescription": "Más de 12 años",
+    "children": "Niño",
+    "childrenDescription": "De 5 a 12 años",
+    "inapam": "INAPAM",
+    "inapamDescription": "Con credencial vigente",
+    "teacher": "Maestro",
+    "teacherDescription": "Con credencial vigente",
+    "student": "Estudiante",
+    "studentDescription": "Con credencial vigente",
+    "ready": "Listo",
+    "calendarTitle": "Selecciona la fecha de tu viaje",
+    "calendarPromo1": "Aprovecha tu compra anticipada",
+    "calendarPromo2": "y obten hasta un",
+    "calendarPromo3": "50% de descuento",
+    "calendarPromo4": "en tus viajes.",
+    "calendarCheckBox": "Quiero que mi fecha de ida sea la misma de regreso."
+  },
+  "calendar": {
+    "sunday": "DI",
+    "monday": "LU",
+    "tuesday": "MA",
+    "wednesday": "ME",
+    "thursday": "JE",
+    "friday": "VE",
+    "saturday": "SA"
+  }
 }

@@ -6,7 +6,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers-pro/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
 import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
-import { DateRange } from '@mui/x-date-pickers-pro/models'; // Correct import
+import { DateRange } from '@mui/x-date-pickers-pro/models';  
 import dayjs, { Dayjs } from 'dayjs';
 import 'dayjs/locale/es';
 

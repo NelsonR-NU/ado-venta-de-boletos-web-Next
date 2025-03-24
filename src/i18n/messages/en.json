@@ -6,15 +6,53 @@
       "sortedBy": "Sorted by",
       "filters": "Filters",
       "days": {
-        "Sun": "Sun",
-        "Mon": "Mon",
-        "Tue": "Tue",
-        "Wed": "Wed",
-        "Thur": "Thur",
-        "Thu": "Thur",
-        "Fri": "Fri",
-        "Sat": "Sat"
+        "Sun": [
+          "Sun",
+          "Sunday"
+        ],
+        "Mon": [
+          "Mon",
+          "Monday"
+        ],
+        "Tue": [
+          "Tue",
+          "Tuesday"
+        ],
+        "Wed": [
+          "Wed",
+          "Wednesday"
+        ],
+        "Thu": [
+          "Thu",
+          "Thursday"
+        ],
+        "Thur":[
+          "Thu",
+          "Thursday"
+        ],
+        "Fri": [
+          "Fri",
+          "Friday"
+        ],
+        "Sat": [
+          "Sat",
+          "Saturday"
+        ]
       },
+      "months": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
       "sortedTrip": {
         "First_to_depart": "First to depart",
         "Last_to_depart": "Last to depart",
@@ -35,8 +73,8 @@
         "by_brand": "By brand",
         "source_terminal": "Source terminal",
         "destination_terminal": "Destination terminal",
-        "reset_filters": "RESET FILTERS",
-        "apply_filters": "APPLY FILTERS",
+        "reset_filters": "Reset Filters",
+        "apply_filters": "Apply Filters",
         "by_promotion_type": {
           "discount": "Discount"
         },
@@ -83,6 +121,18 @@
         "destination_terminal_type": {
           "veracruz": "Veracruz"
         }
+      },
+      "promotion": {
+        "title": "autumn promotion",
+        "description": "Explore a different place and save up to 20% on your next trip.",
+        "btnText": "I'm interested"
+      },
+      "date_popup": {
+        "title": "Date change",
+        "content": "Your departure date will change to",
+        "continue_link": "Do you want to continue?",
+        "cancel": "No, cancel",
+        "continue_btn": "Yes, continue"
       }
     },
     "searchResults": {

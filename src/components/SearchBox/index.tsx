@@ -7,15 +7,16 @@ import SelectedBus from '../../assets/svg/selectedBus.svg';
 import UnSelectedBus from '../../assets/svg/unSelectedBus.svg';
 import Image from 'next/image';
 import SearchCard from '../SearchCard';
-import AdoButton from '../Button';
+import Button from '@/components/Button'
 import SearchCalendarCard from '../SearchCalendarCard';
+import { Box } from '@mui/material';
 
 function SearchBox() {
   const t = useTranslations("searchResults");
 
   const [roundTrip, setRoundTrip] = useState(true);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  
+
   // State to manage selected values for each SearchCard
   const [searchValues, setSearchValues] = useState({
     Origin: t("dummyValueOne"),
@@ -48,9 +49,9 @@ function SearchBox() {
       [t("destination")]: "Destination",
       [t("passengers")]: "Passengers",
     };
-  
+
     const mappedKey = keyMap[cardName] || cardName; // Fallback to original if not found
-    
+
     setSearchValues(prev => ({ ...prev, [mappedKey]: value }));
     setOpenDropdown(null);
   };
@@ -79,7 +80,7 @@ function SearchBox() {
     //     [type]: Math.max(0, prev[mappedKey] + delta) // Ensure count doesn't go below 0
     // }));
   };
-  
+
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -112,49 +113,49 @@ function SearchBox() {
 
         {/* Detail Search Card Filter */}
         <div className='flex justify-between mt-1 items-end'>
-          <SearchCard 
-            width={18} 
-            cardName={t("origin")} 
-            value={searchValues.Origin} 
-            isOpen={openDropdown === "Origin" || openDropdown === "Origen"} 
+          <SearchCard
+            width={18}
+            cardName={t("origin")}
+            value={searchValues.Origin}
+            isOpen={openDropdown === "Origin" || openDropdown === "Origen"}
             isPassenger={false}
-            toggleDropdown={toggleDropdown} 
-            dropdownContent={["New York", "Los Angeles", "Chicago"]} 
+            toggleDropdown={toggleDropdown}
+            dropdownContent={["New York", "Los Angeles", "Chicago"]}
             onSelect={handleSelectValue}
           />
-          <SearchCard 
-            width={18} 
-            cardName={t("destination")} 
-            value={searchValues.Destination} 
-            isOpen={openDropdown === "Destination" || openDropdown === "Destino"} 
+          <SearchCard
+            width={18}
+            cardName={t("destination")}
+            value={searchValues.Destination}
+            isOpen={openDropdown === "Destination" || openDropdown === "Destino"}
             isPassenger={false}
-            toggleDropdown={toggleDropdown} 
-            dropdownContent={["Miami", "San Francisco", "Houston"]} 
+            toggleDropdown={toggleDropdown}
+            dropdownContent={["Miami", "San Francisco", "Houston"]}
             onSelect={handleSelectValue}
           />
-          <SearchCalendarCard 
+          <SearchCalendarCard
             width={28}
             ida={t("ida")}
             returnTrip={t("return")}
             startDate={t("sampleDate")}
-            returnDate={t("sampleDate2")} 
+            returnDate={t("sampleDate2")}
             cardName={t("ida")}
-            isOpen={openDropdown === "Ida"} 
+            isOpen={openDropdown === "Ida"}
             toggleDropdown={toggleDropdown}
           />
-          <SearchCard 
-            width={18} 
-            cardName={t("passengers")} 
-            value={"1 adultos"} 
-            isOpen={openDropdown === "Passengers" || openDropdown === "Pasajeros"} 
+          <SearchCard
+            width={18}
+            cardName={t("passengers")}
+            value={"1 adultos"}
+            isOpen={openDropdown === "Passengers" || openDropdown === "Pasajeros"}
             isPassenger={true}
-            toggleDropdown={toggleDropdown} 
-            dropdownContent={["1 Adult", "2 Adults", "3 Adults"]} 
+            toggleDropdown={toggleDropdown}
+            dropdownContent={["1 Adult", "2 Adults", "3 Adults"]}
             // onSelect={updatePassengerCount}
-            passengerValues={passengerValues} 
-            updatePassengerCount={updatePassengerCount} 
+            passengerValues={passengerValues}
+            updatePassengerCount={updatePassengerCount}
           />
-          <AdoButton width={14} backgroundColor='' borderColor='#5F2167' buttonText={t("modifyTrip")} textColor='#5F2167' />
+          <Button variant='primary' className='border border-ado-purple' buttonText={t("modifyTrip")} />
         </div>
       </div>
     </Container>

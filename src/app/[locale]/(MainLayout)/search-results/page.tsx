@@ -7,15 +7,15 @@ import Container from '@/components/Container';
 import DateSlider from '@/components/HorizontalScrollBar';
 import Filter from '@/components/Filter';
 
-interface FilterData { 
-  day:string,
-  date:string 
+interface FilterData {
+  day: string,
+  date: string
 }
 
 function SearchResults() {
 
-  const [selectedDate, setSelectedDate] = useState<FilterData>({day:new Date().toLocaleDateString("en-US", { weekday: "short" }),date:new Date().toISOString().split("T")[0]});
- 
+  const [selectedDate, setSelectedDate] = useState<FilterData>({ day: new Date().toLocaleDateString("en-US", { weekday: "short" }), date: new Date().toISOString().split("T")[0] });
+
   const handleDateChange = (date: FilterData) => {
     setSelectedDate(date);
   };
@@ -37,15 +37,15 @@ function SearchResults() {
       </div>
       <div className=' bg-[#FAFAFA] ' >
         <Container className={"max-[500px]:p-0 max-[500px]:m-0"}>
-          <div className="flex-col"> 
-            <DateSlider onDateSelect={handleDateChange} /> 
+          <div className="flex-col">
+            <DateSlider onDateSelect={handleDateChange} />
           </div>
         </Container>
       </div>
       <Container className={"max-[500px]:p-0 max-[500px]:m-0"}>
-          <div className="flex-col"> 
-            <Filter date={selectedDate}   />          
-          </div>
+        <div className="flex-col">
+          <Filter date={selectedDate} />
+        </div>
       </Container>
     </div>
   );
