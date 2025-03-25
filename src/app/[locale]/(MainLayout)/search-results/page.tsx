@@ -6,6 +6,8 @@ import SearchBox from '@/components/SearchBox';
 import Container from '@/components/Container';
 import DateSlider from '@/components/HorizontalScrollBar';
 import Filter from '@/components/Filter';
+import PromoCard from '@/components/PromoCard';
+import { useTranslations } from 'next-intl';
 
 interface FilterData {
   day: string,
@@ -15,11 +17,15 @@ interface FilterData {
 function SearchResults() {
 
   const [selectedDate, setSelectedDate] = useState<FilterData>({ day: new Date().toLocaleDateString("en-US", { weekday: "short" }), date: new Date().toISOString().split("T")[0] });
-
+  const t = useTranslations("home");
   const handleDateChange = (date: FilterData) => {
     setSelectedDate(date);
   };
 
+
+  const handlePromotionAction = () => {
+    console.log("promotion interested")
+  };
 
   return (
     <div className='bg-ado-background w-full'>
@@ -46,6 +52,7 @@ function SearchResults() {
         <div className="flex-col">
           <Filter date={selectedDate} />
         </div>
+        <PromoCard imageUrl={""} bannerTitle={t('promotion.title')} bannerDescription={t('promotion.description')} btnText={t('promotion.btnText')} btnColor={"ado-btn-red"} showImage={true} handlePromotionAction={handlePromotionAction} />
       </Container>
     </div>
   );

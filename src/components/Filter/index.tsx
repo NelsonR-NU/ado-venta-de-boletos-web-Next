@@ -64,7 +64,7 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
 
         <div className="relative w-full sm:w-auto" ref={filterRef}>
           <Button
-            className="border border-ado-purple text-ado-purple px-4 py-2 h-[40px] rounded-md text-sm flex items-center justify-center w-full sm:w-auto hover:bg-purple-100 whitespace-nowrap"
+            variant="secondary"
             onClick={handleFilterClick}
             aria-expanded={isFilterDropdownOpen}
             buttonText={t('filters')}
@@ -76,6 +76,7 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
         {/* Sort Button */}
         <div className="relative w-full sm:w-auto max-[500px]:!m-0" ref={sortRef}>
           <Button
+            variant="secondary"
             className="border border-ado-purple text-ado-purple px-4 py-2 h-[40px] rounded-md text-sm flex items-center justify-center w-full sm:w-auto hover:bg-purple-100 whitespace-nowrap"
             onClick={() => {
               setIsSortDropdownOpen(!isSortDropdownOpen);

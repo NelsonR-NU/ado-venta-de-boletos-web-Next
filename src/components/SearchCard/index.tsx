@@ -46,13 +46,13 @@ function SearchCard({ width, cardName, value, isOpen, isPassenger, toggleDropdow
         className="w-full bg-white border-2 border-ado-search-border flex flex-col justify-start px-2 py-1 rounded-[4px] cursor-pointer"
         onClick={() => toggleDropdown(cardName)}
       >
-        <p className="text-[12px] text-[#1D1F24]">{cardName}</p>
+        <p className="text-[12px] text-ado-text-gray">{cardName}</p>
         <p className="text-[14px] font-medium truncate w-full " title={value} >{value}</p>
       </div>
 
       {/* Dropdown */}
       {isOpen && !isPassenger && (
-        <SearchDropDown 
+        <SearchDropDown
           recentSearches={recentearches}
           originTerminals={originTerminals}
           cardName={cardName}
@@ -61,7 +61,7 @@ function SearchCard({ width, cardName, value, isOpen, isPassenger, toggleDropdow
       )}
 
       {isOpen && isPassenger && (
-        <SearchPassengerDropDown 
+        <SearchPassengerDropDown
           updatePassengerCount={updatePassengerCount}
           passengerValues={passengerValues}
         />
