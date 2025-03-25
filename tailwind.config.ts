@@ -10,6 +10,8 @@ export default {
     extend: {
       colors: {
         "ado-background": "#FFFFFF",
+        "ado-background-secondary": "#F4F6F9",
+        "ado-neutral-light": "#B5BAC7",
         "ado-search-border": "#E5E9EE",
         "ado-selected": "#5F2167",
         "ado-red": "#E11F2A",
@@ -36,6 +38,9 @@ export default {
         regular: "400",
         medium: "500",
         bold: "700",
+      },
+      boxShadow: {
+        charcoal: "0px 8px 16px 0px rgba(13, 14, 15, 0.10)",
       },
     },
   },
