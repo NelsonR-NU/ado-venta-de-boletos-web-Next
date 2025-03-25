@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
         color: variant === "primary" ? "white" : "#5F2167",
         width: typeof width === "number" ? `${width}px` : width,
       }}
-      className={`flex items-center border border-ado-purple gap-2 rounded-[4px] text-[16px] font-medium px-6 py-2 cursor-pointer transition duration-200 ease-in-out ${className}`}
+      className={`flex !items-center border border-ado-purple gap-2 rounded-[4px] text-[16px] font-medium px-6 py-2 cursor-pointer transition duration-200 ease-in-out ${className}`}
       onClick={onClick}
     >
       {icon && iconPosition === "left" && icon}
