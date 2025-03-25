@@ -6,7 +6,8 @@ interface AdoCheckboxProps {
   label: string | React.ReactNode;
   checked?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  className?: string;
+  className?: string; 
+  name?: string;
 }
 
 const AdoCheckbox: React.FC<AdoCheckboxProps> = ({
@@ -14,6 +15,7 @@ const AdoCheckbox: React.FC<AdoCheckboxProps> = ({
   checked = false,
   onChange,
   className = "",
+  name,
 }) => {
   return (
     <FormControlLabel
@@ -25,6 +27,7 @@ const AdoCheckbox: React.FC<AdoCheckboxProps> = ({
           }}
           checked={checked}   
           onChange={onChange}  
+          name={name} 
         />
       }
       label={label}
