@@ -20,7 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, type, name, value, onCha
                 value={typeof value === "boolean" ? String(value) : value}
                 onChange={onChange}
                 required={required}
-                className="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-blue-300 bg-white placeholder-ado-steel-gray"
+                className="mt-1 w-full p-2 border rounded-lg bg-white placeholder-ado-steel-gray"
                 placeholder={placeholder}
             />
         </div>

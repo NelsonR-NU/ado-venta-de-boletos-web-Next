@@ -6,6 +6,7 @@ import SearchBox from '@/components/SearchBox';
 import Container from '@/components/Container';
 import DateSlider from '@/components/HorizontalScrollBar';
 import Filter from '@/components/Filter';
+import BookingForm from '@/components/PassengerRegistrationForm';
 
 interface FilterData {
   day: string,
@@ -46,6 +47,7 @@ function SearchResults() {
         <div className="flex-col">
           <Filter date={selectedDate} />
         </div>
+        <BookingForm />
       </Container>
     </div>
   );

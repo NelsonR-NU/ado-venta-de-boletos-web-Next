@@ -4,7 +4,7 @@ import InputField from "../Input/index";
 import InfoIcon from '../../assets/svg/information.svg';
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import AdoCheckbox from "../CheckBox";
+import Checkbox from "../CheckBox";
 
 interface PassengerData {
   email: string;
@@ -15,7 +15,7 @@ interface PassengerData {
   assistanceRegreso: boolean;
 }
 
-const BookingForm: React.FC = () => {
+const PassengerRegistrationForm: React.FC = () => {
   const t = useTranslations("booking");
   const [formData, setFormData] = useState<PassengerData>({
     email: "",
@@ -36,51 +36,41 @@ const BookingForm: React.FC = () => {
     });
   };
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formData.email !== formData.confirmEmail) {
-      setError(t("email_mismatch_error"));
-      return;
-    }
-    setError("");
-    console.log("Email submitted:", formData.email);
-  };
-
   return (
-    <div className="flex flex-col gap-6 items-center p-4 md:w-[70%] w-full">
-      <Card
-        title={t('send_tickets_to')}
-        width="full"
-      >
-        <form onSubmit={handleEmailSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {["email", "confirmEmail"].map((field) => (
-            <InputField
-              key={field}
-              label={field === "email" ? t("email") : t("confirm_email")}
-              type="email"
-              name={field}
-              value={formData[field as keyof PassengerData] as string}
-              onChange={handleChange}
-              placeholder="Ej: mar.tg@gmail.com"
-              required
-            />
-          ))}
+    <div className="flex flex-col gap-6 p-4 md:w-[70%] w-full">
+      <Card width="full">
+        <h2 className="text-lg font-semibold mb-4">{t('send_tickets_to')}</h2>
+        <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <InputField
+            label={t("email")}
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Ej: mar.tg@gmail.com"
+            required
+          />
+          <InputField
+            label={t("confirm_email")}
+            type="email"
+            name="confirmEmail"
+            value={formData.confirmEmail}
+            onChange={handleChange}
+            placeholder="Ej: mar.tg@gmail.com"
+            required
+          />
         </form>
         {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       </Card>
 
-      <Card
-        primaryTitle={
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-2">
-            <span>{t("register_passenger")}</span>
-            <a href="#" className="text-ado-teal text-sm flex items-center gap-2 mt-2 sm:mt-0">
-              {t("what_is_total_assistance")} <Image src={InfoIcon} alt="Info Icon" />
-            </a>
-          </div>
-        }
-        width="full"
-        className="w-full"
-      >
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-2">
+        <h2 className="text-lg font-bold mb-4">{t("register_passenger")}</h2>
+        <a href="#" className="font-bold text-ado-teal text-sm flex items-center gap-2 mt-2 sm:mt-0">
+          {t("what_is_total_assistance")} <Image src={InfoIcon} alt="Info Icon" />
+        </a>
+      </div>
+
+      <Card width="full" className="w-full">
         <div className="flex flex-wrap justify-between mb-3 gap-2 sm:gap-4 text-sm text-black border-b border-ado-frost-gray pb-4">
           <span>{t("passenger")} 1: <strong>Adulto</strong></span>
           <span>{t("seat_departure")} <strong>17</strong></span>
@@ -88,17 +78,22 @@ const BookingForm: React.FC = () => {
         </div>
 
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {["name", "lastName"].map((field) => (
-            <InputField
-              key={field}
-              label={field === "name" ? t("first_name") : t("last_name")}
-              type="text"
-              name={field}
-              value={formData[field as keyof PassengerData] as string}
-              onChange={handleChange}
-              placeholder={field === "name" ? "Ej: María" : "Ej: Torres Gómez"}
-            />
-          ))}
+          <InputField
+            label={t("first_name")}
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Ej: María"
+          />
+          <InputField
+            label={t("last_name")}
+            type="text"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            placeholder="Ej: Torres Gómez"
+          />
         </form>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center mt-4 border-t pt-4 gap-3 sm:gap-6">
@@ -107,25 +102,23 @@ const BookingForm: React.FC = () => {
           </label>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
-            <AdoCheckbox
+            <Checkbox
               label={<span className="text-sm text-ado-charcoal">{`${t("departure")} $15.00 MXN`}</span>}
               name="assistanceIda"
               checked={formData.assistanceIda}
               onChange={handleChange}
             />
-
-            <AdoCheckbox
+            <Checkbox
               label={<span className="text-sm text-ado-charcoal">{`${t("return")} $15.00 MXN`}</span>}
               name="assistanceRegreso"
               checked={formData.assistanceRegreso}
               onChange={handleChange}
             />
           </div>
-
         </div>
       </Card>
     </div>
   );
 };
 
-export default BookingForm;
+export default PassengerRegistrationForm;
