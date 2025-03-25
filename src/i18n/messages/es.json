@@ -155,5 +155,21 @@
     "thursday": "JE",
     "friday": "VE",
     "saturday": "SA"
+  },
+  "booking": {
+    "send_tickets_to": "Enviar tu(s) boleto(s) a:",
+    "email": "Correo electrónico*",
+    "confirm_email": "Confirmar correo electrónico*",
+    "register_passenger": "Registra a tu(s) pasajero(s)",
+    "what_is_total_assistance": "¿Qué es la asistencia total?",
+    "passenger": "Pasajero",
+    "adult": "Adulto",
+    "seat_departure": "Asiento de ida:",
+    "seat_return": "Asiento de regreso:",
+    "first_name": "Nombre",
+    "last_name": "Apellidos",
+    "add_total_assistance": "Agregar asistencia total",
+    "departure": "Ida",
+    "return": "Regreso"
   }
 }

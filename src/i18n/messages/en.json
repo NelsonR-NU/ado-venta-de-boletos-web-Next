@@ -179,6 +179,23 @@
       "thursday": "TH",
       "friday": "FR",
       "saturday": "SA"
+    },
+    "booking" : {
+      "send_tickets_to": "Send your ticket(s) to:",
+      "email": "Email*",
+      "confirm_email": "Confirm Email*",
+      "register_passenger": "Register your passenger(s)",
+      "what_is_total_assistance": "What is total assistance?",
+      "passenger": "Passenger",
+      "adult": "Adult",
+      "seat_departure": "Seat departure:",
+      "seat_return": "Seat return:",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "add_total_assistance": "Add total assistance",
+      "departure": "Departure",
+      "return": "Return"
     }
+    
 }
   
