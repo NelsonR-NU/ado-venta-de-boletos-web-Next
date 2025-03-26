@@ -5,6 +5,7 @@ import InfoIcon from '../../assets/svg/information.svg';
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Checkbox from "../CheckBox";
+import Link from "next/link";
 
 interface PassengerData {
   email: string;
@@ -26,7 +27,6 @@ const PassengerRegistrationForm: React.FC = () => {
     assistanceRegreso: false,
   });
 
-  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -38,7 +38,7 @@ const PassengerRegistrationForm: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-6 p-4 md:w-[70%] w-full">
-      <Card width="full">
+      <Card className="bg-ado-ice-blue">
         <h2 className="text-lg font-semibold mb-4">{t('send_tickets_to')}</h2>
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <InputField
@@ -60,17 +60,16 @@ const PassengerRegistrationForm: React.FC = () => {
             required
           />
         </form>
-        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       </Card>
 
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-2">
         <h2 className="text-lg font-bold mb-4">{t("register_passenger")}</h2>
-        <a href="#" className="font-bold text-ado-teal text-sm flex items-center gap-2 mt-2 sm:mt-0">
+        <Link href="#" className="font-bold text-ado-teal text-sm flex items-center gap-2 mt-2 sm:mt-0">
           {t("what_is_total_assistance")} <Image src={InfoIcon} alt="Info Icon" />
-        </a>
+        </Link>
       </div>
 
-      <Card width="full" className="w-full">
+      <Card className="bg-ado-ice-blue">
         <div className="flex flex-wrap justify-between mb-3 gap-2 sm:gap-4 text-sm text-black border-b border-ado-frost-gray pb-4">
           <span>{t("passenger")} 1: <strong>Adulto</strong></span>
           <span>{t("seat_departure")} <strong>17</strong></span>

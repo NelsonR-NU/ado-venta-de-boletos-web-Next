@@ -28,6 +28,7 @@ export default {
         "ado-charcoal": "#1D1F24",
         "ado-steel-gray": "#6F7587",
         "ado-frost-gray": "#E3E7F2",
+        "ado-ice-blue" : "#F6F7FB",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
