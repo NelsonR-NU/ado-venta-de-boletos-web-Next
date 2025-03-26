@@ -195,6 +195,19 @@
       "add_total_assistance": "Add total assistance",
       "departure": "Departure",
       "return": "Return"
+    },
+    "register" : {
+      "register": "Sign up",
+      "enter_details": "Enter your details to complete your registration.",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "receive_promotions": "I want to receive exclusive travel promotions.",
+      "agree_terms": "In accordance with the",
+      "terms_conditions": "Terms and Conditions",
+      "as_well_as_the" : "as well as the",
+      "privacy_notice": "Privacy Notice",
+      "continue": "Continue"
     }
     
 }

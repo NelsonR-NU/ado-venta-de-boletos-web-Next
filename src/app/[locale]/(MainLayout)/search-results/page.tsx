@@ -7,6 +7,9 @@ import Container from '@/components/Container';
 import DateSlider from '@/components/HorizontalScrollBar';
 import Filter from '@/components/Filter';
 import BookingForm from '@/components/PassengerRegistrationForm';
+import Button from '@/components/Button';
+import Modal from '@/components/Modal';
+import RegisterFormModal from '@/components/RegisterFormModal';
 
 interface FilterData {
   day: string,
@@ -48,6 +51,7 @@ function SearchResults() {
           <Filter date={selectedDate} />
         </div>
         <BookingForm />
+        <RegisterFormModal />
       </Container>
     </div>
   );

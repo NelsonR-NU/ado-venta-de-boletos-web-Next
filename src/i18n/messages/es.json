@@ -171,5 +171,19 @@
     "add_total_assistance": "Agregar asistencia total",
     "departure": "Ida",
     "return": "Regreso"
+  },
+  "register" : {
+    "register": "Regístrate",
+    "enter_details": "Ingresa tus datos para poder completar tu registro.",
+    "first_name": "Nombre",
+    "last_name": "Apellido",
+    "email": "Correo electrónico",
+    "receive_promotions": "Quiero recibir promociones exclusivas para viajar.",
+    "agree_terms": "De acuerdo con los",
+    "terms_conditions": "Términos y Condiciones",
+    "as_well_as_the" : "así como el",
+    "privacy_notice": "Aviso de Privacidad",
+    "continue": "Continuar"
   }
+  
 }

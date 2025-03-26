@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import DrawerModal from "@/components/Drawer";
 import adoBrandImage from "@/assets/png/adoBrandImage.png";
 import Button from "@/components/Button"
-import AdoCheckbox from "@/components/CheckBox";
+import Checkbox from "@/components/CheckBox";
 
 interface FilterDrawerProps {
   isOpen: boolean;
@@ -56,7 +56,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
             <div className="flex flex-col p-5 gap-4">
               <div className="bg-[#F3F4F6] p-5 rounded-lg shadow-md border flex-col">
                 <h2 className="text-lg font-semibold pb-2">{t("filter_content.by_promotion")}</h2>
-                <AdoCheckbox onChange={(e) => handleCheckboxChange('discount')} label={t("filter_content.by_promotion_type.discount")} />
+                <Checkbox onChange={(e) => handleCheckboxChange('discount')} label={t("filter_content.by_promotion_type.discount")} />
               </div>
 
               <div className="flex flex-col bg-ado-bg-light-gray p-4 rounded-lg shadow-md">
@@ -64,7 +64,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
                 <div className="grid grid-cols-2 gap-2 mt-2">
                   {Object.values(t.raw("filter_content.by_departure_time_type") as Record<string, { label: string; time: string }>).map((item, index) => (
                     <div key={index} className="border rounded-lg bg-white px-3 py-2 w-full">
-                      <AdoCheckbox
+                      <Checkbox
                         label={
                           <div className="flex flex-col">
                             <span className="font-semibold text-gray-700">{item.label}</span>
@@ -108,7 +108,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
                 <div className="grid grid-cols-2 gap-2">
                   {Object.values(tripTypes).map((type, index) => (
                     <div key={index} className="border rounded-lg p-3 w-full bg-white">
-                      <AdoCheckbox
+                      <Checkbox
                         label={
                           <div className="flex flex-col">
                             <span className="font-semibold">{type.label}</span>
@@ -124,7 +124,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
               <div className="flex flex-col bg-ado-bg-light-gray p-4 rounded-lg shadow-md">
                 <h3 className="font-semibold text-gray-700">{t("filter_content.by_brand")}</h3>
                 <div className="border rounded-lg p-3 w-[90px] flex justify-center items-center bg-white w-fit">
-                  <AdoCheckbox label={<Image src={adoBrandImage} alt="ado brand image" className="w-[50px]" />} />
+                  <Checkbox label={<Image src={adoBrandImage} alt="ado brand image" className="w-[50px]" />} />
                 </div>
               </div>
 
@@ -133,7 +133,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
                 <div className="grid grid-cols-2 gap-2">
                   {Object.values(sourceTerminal).map((terminal, index) => (
                     <div key={index} className="border rounded-lg bg-white px-3 py-2 w-full">
-                      <AdoCheckbox label={<span className="text-xs text-gray-500">{terminal}</span>} />
+                      <Checkbox label={<span className="text-xs text-gray-500">{terminal}</span>} />
                     </div>
                   ))}
                 </div>
@@ -142,7 +142,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
               <div className="flex flex-col bg-ado-bg-light-gray p-4 rounded-lg shadow-md">
                 <h3 className="font-semibold text-gray-700">{t("filter_content.destination_terminal")}</h3>
                 <div className="border rounded-lg bg-white px-3 py-2 w-fit">
-                  <AdoCheckbox label={<span className="text-xs text-gray-500">{t("filter_content.destination_terminal_type.veracruz")}</span>} />
+                  <Checkbox label={<span className="text-xs text-gray-500">{t("filter_content.destination_terminal_type.veracruz")}</span>} />
                 </div>
               </div>
             </div>
