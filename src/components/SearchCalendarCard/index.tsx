@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Tick from '../../assets/svg/tick.svg';
 import Button from '@/components/Button'
 import Calendar from '../Calendar';
+import { Box } from '@mui/material';
 
 function SearchCalendarCard({ width, ida, returnTrip, startDate, returnDate, cardName, isOpen, toggleDropdown }: { width: number, ida: string, returnTrip: string, startDate: string, returnDate: string, cardName: string, isOpen: boolean, toggleDropdown: (cardName: string) => void }) {
 
@@ -33,7 +34,7 @@ function SearchCalendarCard({ width, ida, returnTrip, startDate, returnDate, car
 
             </div>
             {isOpen && (
-                <div className='absolute right-[-90] top-full bg-[#FAFAFA] mt-2 p-[24px] w-[700px] flex flex-col rounded-[8px] ' >
+                <div className='absolute lg:right-[-90] top-full bg-[#FAFAFA] mt-2 p-[24px] w-[700px] flex flex-col rounded-[8px] ' >
                     <p className=' text-[#26282F] text-[16px] font-medium ' >{t("calendarTitle")}</p>
                     <div className=' w-full p-[10px] bg-[#EBF7F6] border-[1px] border-[#B9E9E4] mt-2 rounded-[10px] flex items-center ' >
                         <Image src={CalendarPromo} alt="Promo Icon" />
@@ -60,11 +61,7 @@ function SearchCalendarCard({ width, ida, returnTrip, startDate, returnDate, car
                             <p className=' text-[16px] text-ado-text-gray ml-2 ' >{t("calendarCheckBox")}</p>
                         </div>
 
-                        <Button
-                            variant='primary'
-                            width={14}
-                            buttonText={t("ready")}
-                        />
+                        <Button variant='primary' buttonText={t("ready")} />
                     </div>
                 </div>
             )}

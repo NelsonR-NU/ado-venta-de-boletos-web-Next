@@ -169,7 +169,16 @@
       "calendarPromo2": "and get up to",
       "calendarPromo3": "50% discount",
       "calendarPromo4": "on your trips.",
-      "calendarCheckBox": "I want my departure date to be the same when I return."
+      "calendarCheckBox": "I want my departure date to be the same when I return.",
+      "searchResultsTitle": "Search Results.",
+      "tryAnotherDate": "Try another date",
+      "yourSearch": "Your search for",
+      "yourSearchOn": " November 12",
+      "yourSearchOn2": " of",
+      "yourSearchFrom": " Central México Norte",
+      "yourSearchOn3": " to",
+      "yourSearchTo": " Acapulco Costera, Gro.",
+      "noSeatAvailability": "There are no seats available."
     },
     "calendar": {
       "sunday": "SU",

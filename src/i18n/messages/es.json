@@ -145,7 +145,16 @@
     "calendarPromo2": "y obten hasta un",
     "calendarPromo3": "50% de descuento",
     "calendarPromo4": "en tus viajes.",
-    "calendarCheckBox": "Quiero que mi fecha de ida sea la misma de regreso."
+    "calendarCheckBox": "Quiero que mi fecha de ida sea la misma de regreso.",
+    "searchResultsTitle": "Resultado de búsqueda.",
+    "tryAnotherDate": "Intenta con otra fecha",
+    "yourSearch": "Tu búsqueda del",
+    "yourSearchOn": " 12 de Noviembre",
+    "yourSearchOn2": " de",
+    "yourSearchFrom": " Central México Norte",
+    "yourSearchOn3": " a",
+    "yourSearchTo": " Acapulco Costera, Gro.",
+    "noSeatAvailability": "No tiene disponibilidad de asientos."
   },
   "calendar": {
     "sunday": "DI",
