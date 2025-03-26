@@ -33,7 +33,7 @@ function SearchPassengerDropDown({ updatePassengerCount, passengerValues }: Sear
 
     return (
         <div
-            className="absolute right-0 top-full bg-[#FAFAFA] border border-gray-300 w-[800px] mt-1 rounded-[8px] shadow-lg z-[9999] max-h-120 overflow-auto flex flex-col p-[16px]"
+            className="absolute md:right-[-170] lg:right-0 top-full bg-[#FAFAFA] border border-gray-300 md:w-[750px] lg:w-[800px] mt-1 rounded-[8px] shadow-lg z-[9999] max-h-120 overflow-auto flex flex-col p-[16px]"
         >
             <p className=' text-[16px] font-medium font-gotham-pro ' >{t("whoTravels")}</p>
             <hr className="border-t border-[#E3E7F2] mt-[10px] " />
@@ -81,7 +81,6 @@ function SearchPassengerDropDown({ updatePassengerCount, passengerValues }: Sear
                     updatePassengerCount={updatePassengerCount}
                 />
                 <Button
-                    width={14}
                     variant='primary'
                     buttonText={t("ready")}
                 />

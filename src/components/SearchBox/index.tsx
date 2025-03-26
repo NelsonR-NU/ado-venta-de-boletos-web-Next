@@ -11,7 +11,7 @@ import Button from '@/components/Button'
 import SearchCalendarCard from '../SearchCalendarCard';
 import { Box } from '@mui/material';
 
-function SearchBox() {
+function SearchBox({handleLoad}: {handleLoad: () => void}) {
   const t = useTranslations("searchResults");
 
   const [roundTrip, setRoundTrip] = useState(true);
@@ -112,7 +112,58 @@ function SearchBox() {
         </div>
 
         {/* Detail Search Card Filter */}
-        <div className='flex justify-between mt-1 items-end'>
+        <div className='flex justify-between mt-1 items-end md:flex-wrap lg:flex-nowrap'> 
+          <div className=' flex justify-between lg:w-[39.5%] md:w-[100%] ' >
+            <SearchCard 
+              width={50} 
+              cardName={t("origin")} 
+              value={searchValues.Origin} 
+              isOpen={openDropdown === "Origin" || openDropdown === "Origen"} 
+              isPassenger={false}
+              toggleDropdown={toggleDropdown} 
+              dropdownContent={["New York", "Los Angeles", "Chicago"]} 
+              onSelect={handleSelectValue}
+            />
+            <SearchCard 
+              width={49} 
+              cardName={t("destination")} 
+              value={searchValues.Destination} 
+              isOpen={openDropdown === "Destination" || openDropdown === "Destino"} 
+              isPassenger={false}
+              toggleDropdown={toggleDropdown} 
+              dropdownContent={["Miami", "San Francisco", "Houston"]} 
+              onSelect={handleSelectValue}
+            />
+          </div>
+
+          <div className=' lg:w-[60%] md:w-[100%] flex justify-between items-end md:mt-[5px] ' >
+            <SearchCalendarCard 
+              width={48.5}
+              ida={t("ida")}
+              returnTrip={t("return")}
+              startDate={t("sampleDate")}
+              returnDate={t("sampleDate2")} 
+              cardName={t("ida")}
+              isOpen={openDropdown === "Ida"} 
+              toggleDropdown={toggleDropdown}
+            />
+            <SearchCard 
+              width={29.5} 
+              cardName={t("passengers")} 
+              value={"1 adultos"} 
+              isOpen={openDropdown === "Passengers" || openDropdown === "Pasajeros"} 
+              isPassenger={true}
+              toggleDropdown={toggleDropdown} 
+              dropdownContent={["1 Adult", "2 Adults", "3 Adults"]} 
+              // onSelect={updatePassengerCount}
+              passengerValues={passengerValues} 
+              updatePassengerCount={updatePassengerCount} 
+            />
+            <Button variant='primary' className='border border-ado-purple' buttonText={t("modifyTrip")} onClick={handleLoad} />
+          </div>
+        </div>
+
+        {/* <div className='flex justify-between mt-1 items-end'>
           <SearchCard
             width={18}
             cardName={t("origin")}
@@ -156,7 +207,7 @@ function SearchBox() {
             updatePassengerCount={updatePassengerCount}
           />
           <Button variant='primary' className='border border-ado-purple' buttonText={t("modifyTrip")} />
-        </div>
+        </div> */}
       </div>
     </Container>
   )
