@@ -1,7 +1,7 @@
 import React from "react";
 
 interface InputFieldProps {
-    label: string;
+    label: string | React.ReactNode;
     type: string;
     name: string;
     value: string | boolean;

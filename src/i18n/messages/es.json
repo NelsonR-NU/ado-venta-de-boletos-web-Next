@@ -184,6 +184,18 @@
     "as_well_as_the" : "así como el",
     "privacy_notice": "Aviso de Privacidad",
     "continue": "Continuar"
+  },
+  "login" :{
+    "login_text" : "Iniciar sesión",
+    "track_trip_history" : "Inicia sesión para seguir y consultar el historial de tus viajes.",
+    "password" : "Contraseña",
+    "email": "Correo electrónico",
+    "enter_password":"Ingresa tu contraseña",
+    "forgot_password":"¿Olvidaste tu contraseña?",
+    "first_time" :"¿Primera vez en ADO?",
+    "enter_as_guest" : "Entrar como invitado",
+    "register": "Regístrate",
+    "continue": "Continuar"
   }
   
 }
