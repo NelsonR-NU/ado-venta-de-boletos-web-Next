@@ -172,7 +172,7 @@
     "departure": "Ida",
     "return": "Regreso"
   },
-  "register" : {
+  "register": {
     "register": "Regístrate",
     "enter_details": "Ingresa tus datos para poder completar tu registro.",
     "first_name": "Nombre",
@@ -181,9 +181,23 @@
     "receive_promotions": "Quiero recibir promociones exclusivas para viajar.",
     "agree_terms": "De acuerdo con los",
     "terms_conditions": "Términos y Condiciones",
-    "as_well_as_the" : "así como el",
+    "as_well_as_the": "así como el",
     "privacy_notice": "Aviso de Privacidad",
     "continue": "Continuar"
+  },
+  "reservationSummary": {
+    "purchaseSummary": "Resumen de compra",
+    "oneWayTrip": "Viaje de ida",
+    "returnTrip": "Viaje de regreso",
+    "tax": "IVA",
+    "totalAssitance": "Asistencia total",
+    "includesTax": "incluye IVA",
+    "currencySymbol": "$",
+    "currency": "MXN",
+    "total": "Total",
+    "accordingTo": "De acuerdo con los",
+    "asWellAs": "así como el",
+    "termsAndConditions": "Términos y Condiciones",
+    "privacyNotice": "Aviso de Privacidad"
   }
-  
 }

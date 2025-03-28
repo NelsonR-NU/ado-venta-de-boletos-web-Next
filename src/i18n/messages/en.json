@@ -1,214 +1,203 @@
 {
-    "home": {
-      "title": "Welcome to our website!",
-      "description": "Click for About Page",
-      "tripType": "Choose your one-way ticket",
-      "sortedBy": "Sorted by",
+  "home": {
+    "title": "Welcome to our website!",
+    "description": "Click for About Page",
+    "tripType": "Choose your one-way ticket",
+    "sortedBy": "Sorted by",
+    "filters": "Filters",
+    "days": {
+      "Sun": ["Sun", "Sunday"],
+      "Mon": ["Mon", "Monday"],
+      "Tue": ["Tue", "Tuesday"],
+      "Wed": ["Wed", "Wednesday"],
+      "Thu": ["Thu", "Thursday"],
+      "Thur": ["Thu", "Thursday"],
+      "Fri": ["Fri", "Friday"],
+      "Sat": ["Sat", "Saturday"]
+    },
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "sortedTrip": {
+      "First_to_depart": "First to depart",
+      "Last_to_depart": "Last to depart",
+      "Lowest_price": "Lowest price",
+      "Highest_price": "Highest price",
+      "Shortest_trip": "Shortest trip",
+      "Longest_trip": "Longest trip"
+    },
+    "filter_content": {
       "filters": "Filters",
-      "days": {
-        "Sun": [
-          "Sun",
-          "Sunday"
-        ],
-        "Mon": [
-          "Mon",
-          "Monday"
-        ],
-        "Tue": [
-          "Tue",
-          "Tuesday"
-        ],
-        "Wed": [
-          "Wed",
-          "Wednesday"
-        ],
-        "Thu": [
-          "Thu",
-          "Thursday"
-        ],
-        "Thur":[
-          "Thu",
-          "Thursday"
-        ],
-        "Fri": [
-          "Fri",
-          "Friday"
-        ],
-        "Sat": [
-          "Sat",
-          "Saturday"
-        ]
+      "filter_results": "Filter results",
+      "close": "Close",
+      "filter_by": "Filter by",
+      "by_promotion": "By promotion",
+      "by_departure_time": "By departure time",
+      "by_price": "By price",
+      "by_type_of_trip": "By type of trip",
+      "by_brand": "By brand",
+      "source_terminal": "Source terminal",
+      "destination_terminal": "Destination terminal",
+      "reset_filters": "Reset Filters",
+      "apply_filters": "Apply Filters",
+      "by_promotion_type": {
+        "discount": "Discount"
       },
-      "months": [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-      ],
-      "sortedTrip": {
-        "First_to_depart": "First to depart",
-        "Last_to_depart": "Last to depart",
-        "Lowest_price": "Lowest price",
-        "Highest_price": "Highest price",
-        "Shortest_trip": "Shortest trip",
-        "Longest_trip": "Longest trip"
-      },
-      "filter_content": {
-        "filters": "Filters",
-        "filter_results": "Filter results",
-        "close": "Close",
-        "filter_by": "Filter by",
-        "by_promotion": "By promotion",
-        "by_departure_time": "By departure time",
-        "by_price": "By price",
-        "by_type_of_trip": "By type of trip",
-        "by_brand": "By brand",
-        "source_terminal": "Source terminal",
-        "destination_terminal": "Destination terminal",
-        "reset_filters": "Reset Filters",
-        "apply_filters": "Apply Filters",
-        "by_promotion_type": {
-          "discount": "Discount"
+      "by_departure_time_type": {
+        "early_morning": {
+          "label": "Early Morning",
+          "time": "00:00 - 06:59"
         },
-        "by_departure_time_type": {
-          "early_morning": {
-            "label": "Early Morning",
-            "time": "00:00 - 06:59"
-          },
-          "morning": {
-            "label": "Morning",
-            "time": "07:00 - 11:59"
-          },
-          "afternoon": {
-            "label": "Afternoon",
-            "time": "12:00 - 18:59"
-          },
-          "night": {
-            "label": "Night",
-            "time": "19:00 - 23:59"
-          }
+        "morning": {
+          "label": "Morning",
+          "time": "07:00 - 11:59"
         },
-        "by_price_type": {
-          "from": "From",
-          "to": "To"
+        "afternoon": {
+          "label": "Afternoon",
+          "time": "12:00 - 18:59"
         },
-        "by_type_of_trip_type": {
-          "local": {
-            "label": "Local",
-            "description": "The route of the trip starts at this origin."
-          },
-          "transfer": {
-            "label": "Transfer",
-            "description": "The route of the trip started at another terminal."
-          }
-        },
-        "source_terminal_type": {
-          "airport_national_arrivals": "Airport National Arrivals",
-          "central_mexico_north": "Central Mexico North",
-          "executive_south": "Executive of the South",
-          "temporal_angel": "Temporal Terminal of the Angel",
-          "mexico_tapo": "Mexico TAPO",
-          "santa_martha_acatitla": "Santa Martha Acatitla"
-        },
-        "destination_terminal_type": {
-          "veracruz": "Veracruz"
+        "night": {
+          "label": "Night",
+          "time": "19:00 - 23:59"
         }
       },
-      "promotion": {
-        "title": "autumn promotion",
-        "description": "Explore a different place and save up to 20% on your next trip.",
-        "btnText": "I'm interested"
+      "by_price_type": {
+        "from": "From",
+        "to": "To"
       },
-      "date_popup": {
-        "title": "Date change",
-        "content": "Your departure date will change to",
-        "continue_link": "Do you want to continue?",
-        "cancel": "No, cancel",
-        "continue_btn": "Yes, continue"
+      "by_type_of_trip_type": {
+        "local": {
+          "label": "Local",
+          "description": "The route of the trip starts at this origin."
+        },
+        "transfer": {
+          "label": "Transfer",
+          "description": "The route of the trip started at another terminal."
+        }
+      },
+      "source_terminal_type": {
+        "airport_national_arrivals": "Airport National Arrivals",
+        "central_mexico_north": "Central Mexico North",
+        "executive_south": "Executive of the South",
+        "temporal_angel": "Temporal Terminal of the Angel",
+        "mexico_tapo": "Mexico TAPO",
+        "santa_martha_acatitla": "Santa Martha Acatitla"
+      },
+      "destination_terminal_type": {
+        "veracruz": "Veracruz"
       }
     },
-    "searchResults": {
-      "roundTrip": "Round Trip",
-      "oneWay": "One Way",
-      "origin": "Origin",
-      "destination": "Destination",
-      "dummyValueOne": "Central Mexico North",
-      "dummyValueTwo": "Acapulco Costera, Gro",
-      "ida": "Ida",
-      "return": "Return",
-      "sampleDate": "Fri. Nov 13",
-      "sampleDate2": "Mar. Nov. 17",
-      "passengers": "Passengers",
-      "adult": "1 adult",
-      "modifyTrip": "Modify Trip",
-      "dropDownText": "We will show you the available terminals according to the origin you choose.",
-      "recentSearches": "Recent Searches",
-      "originTerminals": "Origin terminals by state",
-      "whoTravels": "Who Travels?",
-      "adults": "Adult",
-      "adultDescription": "More than 12 years",
-      "children": "Child",
-      "childrenDescription": "From 5 to 12 years",
-      "inapam": "INAPAM",
-      "inapamDescription": "With valid credential",
-      "teacher": "Teacher",
-      "teacherDescription": "With valid credential",
-      "student": "Student",
-      "studentDescription": "With valid credential",
-      "ready": "Ready",
-      "calendarTitle": "Select the date of your trip",
-      "calendarPromo1": "Take advantage of your advance purchase",
-      "calendarPromo2": "and get up to",
-      "calendarPromo3": "50% discount",
-      "calendarPromo4": "on your trips.",
-      "calendarCheckBox": "I want my departure date to be the same when I return."
+    "promotion": {
+      "title": "autumn promotion",
+      "description": "Explore a different place and save up to 20% on your next trip.",
+      "btnText": "I'm interested"
     },
-    "calendar": {
-      "sunday": "SU",
-      "monday": "MO",
-      "tuesday": "TU",
-      "wednesday": "WE",
-      "thursday": "TH",
-      "friday": "FR",
-      "saturday": "SA"
-    },
-    "booking" : {
-      "send_tickets_to": "Send your ticket(s) to:",
-      "email": "Email*",
-      "confirm_email": "Confirm Email*",
-      "register_passenger": "Register your passenger(s)",
-      "what_is_total_assistance": "What is total assistance?",
-      "passenger": "Passenger",
-      "adult": "Adult",
-      "seat_departure": "Seat departure:",
-      "seat_return": "Seat return:",
-      "first_name": "First Name",
-      "last_name": "Last Name",
-      "add_total_assistance": "Add total assistance",
-      "departure": "Departure",
-      "return": "Return"
-    },
-    "register" : {
-      "register": "Sign up",
-      "enter_details": "Enter your details to complete your registration.",
-      "first_name": "First Name",
-      "last_name": "Last Name",
-      "email": "Email",
-      "receive_promotions": "I want to receive exclusive travel promotions.",
-      "agree_terms": "In accordance with the",
-      "terms_conditions": "Terms and Conditions",
-      "as_well_as_the" : "as well as the",
-      "privacy_notice": "Privacy Notice",
-      "continue": "Continue"
+    "date_popup": {
+      "title": "Date change",
+      "content": "Your departure date will change to",
+      "continue_link": "Do you want to continue?",
+      "cancel": "No, cancel",
+      "continue_btn": "Yes, continue"
     }
-    
+  },
+  "searchResults": {
+    "roundTrip": "Round Trip",
+    "oneWay": "One Way",
+    "origin": "Origin",
+    "destination": "Destination",
+    "dummyValueOne": "Central Mexico North",
+    "dummyValueTwo": "Acapulco Costera, Gro",
+    "ida": "Ida",
+    "return": "Return",
+    "sampleDate": "Fri. Nov 13",
+    "sampleDate2": "Mar. Nov. 17",
+    "passengers": "Passengers",
+    "adult": "1 adult",
+    "modifyTrip": "Modify Trip",
+    "dropDownText": "We will show you the available terminals according to the origin you choose.",
+    "recentSearches": "Recent Searches",
+    "originTerminals": "Origin terminals by state",
+    "whoTravels": "Who Travels?",
+    "adults": "Adult",
+    "adultDescription": "More than 12 years",
+    "children": "Child",
+    "childrenDescription": "From 5 to 12 years",
+    "inapam": "INAPAM",
+    "inapamDescription": "With valid credential",
+    "teacher": "Teacher",
+    "teacherDescription": "With valid credential",
+    "student": "Student",
+    "studentDescription": "With valid credential",
+    "ready": "Ready",
+    "calendarTitle": "Select the date of your trip",
+    "calendarPromo1": "Take advantage of your advance purchase",
+    "calendarPromo2": "and get up to",
+    "calendarPromo3": "50% discount",
+    "calendarPromo4": "on your trips.",
+    "calendarCheckBox": "I want my departure date to be the same when I return."
+  },
+  "calendar": {
+    "sunday": "SU",
+    "monday": "MO",
+    "tuesday": "TU",
+    "wednesday": "WE",
+    "thursday": "TH",
+    "friday": "FR",
+    "saturday": "SA"
+  },
+  "booking": {
+    "send_tickets_to": "Send your ticket(s) to:",
+    "email": "Email*",
+    "confirm_email": "Confirm Email*",
+    "register_passenger": "Register your passenger(s)",
+    "what_is_total_assistance": "What is total assistance?",
+    "passenger": "Passenger",
+    "adult": "Adult",
+    "seat_departure": "Seat departure:",
+    "seat_return": "Seat return:",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "add_total_assistance": "Add total assistance",
+    "departure": "Departure",
+    "return": "Return"
+  },
+  "register": {
+    "register": "Sign up",
+    "enter_details": "Enter your details to complete your registration.",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "receive_promotions": "I want to receive exclusive travel promotions.",
+    "agree_terms": "In accordance with the",
+    "terms_conditions": "Terms and Conditions",
+    "as_well_as_the": "as well as the",
+    "privacy_notice": "Privacy Notice",
+    "continue": "Continue"
+  },
+  "reservationSummary": {
+    "purchaseSummary": "Resumen de compra",
+    "oneWayTrip": "Viaje de ida",
+    "returnTrip": "Viaje de regreso",
+    "tax": "IVA",
+    "totalAssitance": "Asistencia total",
+    "includesTax": "incluye IVA",
+    "currencySymbol": "$",
+    "currency": "MXN",
+    "total": "Total",
+    "accordingTo": "De acuerdo con los",
+    "asWellAs": "así como el",
+    "termsAndConditions": "Términos y Condiciones",
+    "privacyNotice": "Aviso de Privacidad"
+  }
 }
-  
