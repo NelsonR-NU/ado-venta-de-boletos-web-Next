@@ -55,12 +55,12 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [open, setOpen] = useState<boolean>(false);
   const [selectedDate, setSelectedDate] = useState<DateInfo | null>(null);
-  const [showArrows, setShowArrows] = useState<boolean>(window.innerWidth > 768);
-  const t = useTranslations("home");
+  const [showArrows, setShowArrows] = useState<boolean>(window.innerWidth > 640);
+  const t = useTranslations("searchResults");
 
   useLayoutEffect(() => {
     const handleResize = () => {
-      setShowArrows(window.innerWidth > 768);
+      setShowArrows(window.innerWidth > 640);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -97,15 +97,15 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
 
 
   return (
-    <div className="flex items-center justify-center  p-4    w-full max-w-[100vw] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1200px] mx-auto max-[500px]:p-0 max-[500px]:m-0">
+    <div className="flex items-center justify-center mt-0 p-0 w-full   max-w-[600px] md:max-w-[800px] lg:max-w-[1200px] mx-auto ">
       {showArrows && (
-        <Button className="!p-2 border text-gray-600 mr-4 hover:bg-gray-200 rounded-full hidden md:flex" onClick={() => scrollRef.current?.scrollBy({ left: -120, behavior: "smooth" })} icon={<Image src={leftArrow} alt="left arrow" className="w-[15px]" />} />
+        <Button buttonStyle="outline" className="!p-2 border text-gray-600 mr-4 border !border-ado-gray shadow-[0px_4px_8px_0px_rgba(0,208,15,0.1)] hover:bg-gray-200 !rounded-full hidden md:flex" onClick={() => scrollRef.current?.scrollBy({ left: -120, behavior: "smooth" })} icon={<Image src={leftArrow} alt="left arrow" className="w-[15px]" />} />
       )}
-      <div className="relative w-full bg-gray-100 border rounded-md p-4 overflow-hidden min-[800px]:max-w-[900px] max-[500px]:max-w-full max-[500px]:p-0 max-[500px]:m-0">
-        <div ref={scrollRef} className="flex items-center overflow-x-auto scrollbar-hide" style={{ whiteSpace: "nowrap", scrollSnapType: "x mandatory" }}>
+      <div className="relative p-0 m-0 w-full   border-0 rounded-md sm:p-4 overflow-hidden md:max-w-[900px] sm:bg-ado-scroll-background ">
+        <div ref={scrollRef} className="flex gap-2 bg-white   items-center overflow-x-auto  sm:gap-0" style={{ whiteSpace: "nowrap", scrollSnapType: "x mandatory" }}>
           {dates.map(({ day, date, past }, index) => (<div
             key={date}
-            className={`w-[90px] h-[40px] px-4 py-2 flex items-center justify-center text-center transition-all max-[500px]:p-[40px] max-[500px]:w-[33vw] cursor-pointer ${selectedIndex === index ? "border-b-4 rounded-md bg-white border-green-500 font-semibold shadow-md" : "hover:bg-gray-100 opacity-70"
+            className={`w-[90px] h-[40px] p-[40px] w-[33vw]  sm:px-4 sm:py-2 flex items-center justify-center text-center transition-all bg-ado-gray   cursor-pointer sm:bg-ado-scroll-background sm:px-8  ${selectedIndex === index ? "!bg-ado-date-select  border-b-4 rounded-b-md border-green-500 font-semibold shadow-md !sm:bg-ado-date-background" : "hover:bg-gray-100 opacity-70"
               }`}
             onClick={() => handleSelectDate(index, t.raw(`days.${day}`)[1], new Date(date).getDate())}
             aria-disabled={past}
@@ -118,25 +118,27 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
         </div>
       </div>
       {showArrows && (
-        <Button className="!p-2 border text-gray-600 ml-4 hover:bg-gray-200 rounded-full hidden md:flex" onClick={() => scrollRef.current?.scrollBy({ left: 120, behavior: "smooth" })} icon={<Image src={rightArrow} alt="right arrow" className="w-[15px]" />} />
+        <Button buttonStyle="outline" className="!p-2 border text-gray-600 ml-4 border !border-ado-gray shadow-[0px_4px_8px_0px_rgba(0,208,15,0.1)] hover:bg-gray-200 !rounded-full hidden md:flex" onClick={() => scrollRef.current?.scrollBy({ left: 120, behavior: "smooth" })} icon={<Image src={rightArrow} alt="right arrow" className="w-[15px]" />} />
       )}
       <style jsx>{`
         ::-webkit-scrollbar { display: none; }
       `}</style>
       <Modal isOpen={open} onClose={handleModalClose}>
-        <div className="flex justify-center">
-          <span className="text-yellow-500 text-2xl border border-ado-alert-border bg-ado-sandal rounded-[50%]"><Image alt="date change" src={alertIcon} className="p-4" /></span>
-        </div>
-        <div className="flex-col justify-center item-center">
+        <div className="flex flex-col justify-center item-center gap-y-2">
+          <div className="flex justify-center">
+            <span className="text-yellow-500 text-2xl border border-ado-alert-border bg-ado-sandal rounded-[50%]"><Image alt="date change" src={alertIcon} className="p-4" /></span>
+          </div>
           <h2 className="text-lg font-semibold text-center mt-2">{t.raw("date_popup.title")}</h2>
-          <p className="flex justify-center text-[14px]">
-            {t("date_popup.content")}<span className="font-bold ml-[5px]">{selectedDate?.day} {selectedDate?.date} de {t.raw(`months.${selectedDate?.month || 0}`)} </span>
-          </p>
-          <p className="flex justify-center  mt-2 text-[14px]">{t("date_popup.continue_link")}</p>
+          <div>
+            <p className="flex justify-center text-[14px]">
+              {t("date_popup.content")}<span className="font-bold ml-[5px]">{selectedDate?.day} {selectedDate?.date} de {t.raw(`months.${selectedDate?.month || 0}`)} </span>
+            </p>
+            <p className="flex justify-center  text-[14px]">{t("date_popup.continue_link")}</p>
+          </div>
         </div>
-        <div className="flex justify-between mt-6 max-xs:flex-col">
-          <Button variant="secondary" className={"px-4 py-2 border border-ado-purple text-ado-purple rounded-[5px] w-1/2  mr-2 justify-center max-xs:w-full"} width={"w-1/2"} buttonText={t("date_popup.cancel")} onClick={handleDateChange} />
-          <Button variant="primary" className={"px-4 py-2 bg-ado-purple text-white rounded-[5px] w-1/2 ml-2   justify-center  max-xs:w-full  max-xs:mt-4 max-xs:ml-0"} width={"w-1/2"} buttonText={t("date_popup.continue_btn")} onClick={handleDateChange} />
+        <div className="flex justify-between gap-3 mt-6 flex-col w-full sm:flex-row">
+          <Button buttonStyle="outline" className={"w-full sm:w-[48%] "} buttonText={t("date_popup.cancel")} onClick={handleDateChange} />
+          <Button className={"w-full sm:w-[48%]"} buttonText={t("date_popup.continue_btn")} onClick={handleDateChange} />
         </div>
       </Modal>
     </div>

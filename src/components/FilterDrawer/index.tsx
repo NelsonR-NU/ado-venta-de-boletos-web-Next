@@ -20,7 +20,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
 
   const [selectedFilters, setSelectedFilters] = React.useState<Record<string, boolean>>({});
 
-  const t = useTranslations("home");
+  const t = useTranslations("searchResults");
 
   const sourceTerminal = t.raw("filter_content.source_terminal_type") as Record<string, string>;
   const tripTypes = t.raw("filter_content.by_type_of_trip_type") as Record<string, { label: string; description: string }>;
@@ -48,6 +48,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
       onClose={onClose}
       title={t("filter_content.filter_results")}
       closeLabel={t("filter_content.close")}
+      className="w-[1000px]"
     >
       <div className="flex-1 overflow-y-auto space-y-5 bg-ado-bg-light-gray p-6 flex-col">
         <div className="flex flex-col space-y-4">
@@ -151,8 +152,8 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
       </div>
 
       <div className="flex justify-between p-6 gap-4">
-        <Button variant="secondary" className="border border-none" width="object-fit" buttonText={t("filter_content.reset_filters")} />
-        <Button variant="primary" width="object-fit" buttonText={t("filter_content.apply_filters")} onClick={handleApplyFilters} />
+        <Button buttonStyle="outline" className="border !border-none " buttonText={t("filter_content.reset_filters")} />
+        <Button disabled={true} buttonStyle="filled" className="text-white" buttonText={t("filter_content.apply_filters")} onClick={handleApplyFilters} />
       </div>
     </DrawerModal>
   );

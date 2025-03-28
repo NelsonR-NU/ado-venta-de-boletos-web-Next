@@ -26,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         >
             <div className="flex-col bg-white rounded-lg shadow-lg w-[600px] p-6 max-xs:w-fit max-xs:m-[20px]">
                 <div className="flex justify-end ">
-                    <Button className="flex items-center gap-2 !text-ado-white cursor-pointer " onClick={onClose} iconPosition="right" icon={<Image src={close} alt="close icon" className="w-4" />} />
+                    <Button buttonStyle="none" className="flex items-center gap-2 !text-ado-white cursor-pointer " onClick={onClose} iconPosition="right" icon={<Image src={close} alt="close icon" className="w-4" />} />
                 </div>
                 {children}
             </div>

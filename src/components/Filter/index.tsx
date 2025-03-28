@@ -18,7 +18,8 @@ interface FilterProps {
 
 const Filter: React.FC<FilterProps> = ({ date }) => {
   const t = useTranslations("home");
-  const [selectedSort, setSelectedSort] = useState(t("sortedTrip.First_to_depart"));
+  const daysTrans = useTranslations("searchResults");
+  const [selectedSort, setSelectedSort] = useState(daysTrans("sortedTrip.First_to_depart"));
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [isSortDropdownOpen, setIsSortDropdownOpen] = useState(false);
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
@@ -49,34 +50,35 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
     setDrawerOpen(true)
   };
 
-  const sortedTrip = t.raw("sortedTrip") as Record<string, string>;
+  const sortedTrip = daysTrans.raw("sortedTrip") as Record<string, string>;
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center p-4  space-y-4 sm:space-y-0">
+    <div className="flex flex-col sm:flex-row justify-between items-center max-sm:p-4  space-y-4 sm:space-y-0">
       <p className="flex text-gray-700 text-sm text-center sm:text-left w-full">
         <span className="font-medium">{t('tripType')}</span>
         <span className="ml-2 text-gray-900 font-semibold">
-          {t.raw(`days.${date?.day}`)[0]},{new Date(date?.date).toLocaleDateString("es-ES", { day: "2-digit" })} de{" "}
+          {daysTrans.raw(`days.${date?.day}`)[0]},{new Date(date?.date).toLocaleDateString("es-ES", { day: "2-digit" })} de{" "}
           {new Date(date?.date).toLocaleDateString("es-ES", { month: "short" })}
         </span>
       </p>
 
-      <div className="flex flex-col sm:flex-row w-full sm:w-auto sm:space-x-3 space-y-2 sm:space-y-0 max-[500px]:flex-row gap-[20px]">
+      <div className="flex flex-row   w-full sm:w-auto sm:space-x-3 space-y-2 sm:space-y-0  gap-[20px]">
 
-        <div className="relative w-full sm:w-auto" ref={filterRef}>
+        <div className="relative w-[48%] sm:w-auto" ref={filterRef}>
           <Button
-            className="border border-ado-purple text-ado-purple px-4 py-2 h-[40px] rounded-md text-sm flex items-center justify-center w-full sm:w-auto hover:bg-purple-100 whitespace-nowrap"
+            buttonStyle="outline"
+            className="text-ado-purple w-full sm:w-max"
             onClick={handleFilterClick}
             aria-expanded={isFilterDropdownOpen}
             buttonText={t('filters')}
             iconPosition="right"
-            icon={<Image src={filterIcon} alt={"filter icon"} className={`ml-2 transition-transform w-4 ${isFilterDropdownOpen ? "rotate-180" : ""}`} />}
+            icon={<Image src={filterIcon} alt={"filter icon"} className={`ml-2 transition-transform w-4`} />}
           />
         </div>
 
-        {/* Sort Button */}
-        <div className="relative w-full sm:w-auto max-[500px]:!m-0" ref={sortRef}>
+        <div className="relative w-[48%] !m-0 sm:w-auto" ref={sortRef}>
           <Button
-            className="border border-ado-purple text-ado-purple px-4 py-2 h-[40px] rounded-md text-sm flex items-center justify-center w-full sm:w-auto hover:bg-purple-100 whitespace-nowrap"
+            buttonStyle="outline"
+            className="text-ado-purple w-full sm:w-max  whitespace-nowrap"
             onClick={() => {
               setIsSortDropdownOpen(!isSortDropdownOpen);
               setIsFilterDropdownOpen(false);
@@ -86,7 +88,7 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
               <span className="hidden sm:inline">{t('sortedBy')}</span>
               <span className="font-semibold mx-1">{selectedSort}</span></>}
             iconPosition="right"
-            icon={<Image src={bottomArrow} alt={"dropdown icon"} className={`ml-2 transition-transform w-4 ${isFilterDropdownOpen ? "rotate-180" : ""}`} />}
+            icon={<Image src={bottomArrow} alt={"dropdown icon"} className={`ml-2 transition-transform w-4 `} />}
           />
 
 
@@ -112,7 +114,7 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
           )}
         </div>
       </div>
-      <FilterDrawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)} />
+      <FilterDrawer  isOpen={drawerOpen} onClose={() => setDrawerOpen(false)} />
     </div>
   );
 };
