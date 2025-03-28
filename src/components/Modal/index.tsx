@@ -4,18 +4,18 @@ import Image from "next/image";
 import Button from "@/components/Button";
 
 interface ModalProps {
-    isOpen: boolean;
+    isOpen?: boolean;
     onClose?: () => void;
     children: ReactNode;
-    showCloseIcon: boolean;
+    showCloseIcon?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, showCloseIcon }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, showCloseIcon = true }) => {
     if (!isOpen) return null;
 
     const handleOutsideClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (event.target === event.currentTarget && onClose) {
-            onClose(); 
+            onClose();
         }
     };
 

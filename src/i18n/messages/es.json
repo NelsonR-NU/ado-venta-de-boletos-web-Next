@@ -170,9 +170,12 @@
     "last_name": "Apellidos",
     "add_total_assistance": "Agregar asistencia total",
     "departure": "Ida",
-    "return": "Regreso"
+    "return": "Regreso",
+    "ex_email": "Ej: mar.tg@gmail.com",
+    "ex_firstName": "Ej: María",
+    "ex_lastName": "Ej: Torres Gómez"
   },
-  "register" : {
+  "register": {
     "register": "Regístrate",
     "enter_details": "Ingresa tus datos para poder completar tu registro.",
     "first_name": "Nombre",
@@ -181,21 +184,26 @@
     "receive_promotions": "Quiero recibir promociones exclusivas para viajar.",
     "agree_terms": "De acuerdo con los",
     "terms_conditions": "Términos y Condiciones",
-    "as_well_as_the" : "así como el",
+    "as_well_as_the": "así como el",
     "privacy_notice": "Aviso de Privacidad",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "ex_email": "Ej: mar.tg@gmail.com",
+    "ex_firstName": "Ej: María",
+    "ex_lastName": "Ej: Torres Gómez"
   },
-  "login" :{
-    "login_text" : "Iniciar sesión",
-    "track_trip_history" : "Inicia sesión para seguir y consultar el historial de tus viajes.",
-    "password" : "Contraseña",
+  "login": {
+    "login_text": "Iniciar sesión",
+    "track_trip_history": "Inicia sesión para seguir y consultar el historial de tus viajes.",
+    "password": "Contraseña",
     "email": "Correo electrónico",
-    "enter_password":"Ingresa tu contraseña",
-    "forgot_password":"¿Olvidaste tu contraseña?",
-    "first_time" :"¿Primera vez en ADO?",
-    "enter_as_guest" : "Entrar como invitado",
+    "enter_password": "Ingresa tu contraseña",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "first_time": "¿Primera vez en ADO?",
+    "enter_as_guest": "Entrar como invitado",
     "register": "Regístrate",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "ex_email": "Ej: mar.tg@gmail.com",
+    "ex_firstName": "Ej: María",
+    "ex_lastName": "Ej: Torres Gómez"
   }
-  
 }

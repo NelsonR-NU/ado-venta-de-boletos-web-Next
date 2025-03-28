@@ -123,7 +123,7 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
       <style jsx>{`
         ::-webkit-scrollbar { display: none; }
       `}</style>
-      <Modal isOpen={open} showCloseIcon={true} onClose={handleModalClose}>
+      <Modal isOpen={open} onClose={handleModalClose}>
         <div className="flex justify-center">
           <span className="text-yellow-500 text-2xl border border-ado-alert-border bg-ado-sandal rounded-[50%]"><Image alt="date change" src={alertIcon} className="p-4" /></span>
         </div>

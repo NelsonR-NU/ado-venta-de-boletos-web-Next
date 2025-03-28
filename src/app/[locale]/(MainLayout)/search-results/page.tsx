@@ -9,6 +9,7 @@ import Filter from '@/components/Filter';
 import BookingForm from '@/components/PassengerRegistrationForm';
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
+import LoginFormModal from '@/components/LoginFormModal';
 import RegisterFormModal from '@/components/RegisterFormModal';
 
 interface FilterData {
@@ -51,7 +52,7 @@ function SearchResults() {
           <Filter date={selectedDate} />
         </div>
         <BookingForm />
-        <RegisterFormModal />
+        <LoginFormModal />
       </Container>
     </div>
   );

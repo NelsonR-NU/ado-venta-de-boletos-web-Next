@@ -47,7 +47,7 @@ const PassengerRegistrationForm: React.FC = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Ej: mar.tg@gmail.com"
+            placeholder={t('ex_email')}
             required
           />
           <InputField
@@ -56,7 +56,7 @@ const PassengerRegistrationForm: React.FC = () => {
             name="confirmEmail"
             value={formData.confirmEmail}
             onChange={handleChange}
-            placeholder="Ej: mar.tg@gmail.com"
+            placeholder={t('ex_email')}
             required
           />
         </form>
@@ -83,7 +83,7 @@ const PassengerRegistrationForm: React.FC = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Ej: María"
+            placeholder={t('ex_firstName')}
           />
           <InputField
             label={t("last_name")}
@@ -91,7 +91,7 @@ const PassengerRegistrationForm: React.FC = () => {
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
-            placeholder="Ej: Torres Gómez"
+            placeholder={t('ex_lastName')}
           />
         </form>
 

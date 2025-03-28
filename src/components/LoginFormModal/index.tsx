@@ -6,17 +6,18 @@ import Button from "../Button";
 import InputField from "../Input";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import RegisterFormModal from "../RegisterFormModal";
 
 const LoginFormModal: React.FC = () => {
     const t = useTranslations("login");
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
     const [formData, setFormData] = useState({
-        name: "",
-        lastName: "",
         email: "",
-        receivePromotions: false,
-        agreeTerms: false,
+        password: "",
     });
+
+    const isFormValid = formData.email && formData.password;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, type, checked, value } = e.target;
@@ -26,15 +27,30 @@ const LoginFormModal: React.FC = () => {
         });
     };
 
+    const handleOpenRegisterModal = () => {
+        setIsLoginModalOpen(false);
+        setIsRegisterModalOpen(true);
+    };
+
+    const handleBackToLogin = () => {
+        setIsRegisterModalOpen(false);
+        setIsLoginModalOpen(true);
+    };
+
+    const handleClosePopup = () => {
+        setIsLoginModalOpen(false);
+        setIsRegisterModalOpen(false);
+    }
+
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 pb-2">
             <Button
                 variant="primary"
                 className="border border-ado-purple"
                 buttonText="Click"
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => setIsLoginModalOpen(true)}
             />
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} showCloseIcon={true}>
+            <Modal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)}>
                 <div className="border-b border-ado-neutral-light">
                     <h2 className="font-bold text-[18px] text-ado-charcoal">
                         {t('login_text')}
@@ -44,49 +60,57 @@ const LoginFormModal: React.FC = () => {
                 <form className="space-y-4 my-4">
                     <div className="grid grid-cols-2 gap-4">
                         <InputField
-                            label={
-                                <span className="text-xs">{t("email")}</span>
-                            }
+                            label={<span className="text-xs">{t("email")}</span>}
                             type="text"
-                            name="name"
-                            value={formData.name}
+                            name="email"
+                            value={formData.email}
                             onChange={handleChange}
-                            placeholder="Ej:mar.tg@gmail.com"
+                            placeholder={t('ex_email')}
                         />
                         <InputField
-                            label={
-                                <span className="text-xs">{t("password")}</span>
-                            }
-                            type="text"
-                            name="lastName"
-                            value={formData.lastName}
+                            label={<span className="text-xs">{t("password")}</span>}
+                            type="password"
+                            name="password"
+                            value={formData.password}
                             onChange={handleChange}
                             placeholder={t('enter_password')}
                         />
                     </div>
                     <div className="space-y-2">
-                        <Link href="#" className="text-ado-royal-purple underline font-semibold mx-1">{t("forgot_password")}</Link>
+                        <Link href="#" className="text-ado-royal-purple underline font-semibold mx-1">
+                            {t("forgot_password")}
+                        </Link>
                     </div>
                     <Button
                         width={312}
-                        className="w-[312px] h-[43px] !bg-ado-gray !text-ado-slate-gray rounded-[4px] px-[52px] py-[12px] gap-[8px] flex items-center justify-center"
-                        disabled={!formData.agreeTerms}
+                        className={`w-[312px] h-[43px] rounded-[4px] px-[52px] py-[12px] gap-[8px] flex items-center justify-center
+                            ${isFormValid ? "!bg-ado-purple !text-white" : "!bg-ado-gray !text-ado-slate-gray"}
+                        `}
+                        disabled={!isFormValid}
                         buttonText={t("continue")}
                     />
                     <div>
                         <p className="text-gray-600 text-sm">
                             {t('first_time')}
-                            <Link href="/register" className="text-ado-purple font-semibold underline mx-2 text-base">
+                            <span
+                                className="text-ado-purple font-semibold underline mx-2 text-base cursor-pointer"
+                                onClick={handleOpenRegisterModal}
+                            >
                                 {t('register')}
-                            </Link>
+                            </span>
                         </p>
-                        <Link href="/guest-login" className="text-ado-purple font-semibold underline block my-7 text-base">
+                        <div className="text-ado-purple font-semibold underline block my-7 text-base cursor-pointer" onClick={handleClosePopup}>
                             {t('enter_as_guest')}
-                        </Link>
+                        </div>
                     </div>
-
                 </form>
             </Modal>
+
+            <RegisterFormModal
+                isOpen={isRegisterModalOpen}
+                onClose={() => setIsRegisterModalOpen(false)}
+                onBackToLogin={handleBackToLogin}
+            />
         </div>
     );
 };

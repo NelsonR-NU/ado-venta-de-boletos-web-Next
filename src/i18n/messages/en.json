@@ -170,7 +170,10 @@
     "last_name": "Last Name",
     "add_total_assistance": "Add total assistance",
     "departure": "Departure",
-    "return": "Return"
+    "return": "Return",
+    "ex_email": "Ex: mar.tg@gmail.com",
+    "ex_firstName": "Ex: Maria",
+    "ex_lastName": "Ex: Torres Gomez"
   },
   "register": {
     "register": "Sign up",
@@ -183,7 +186,10 @@
     "terms_conditions": "Terms and Conditions",
     "as_well_as_the": "as well as the",
     "privacy_notice": "Privacy Notice",
-    "continue": "Continue"
+    "continue": "Continue",
+    "ex_email": "Ex: mar.tg@gmail.com",
+    "ex_firstName": "Ex: Maria",
+    "ex_lastName": "Ex: Torres Gomez"
   },
   "login": {
     "login_text": "Login",
@@ -195,6 +201,9 @@
     "first_time": "First time in ADO?",
     "enter_as_guest": "Enter as a guest",
     "register": "Sign up",
-    "continue": "Continue"
+    "continue": "Continue",
+    "ex_email": "Ex: mar.tg@gmail.com",
+    "ex_firstName": "Ex: Maria",
+    "ex_lastName": "Ex: Torres Gomez"
   }
 }
