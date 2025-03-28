@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -12,6 +12,7 @@ interface ReservationSummaryProps {}
 
 const ReservationSummary: React.FC<ReservationSummaryProps> = () => {
   const t = useTranslations("reservationSummary");
+  const [priceSummaryCheckboxChecked, setPriceSummaryCheckboxChecked] = useState(false);
 
   return (
     <div className="w-full">
@@ -59,18 +60,20 @@ const ReservationSummary: React.FC<ReservationSummaryProps> = () => {
               </Link>
             </p>
           }
-          checked={false}
+          checked={priceSummaryCheckboxChecked}
+          onChange={(e) => setPriceSummaryCheckboxChecked(e.target.checked)}
+          name="priceSummaryCheckbox"
         />
         <Button
           variant="primary"
-          disabled={true}
+          disabled={!priceSummaryCheckboxChecked}
           onClick={() => {}}
           iconPosition="right"
-          buttonText="Continuar"
+          buttonText={t("continue")}
         />
         <Button
           onClick={() => {}}
-          buttonText={"Detalle de compra"}
+          buttonText={t("purchaseDetail")}
           icon={<Image src={rightChevron} alt="right chevron" />}
           iconPosition="right"
           buttonStyle="outline"
