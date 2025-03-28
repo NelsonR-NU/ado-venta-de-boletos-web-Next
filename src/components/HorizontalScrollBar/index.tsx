@@ -123,11 +123,11 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
       <style jsx>{`
         ::-webkit-scrollbar { display: none; }
       `}</style>
-      <Modal isOpen={open} onClose={handleModalClose}>
-        <div className="flex flex-col justify-center item-center gap-y-2">
-          <div className="flex justify-center">
-            <span className="text-yellow-500 text-2xl border border-ado-alert-border bg-ado-sandal rounded-[50%]"><Image alt="date change" src={alertIcon} className="p-4" /></span>
-          </div>
+      <Modal isOpen={open} showCloseIcon={true} onClose={handleModalClose}>
+        <div className="flex justify-center">
+          <span className="text-yellow-500 text-2xl border border-ado-alert-border bg-ado-sandal rounded-[50%]"><Image alt="date change" src={alertIcon} className="p-4" /></span>
+        </div>
+        <div className="flex-col justify-center item-center">
           <h2 className="text-lg font-semibold text-center mt-2">{t.raw("date_popup.title")}</h2>
           <div>
             <p className="flex justify-center text-[14px]">

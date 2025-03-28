@@ -166,11 +166,53 @@
     "saturday": "SA"
   },
   "booking": {
+    "send_tickets_to": "Send your ticket(s) to:",
+    "email": "Email*",
+    "confirm_email": "Confirm Email*",
+    "register_passenger": "Register your passenger(s)",
+    "what_is_total_assistance": "What is total assistance?",
+    "passenger": "Passenger",
+    "adult": "Adult",
+    "seat_departure": "Seat departure:",
+    "seat_return": "Seat return:",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "add_total_assistance": "Add total assistance",
+    "departure": "Departure",
+    "return": "Return",
     "authpopup": {
       "title": "Do you want to continue as a guest or log in?",
       "content": "If you log in, you'll be able to track and view your trip history.",
       "guest_btn": "Continue as a guest",
       "login_btn": "Login"
     }
+  },
+  "register": {
+    "register": "Sign up",
+    "enter_details": "Enter your details to complete your registration.",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "receive_promotions": "I want to receive exclusive travel promotions.",
+    "agree_terms": "In accordance with the",
+    "terms_conditions": "Terms and Conditions",
+    "as_well_as_the": "as well as the",
+    "privacy_notice": "Privacy Notice",
+    "continue": "Continue"
+  },
+  "reservationSummary": {
+    "purchaseSummary": "Resumen de compra",
+    "oneWayTrip": "Viaje de ida",
+    "returnTrip": "Viaje de regreso",
+    "tax": "IVA",
+    "totalAssitance": "Asistencia total",
+    "includesTax": "incluye IVA",
+    "currencySymbol": "$",
+    "currency": "MXN",
+    "total": "Total",
+    "accordingTo": "De acuerdo con los",
+    "asWellAs": "así como el",
+    "termsAndConditions": "Términos y Condiciones",
+    "privacyNotice": "Aviso de Privacidad"
   }
 }

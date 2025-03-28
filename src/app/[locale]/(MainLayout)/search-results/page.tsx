@@ -4,16 +4,17 @@ import React, { useState } from 'react';
 import Banner from '../../../../assets/png/searchBanner.png';
 import SearchBox from '@/components/SearchBox';
 import Container from '@/components/Container';
-import DateSlider from '@/components/HorizontalScrollBar';
 import Filter from '@/components/Filter';
 import BookingForm from '@/components/PassengerRegistrationForm';
 import Button from '@/components/Button';
-import PromoCard from '@/components/PromoCard';
 import Modal from '@/components/Modal';
+import RegisterFormModal from '@/components/RegisterFormModal';
+import PromoCard from '@/components/PromoCard';
 import filterIcon from '@/assets/png/filter.png'
 import infoIcon from "@/assets/png/info.png"
 import AdoBus from '@/assets/png/adoBus.png';
 import { useTranslations } from 'next-intl';
+import DateSlider from '@/components/HorizontalScrollBar';
 
 interface FilterData {
   day: string,
@@ -113,7 +114,7 @@ function SearchResults() {
         </div>
       )}
 
-      <Modal isOpen={open} onClose={handleModalClose}>
+      <Modal isOpen={open} onClose={handleModalClose} showCloseIcon={true}>
         <div className="flex flex-col justify-center gap-y-2">
           <div className="flex flex-col justify-center items-center">
             <span className="text-yellow-500 w-fit text-2xl border border-ado-alert-border bg-ado-sandal rounded-[50%]">
@@ -133,6 +134,7 @@ function SearchResults() {
       <Container className={"max-[500px]:p-0 max-[500px]:m-0"}>
         <h1>hello</h1>
         {/* <BookingForm /> */}
+        <RegisterFormModal />
       </Container>
     </div>
   );

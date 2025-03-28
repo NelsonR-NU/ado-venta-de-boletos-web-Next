@@ -1,20 +1,21 @@
 import React, { ReactNode } from "react";
-import close from '@/assets/svg/close.svg'
+import close from "@/assets/svg/close.svg";
 import Image from "next/image";
-import Button from "@/components/Button"
+import Button from "@/components/Button";
 
 interface ModalProps {
     isOpen: boolean;
-    onClose: () => void;
+    onClose?: () => void;
     children: ReactNode;
+    showCloseIcon: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, showCloseIcon }) => {
     if (!isOpen) return null;
 
     const handleOutsideClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        if (event.target === event.currentTarget) {
-            onClose();
+        if (event.target === event.currentTarget && onClose) {
+            onClose(); 
         }
     };
 
@@ -25,8 +26,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
             onClick={handleOutsideClick}
         >
             <div className="flex-col bg-white rounded-lg shadow-lg w-[600px] p-6 max-xs:w-fit max-xs:m-[20px]">
-                <div className="flex justify-end ">
-                    <Button buttonStyle="none" className="flex items-center gap-2 !text-ado-white cursor-pointer " onClick={onClose} iconPosition="right" icon={<Image src={close} alt="close icon" className="w-4" />} />
+                <div className="flex justify-end">
+                    {showCloseIcon && onClose && (
+                        <Button
+                            className="flex items-center gap-2 !text-ado-white cursor-pointer"
+                            onClick={onClose}
+                            iconPosition="right"
+                            icon={<Image src={close} alt="close icon" className="w-4" />}
+                        />
+                    )}
                 </div>
                 {children}
             </div>
