@@ -73,6 +73,7 @@ const ReservationSummary: React.FC<ReservationSummaryProps> = () => {
           buttonText={"Detalle de compra"}
           icon={<Image src={rightChevron} alt="right chevron" />}
           iconPosition="right"
+          buttonStyle="outline"
         />
       </Card>
     </div>
