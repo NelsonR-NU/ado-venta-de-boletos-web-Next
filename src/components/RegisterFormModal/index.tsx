@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import Modal from "@/components/Modal";
-import Button from "../Button";
-import InputField from "../Input";
+import Button from "@/components/Button";
+import InputField from "@/components/Input";
 import { useTranslations } from "next-intl";
-import Checkbox from "../CheckBox";
+import Checkbox from "@/components/CheckBox";
 import Link from "next/link";
 import Image from "next/image";
 import leftChevron from "@/assets/svg/left-chevron.svg"
