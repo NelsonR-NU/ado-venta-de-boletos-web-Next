@@ -109,8 +109,7 @@ const RegisterFormModal: React.FC<RegisterFormModalProps> = ({
                     />
                 </div>
                 <Button
-                    width={312}
-                    className={`w-[312px] h-[43px] rounded-[4px] px-[52px] py-[12px] gap-[8px] flex items-center justify-center
+                    className={`w-[267px] h-[43px] rounded-[4px] px-[52px] py-[12px] gap-[8px] flex items-center justify-center
                         ${isFormValid ? "!bg-ado-purple !text-white" : "!bg-ado-gray !text-ado-slate-gray"}
                     `}
                     disabled={!isFormValid}
