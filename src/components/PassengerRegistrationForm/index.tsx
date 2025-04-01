@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Checkbox from "../CheckBox";
 import Link from "next/link";
+import Dropdown from "../dropdown";
 
 interface PassengerData {
   email: string;
@@ -29,6 +30,12 @@ const PassengerRegistrationForm: React.FC = () => {
   });
 
   const isAuthenticated = true;
+  const passengers = [
+    "Jimena Vinat",
+    "Raúl Martínez López",
+    "Marisol Gutiérrez-Rodriguez"
+  ];
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -79,7 +86,7 @@ const PassengerRegistrationForm: React.FC = () => {
       </div>
 
       <Card className="bg-ado-ice-blue">
-        <div className="flex flex-wrap justify-between mb-3 gap-2 sm:gap-4 text-sm text-black border-b border-ado-frost-gray pb-4">
+        <div className="flex flex-wrap mb-3 gap-2 sm:gap-4 text-sm text-black border-b border-ado-frost-gray pb-4">
           <span>{t("passenger")} 1: <strong>Adulto</strong></span>
           <span>{t("seat_departure")} <strong>17</strong></span>
           <span>{t("seat_return")} <strong>16</strong></span>
@@ -89,14 +96,7 @@ const PassengerRegistrationForm: React.FC = () => {
           <span className="text-xs font-medium text-ado-text-gray">
             Seleccionar un pasajero favorito
           </span>
-          <div className="relative">
-            <select className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-white text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
-              <option>Seleccionar</option>
-            </select>
-            <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-              ⌃
-            </div>
-          </div>
+          <Dropdown options={passengers} bgColor="bg-ado-date-background" className="rounded-sm text-sm" placeholder="Seleccionar" hoverColor="hover:bg-ado-light-blue-gray" textColor="text-ado-steel-gray" />
         </div>)}
 
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">

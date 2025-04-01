@@ -37,6 +37,7 @@ export default {
         "ado-frost-gray": "#E3E7F2",
         "ado-ice-blue": "#F6F7FB",
         "ado-slate-gray": "#595E6D",
+        "ado-light-blue-gray": "#E8EBF4",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
