@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import Card from "../Card";
-import InputField from "../Input/index";
-import InfoIcon from '../../assets/svg/information.svg';
+import Card from "@/components/Card";
+import InputField from "@/components/Input";
+import InfoIcon from '@/assets/svg/information.svg';
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import Checkbox from "../CheckBox";
+import Checkbox from "@/components/CheckBox";
 import Link from "next/link";
-import Dropdown from "../dropdown";
+import Dropdown from "@/components/dropdown";
 
 interface PassengerData {
   email: string;
