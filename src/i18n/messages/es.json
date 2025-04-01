@@ -180,6 +180,8 @@
     "add_total_assistance": "Agregar asistencia total",
     "departure": "Ida",
     "return": "Regreso",
+    "ticket_sent_to": "Los boletos se enviarán a:",
+    "Select_an_passenger": "Seleccionar un pasajero favorito",
     "authpopup": {
       "title": "¿Quieres continuar como invitado o iniciar sesión?",
       "content": "Si inicias sesión, podrás seguir y consultar el historial de tus viajes.",

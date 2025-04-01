@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Card from "../Card";
 import InputField from "../Input/index";
@@ -27,6 +28,7 @@ const PassengerRegistrationForm: React.FC = () => {
     assistanceRegreso: false,
   });
 
+  const isAuthenticated = true;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -37,8 +39,8 @@ const PassengerRegistrationForm: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 p-4 md:w-[70%] w-full">
-      <Card className="bg-ado-ice-blue">
+    <div className="flex flex-col gap-6 p-4 md:w-[100%] w-full">
+      {!isAuthenticated ? (<Card className="bg-ado-ice-blue">
         <h2 className="text-lg font-semibold mb-4">{t('send_tickets_to')}</h2>
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <InputField
@@ -60,7 +62,14 @@ const PassengerRegistrationForm: React.FC = () => {
             required
           />
         </form>
-      </Card>
+      </Card>) : (<div className="text-ado-text-gray text-lg font-bold px-2">
+        <span>{t('ticket_sent_to')}</span>
+        <a href="mailto:jimena.vinat@gmail.com" className="text-ado-teal font-bold hover:underline mx-2">
+          jimena.vinat@gmail.com
+        </a>
+      </div>
+      )
+      }
 
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-2">
         <h2 className="text-lg font-bold mb-4">{t("register_passenger")}</h2>
@@ -75,6 +84,20 @@ const PassengerRegistrationForm: React.FC = () => {
           <span>{t("seat_departure")} <strong>17</strong></span>
           <span>{t("seat_return")} <strong>16</strong></span>
         </div>
+
+        {isAuthenticated && (<div className="flex flex-col space-y-1">
+          <span className="text-xs font-medium text-ado-text-gray">
+            Seleccionar un pasajero favorito
+          </span>
+          <div className="relative">
+            <select className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-white text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
+              <option>Seleccionar</option>
+            </select>
+            <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+              ⌃
+            </div>
+          </div>
+        </div>)}
 
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <InputField

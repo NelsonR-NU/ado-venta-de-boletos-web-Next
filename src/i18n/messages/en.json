@@ -180,6 +180,8 @@
     "add_total_assistance": "Add total assistance",
     "departure": "Departure",
     "return": "Return",
+    "ticket_sent_to": "Tickets will be sent to:",
+    "Select_an_passenger": "Select a favorite passenger",
     "authpopup": {
       "title": "Do you want to continue as a guest or log in?",
       "content": "If you log in, you'll be able to track and view your trip history.",
