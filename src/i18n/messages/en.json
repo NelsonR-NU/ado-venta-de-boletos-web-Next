@@ -182,6 +182,10 @@
     "return": "Return",
     "ticket_sent_to": "Tickets will be sent to:",
     "Select_an_passenger": "Select a favorite passenger",
+    "ex_email": "Ex: mar.tg@gmail.com",
+    "ex_firstName": "Ex: Maria",
+    "ex_lastName": "Ex: Torres Gomez",
+    "select":"Select",
     "authpopup": {
       "title": "Do you want to continue as a guest or log in?",
       "content": "If you log in, you'll be able to track and view your trip history.",
@@ -200,7 +204,21 @@
     "terms_conditions": "Terms and Conditions",
     "as_well_as_the": "as well as the",
     "privacy_notice": "Privacy Notice",
-    "continue": "Continue"
+    "continue": "Continue",
+    "return": "Return",
+    "ex_email": "Ex: mar.tg@gmail.com",
+    "ex_firstName": "Ex: Maria",
+    "ex_lastName": "Ex: Torres Gomez"
+  },
+  "login": {
+    "login_text": "Login",
+    "first_time": "First time in ADO?",
+    "enter_as_guest": "Enter as a guest",
+    "register": "Sign up",
+    "continue": "Continue",
+    "ex_email": "Ex: mar.tg@gmail.com",
+    "ex_firstName": "Ex: Maria",
+    "ex_lastName": "Ex: Torres Gomez"
   },
   "reservationSummary": {
     "purchaseSummary": "Resumen de compra",

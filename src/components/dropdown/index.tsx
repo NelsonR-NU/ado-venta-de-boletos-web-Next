@@ -53,7 +53,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 
       {isOpen && (
         <div
-          className={`absolute w-full mt-2 bg-white shadow-lg rounded-lg max-h-[326px] overflow-y-auto p-5`}
+          className={`absolute w-full mt-2 bg-white shadow-lg rounded-lg max-h-[326px] overflow-y-auto p-5 z-[999]`}
         >
           <span className="text-sm font-bold">{title}</span>
           <div className={`p-2 rounded-lg ${bgColor} ${title ? "mt-5" : ""}`}>

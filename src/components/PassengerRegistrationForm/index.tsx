@@ -29,7 +29,7 @@ const PassengerRegistrationForm: React.FC = () => {
     assistanceRegreso: false,
   });
 
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const passengers = [
     "Jimena Vinat",
     "Raúl Martínez López",
@@ -87,16 +87,16 @@ const PassengerRegistrationForm: React.FC = () => {
 
       <Card className="bg-ado-ice-blue">
         <div className="flex flex-wrap mb-3 gap-2 sm:gap-4 text-sm text-black border-b border-ado-frost-gray pb-4">
-          <span>{t("passenger")} 1: <strong>Adulto</strong></span>
+          <span>{t("passenger")} 1: <strong>{t('adult')}</strong></span>
           <span>{t("seat_departure")} <strong>17</strong></span>
           <span>{t("seat_return")} <strong>16</strong></span>
         </div>
 
         {isAuthenticated && (<div className="flex flex-col space-y-1">
           <span className="text-xs font-medium text-ado-text-gray">
-            Seleccionar un pasajero favorito
+            {t('Select_an_passenger')}
           </span>
-          <Dropdown options={passengers} bgColor="bg-ado-date-background" className="rounded-sm text-sm" placeholder="Seleccionar" hoverColor="hover:bg-ado-light-blue-gray" textColor="text-ado-steel-gray" />
+          <Dropdown options={passengers} bgColor="bg-ado-date-background" className="rounded-sm text-sm" placeholder={t('select')} hoverColor="hover:bg-ado-light-blue-gray" textColor="text-ado-steel-gray" />
         </div>)}
 
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">

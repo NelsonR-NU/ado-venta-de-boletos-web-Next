@@ -4,18 +4,18 @@ import Image from "next/image";
 import Button from "@/components/Button";
 
 interface ModalProps {
-    isOpen: boolean;
+    isOpen?: boolean;
     onClose?: () => void;
     children: ReactNode;
-    showCloseIcon: boolean;
+    showCloseIcon?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, showCloseIcon }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, showCloseIcon = true }) => {
     if (!isOpen) return null;
 
     const handleOutsideClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (event.target === event.currentTarget && onClose) {
-            onClose(); 
+            onClose();
         }
     };
 
@@ -29,7 +29,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, showCloseIcon 
                 <div className="flex justify-end">
                     {showCloseIcon && onClose && (
                         <Button
-                            className="flex items-center gap-2 !text-ado-white cursor-pointer"
+                            className="flex items-center gap-2 !text-ado-white cursor-pointer !bg-ado-background"
                             onClick={onClose}
                             iconPosition="right"
                             icon={<Image src={close} alt="close icon" className="w-4" />}

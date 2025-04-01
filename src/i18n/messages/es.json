@@ -182,6 +182,10 @@
     "return": "Regreso",
     "ticket_sent_to": "Los boletos se enviarán a:",
     "Select_an_passenger": "Seleccionar un pasajero favorito",
+    "ex_email": "Ej: mar.tg@gmail.com",
+    "ex_firstName": "Ej: María",
+    "ex_lastName": "Ej: Torres Gómez",
+    "select":"Seleccionar",
     "authpopup": {
       "title": "¿Quieres continuar como invitado o iniciar sesión?",
       "content": "Si inicias sesión, podrás seguir y consultar el historial de tus viajes.",
@@ -200,7 +204,10 @@
     "terms_conditions": "Términos y Condiciones",
     "as_well_as_the": "así como el",
     "privacy_notice": "Aviso de Privacidad",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "ex_email": "Ej: mar.tg@gmail.com",
+    "ex_firstName": "Ej: María",
+    "ex_lastName": "Ej: Torres Gómez"
   },
   "reservationSummary": {
     "purchaseSummary": "Resumen de compra",
@@ -218,5 +225,20 @@
     "privacyNotice": "Aviso de Privacidad",
     "continue": "Continuar",
     "purchaseDetail": "Detalle de compra"
+  },
+  "login": {
+    "login_text": "Iniciar sesión",
+    "track_trip_history": "Inicia sesión para seguir y consultar el historial de tus viajes.",
+    "password": "Contraseña",
+    "email": "Correo electrónico",
+    "enter_password": "Ingresa tu contraseña",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "first_time": "¿Primera vez en ADO?",
+    "enter_as_guest": "Entrar como invitado",
+    "register": "Regístrate",
+    "continue": "Continuar",
+    "ex_email": "Ej: mar.tg@gmail.com",
+    "ex_firstName": "Ej: María",
+    "ex_lastName": "Ej: Torres Gómez"
   }
 }

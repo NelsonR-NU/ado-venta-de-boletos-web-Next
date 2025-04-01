@@ -1,7 +1,7 @@
 import React from "react";
 
 interface InputFieldProps {
-    label: string;
+    label: string | React.ReactNode;
     type: string;
     name: string;
     value: string | boolean;
@@ -16,7 +16,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, type, name, value, onCha
             <label className="block text-sm font-medium text-ado-charcoal">{label}</label>
             <input
                 type={type}
-                name={name} 
+                name={name}
                 value={typeof value === "boolean" ? String(value) : value}
                 onChange={onChange}
                 required={required}
