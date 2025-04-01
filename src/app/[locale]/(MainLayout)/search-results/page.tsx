@@ -7,10 +7,7 @@ import Container from '@/components/Container';
 import DateSlider from '@/components/HorizontalScrollBar';
 import Filter from '@/components/Filter';
 import BookingForm from '@/components/PassengerRegistrationForm';
-import Button from '@/components/Button';
-import Modal from '@/components/Modal';
-import LoginFormModal from '@/components/LoginFormModal';
-import RegisterFormModal from '@/components/RegisterFormModal';
+
 
 interface FilterData {
   day: string,
@@ -24,8 +21,7 @@ function SearchResults() {
   const handleDateChange = (date: FilterData) => {
     setSelectedDate(date);
   };
-
-
+  
   return (
     <div className='bg-ado-background w-full'>
       <div className="w-full h-[210px] relative">
@@ -52,7 +48,6 @@ function SearchResults() {
           <Filter date={selectedDate} />
         </div>
         <BookingForm />
-        <LoginFormModal />
       </Container>
     </div>
   );

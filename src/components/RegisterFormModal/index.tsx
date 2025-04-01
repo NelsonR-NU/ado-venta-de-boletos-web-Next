@@ -56,7 +56,7 @@ const RegisterFormModal: React.FC<RegisterFormModalProps> = ({
                     </h2>
                 </div>
             </div>
-            <form className="space-y-4 my-4">
+            <form className="space-y-4 my-4" onSubmit={(e) => e.preventDefault()}>
                 <p className="text-sm text-ado-charcoal">{t("enter_details")}</p>
                 <div className="grid grid-cols-2 gap-4">
                     <InputField

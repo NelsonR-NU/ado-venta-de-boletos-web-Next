@@ -42,6 +42,7 @@ const LoginFormModal: React.FC = () => {
         setIsRegisterModalOpen(false);
     }
 
+
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 pb-2">
             <Button
@@ -57,7 +58,7 @@ const LoginFormModal: React.FC = () => {
                     </h2>
                     <p className="text-sm text-ado-charcoal my-5">{t("track_trip_history")}</p>
                 </div>
-                <form className="space-y-4 my-4">
+                <form className="space-y-4 my-4" onSubmit={(e) => e.preventDefault()}>
                     <div className="grid grid-cols-2 gap-4">
                         <InputField
                             label={<span className="text-xs">{t("email")}</span>}
