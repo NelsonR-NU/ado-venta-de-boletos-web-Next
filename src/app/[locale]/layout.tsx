@@ -3,18 +3,29 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "../globals.css";
 import ClientProvider from "@/components/clientProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const gothamProFont = localFont({
+  src: [
+    {
+      path: "../../font/gothampro.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../font/gothampro_medium.ttf",
+      weight: "500",
+      style: "medium",
+    },
+    {
+      path: "../../font/gothampro_bold.ttf",
+      weight: "700",
+      style: "bold",
+    },
+  ],
+  variable: "--font-gotham-pro",
 });
 
 export const metadata: Metadata = {
@@ -41,11 +52,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className=' font-gotham-pro antialiased'>
+      <body className={`${gothamProFont.variable} antialiased`}>
         <ClientProvider>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
         </ClientProvider>
       </body>
     </html>

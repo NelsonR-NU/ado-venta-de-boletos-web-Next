@@ -2,6 +2,7 @@ import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import prettier from "eslint-plugin-prettier";
 import unusedImports from "eslint-plugin-unused-imports";
+import regexp from "eslint-plugin-regexp";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -20,7 +21,8 @@ const eslintConfig = [
       "next/typescript",
       "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended"
+      "plugin:prettier/recommended",
+      "plugin:regexp/recommended"
     )
     .map((config) => ({
       ...config,
@@ -32,6 +34,7 @@ const eslintConfig = [
     plugins: {
       prettier,
       "unused-imports": unusedImports,
+      regexp,
     },
 
     rules: {
@@ -63,7 +66,6 @@ const eslintConfig = [
       "regexp/no-super-linear-backtracking": "error",
       "regexp/no-useless-escape": "error",
       "regexp/strict": "error",
-      "regexp/no-trailing-spaces-in-regexp": "error",
       "regexp/no-lazy-ends": "error",
 
       "@typescript-eslint/no-shadow": ["error"],
