@@ -185,7 +185,7 @@
     "ex_email": "Ej: mar.tg@gmail.com",
     "ex_firstName": "Ej: María",
     "ex_lastName": "Ej: Torres Gómez",
-    "select":"Seleccionar",
+    "select": "Seleccionar",
     "authpopup": {
       "title": "¿Quieres continuar como invitado o iniciar sesión?",
       "content": "Si inicias sesión, podrás seguir y consultar el historial de tus viajes.",
@@ -223,8 +223,10 @@
     "asWellAs": "así como el",
     "termsAndConditions": "Términos y Condiciones",
     "privacyNotice": "Aviso de Privacidad",
-    "continue": "Continuar",
-    "purchaseDetail": "Detalle de compra"
+    "purchaseDetail": "Detalle de compra",
+    "discountCoupon": "Cupón de descuento",
+    "apply": "Aplicar",
+    "continue": "Continuar"
   },
   "login": {
     "login_text": "Iniciar sesión",

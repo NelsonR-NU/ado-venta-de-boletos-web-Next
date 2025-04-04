@@ -7,6 +7,7 @@ import Button from "@/components/Button";
 import Card from "@/components/Card";
 import CheckBox from "@/components/CheckBox";
 import rightChevron from "@/assets/svg/right-chevron-purple.svg";
+import AddCouponCard from "@/components/AddCouponCard";
 
 interface ReservationSummaryProps {}
 
@@ -14,8 +15,10 @@ const ReservationSummary: React.FC<ReservationSummaryProps> = () => {
   const t = useTranslations("reservationSummary");
   const [priceSummaryCheckboxChecked, setPriceSummaryCheckboxChecked] = useState(false);
 
+  const showApplyCouponSection = true;
+
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col gap-4">
       {/* Price Summary */}
       <Card>
         <div className="text-black">{t("purchaseSummary")}</div>
@@ -79,6 +82,8 @@ const ReservationSummary: React.FC<ReservationSummaryProps> = () => {
           buttonStyle="outline"
         />
       </Card>
+      {/* Add Coupon Section */}
+      {showApplyCouponSection && <AddCouponCard />}
     </div>
   );
 };
