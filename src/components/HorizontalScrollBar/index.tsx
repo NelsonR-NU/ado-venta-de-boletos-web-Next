@@ -1,8 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react"; 
 import { format, isBefore, isAfter, isSameDay, addDays } from "date-fns";
 import Modal from "@/components/Modal";
 import alertIcon from "@/assets/png/alert.png"
@@ -10,12 +9,22 @@ import leftArrow from '@/assets/png/leftArrow.png'
 import rightArrow from '@/assets/png/rightArrow.png'
 import Button from '@/components/Button'
 
-interface DateItem {
+type DateItem = {
   date: string;
   day: string;
   past: boolean;
   current: boolean;
   future: boolean;
+};
+
+type DateSliderProps = {
+  onDateSelect: (date: { date: string; day: string }) => void;
+};
+
+type DateInfo = {
+  day: string;
+  date: number;
+  month: number;
 };
 
 
@@ -38,16 +47,6 @@ const generateDates = (): DateItem[] => {
     };
   });
 };
-
-interface DateSliderProps {
-  onDateSelect: Function;
-}
-
-interface DateInfo {
-  day: string;
-  date: number;
-  month: number;
-}
 
 const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
   const dates = generateDates();
@@ -97,15 +96,17 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
 
 
   return (
-    <div className="flex items-center justify-center mt-0 p-0 w-full   max-w-[600px] md:max-w-[800px] lg:max-w-[1200px] mx-auto ">
+    <div className="flex items-center justify-center mt-0 p-0 w-full  mx-auto sm:justify-between sm:gap-[24px]">
       {showArrows && (
-        <Button buttonStyle="outline" className="!p-2 border text-gray-600 mr-4 border !border-ado-gray shadow-[0px_4px_8px_0px_rgba(0,208,15,0.1)] hover:bg-gray-200 !rounded-full hidden md:flex" onClick={() => scrollRef.current?.scrollBy({ left: -120, behavior: "smooth" })} icon={<Image src={leftArrow} alt="left arrow" className="w-[15px]" />} />
+        <Button buttonStyle="outline" className="!p-2 text-gray-600 border !border-ado-gray shadow-green hover:bg-gray-200 !rounded-full hidden md:flex" onClick={() => scrollRef.current?.scrollBy({ left: -120, behavior: "smooth" })} icon={<Image src={leftArrow} alt="left arrow" className="w-[15px]" />} />
       )}
-      <div className="relative p-0 m-0 w-full   border-0 rounded-md sm:p-4 overflow-hidden md:max-w-[900px] sm:bg-ado-scroll-background ">
-        <div ref={scrollRef} className="flex gap-2 bg-white   items-center overflow-x-auto  sm:gap-0" style={{ whiteSpace: "nowrap", scrollSnapType: "x mandatory" }}>
+      <div className="relative overflow-hidden  p-0 m-0 w-full   border-0 rounded-md sm:p-4 sm:border sm:border-ado-neutral-light   sm:bg-ado-scroll-background ">
+
+
+        <div ref={scrollRef} className="flex gap-2 scrollbar-hidden bg-white   items-center overflow-x-auto  sm:gap-0 sm:bg-inherit" style={{ whiteSpace: "nowrap", scrollSnapType: "x mandatory" }}>
           {dates.map(({ day, date, past }, index) => (<div
             key={date}
-            className={`w-[90px] h-[40px] p-[40px] w-[33vw]  sm:px-4 sm:py-2 flex items-center justify-center text-center transition-all bg-ado-gray   cursor-pointer sm:bg-ado-scroll-background sm:px-8  ${selectedIndex === index ? "!bg-ado-date-select  border-b-4 rounded-b-md border-green-500 font-semibold shadow-md !sm:bg-ado-date-background" : "hover:bg-gray-100 opacity-70"
+            className={` px-[8px] py-[16px] sm:px-4 sm:py-2 flex flex-col gap-[8px] items-center justify-center  transition-all bg-ado-gray   cursor-pointer sm:bg-ado-scroll-background   ${selectedIndex === index ? "!bg-ado-date-select  border-b-4 sm:rounded-b-md border-green-500 font-semibold shadow-md !sm:bg-ado-date-background" : "hover:bg-gray-100 opacity-70"
               }`}
             onClick={() => handleSelectDate(index, t.raw(`days.${day}`)[1], new Date(date).getDate())}
             aria-disabled={past}
@@ -113,33 +114,35 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
             <span className={`text-sm capitalize ${past ? "text-gray-300" : "text-gray-600"}`}>
               {t.raw(`days.${day}`)[0]}. {new Date(date).getDate()}
             </span>
+            <span className={`text-sm capitalize ${past ? "text-gray-300" : "text-gray-600"} sm:hidden`}>
+              $1,000.00 MXN
+            </span>
           </div>
           ))}
         </div>
       </div>
       {showArrows && (
-        <Button buttonStyle="outline" className="!p-2 border text-gray-600 ml-4 border !border-ado-gray shadow-[0px_4px_8px_0px_rgba(0,208,15,0.1)] hover:bg-gray-200 !rounded-full hidden md:flex" onClick={() => scrollRef.current?.scrollBy({ left: 120, behavior: "smooth" })} icon={<Image src={rightArrow} alt="right arrow" className="w-[15px]" />} />
+        <Button buttonStyle="outline" className="!p-2 border text-gray-600 !border-ado-gray shadow-green hover:bg-gray-200 !rounded-full hidden md:flex" onClick={() => scrollRef.current?.scrollBy({ left: 120, behavior: "smooth" })} icon={<Image src={rightArrow} alt="right arrow" className="w-[15px]" />} />
       )}
-      <style jsx>{`
-        ::-webkit-scrollbar { display: none; }
-      `}</style>
-      <Modal isOpen={open} showCloseIcon={true} onClose={handleModalClose}>
-        <div className="flex justify-center">
-          <span className="text-yellow-500 text-2xl border border-ado-alert-border bg-ado-sandal rounded-[50%]"><Image alt="date change" src={alertIcon} className="p-4" /></span>
-        </div>
-        <div className="flex-col justify-center item-center">
-          <h2 className="text-lg font-semibold text-center mt-2">{t.raw("date_popup.title")}</h2>
-          <div>
+      <Modal isOpen={open} showCloseIcon={true} onClose={handleModalClose}   >
+        <div className="flex flex-col gap-[16px] p-[16px]">
+          <div className="flex flex-col justify-center items-center gap-[16px]">
+            <span className="text-yellow-500 w-fit text-2xl border border-ado-alert-border bg-ado-sandal rounded-[50%]"><Image alt="date change" src={alertIcon} className="p-4" /></span>
+            <h2 className="font-semibold text-center text-[18px]">{t.raw("date_popup.title")}</h2>
+          </div>
+
+          <div className="flex flex-col justify-center item-center">
             <p className="flex justify-center text-[14px]">
               {t("date_popup.content")}<span className="font-bold ml-[5px]">{selectedDate?.day} {selectedDate?.date} de {t.raw(`months.${selectedDate?.month || 0}`)} </span>
             </p>
             <p className="flex justify-center  text-[14px]">{t("date_popup.continue_link")}</p>
           </div>
+          <div className="flex justify-between gap-[16px] flex-col w-full sm:flex-row">
+            <Button buttonStyle="outline" className={"w-full text-[16px]"} buttonText={t("date_popup.cancel")} onClick={handleDateChange} />
+            <Button className={"w-full text-[16px]"} buttonText={t("date_popup.continue_btn")} onClick={handleDateChange} />
+          </div>
         </div>
-        <div className="flex justify-between gap-3 mt-6 flex-col w-full sm:flex-row">
-          <Button buttonStyle="outline" className={"w-full sm:w-[48%] "} buttonText={t("date_popup.cancel")} onClick={handleDateChange} />
-          <Button className={"w-full sm:w-[48%]"} buttonText={t("date_popup.continue_btn")} onClick={handleDateChange} />
-        </div>
+
       </Modal>
     </div>
   );

@@ -48,14 +48,15 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
       onClose={onClose}
       title={t("filter_content.filter_results")}
       closeLabel={t("filter_content.close")}
-      className="w-[1000px]"
+      className="w-fit sm:w-[560px]"
+
     >
       <div className="flex-1 overflow-y-auto space-y-5 bg-ado-bg-light-gray p-6 flex-col">
         <div className="flex flex-col space-y-4">
           <h2 className="text-lg font-semibold">{t("filter_content.filter_by")}:</h2>
           <div className="flex flex-col bg-white rounded-lg shadow-md">
             <div className="flex flex-col p-5 gap-4">
-              <div className="bg-[#F3F4F6] p-5 rounded-lg shadow-md border flex-col">
+              <div className="bg-ado-bg-gray p-5 rounded-lg shadow-md border flex-col">
                 <h2 className="text-lg font-semibold pb-2">{t("filter_content.by_promotion")}</h2>
                 <Checkbox onChange={(e) => handleCheckboxChange('discount')} label={t("filter_content.by_promotion_type.discount")} />
               </div>
@@ -124,7 +125,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
 
               <div className="flex flex-col bg-ado-bg-light-gray p-4 rounded-lg shadow-md">
                 <h3 className="font-semibold text-gray-700">{t("filter_content.by_brand")}</h3>
-                <div className="border rounded-lg p-3 w-[90px] flex justify-center items-center bg-white w-fit">
+                <div className="border rounded-lg p-3 w-fit flex justify-center items-center bg-white">
                   <Checkbox label={<Image src={adoBrandImage} alt="ado brand image" className="w-[50px]" />} />
                 </div>
               </div>
@@ -152,7 +153,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
       </div>
 
       <div className="flex justify-between p-6 gap-4">
-        <Button buttonStyle="outline" className="border !border-none " buttonText={t("filter_content.reset_filters")} />
+        <Button buttonStyle="outline" className="border-none " buttonText={t("filter_content.reset_filters")} />
         <Button disabled={true} buttonStyle="filled" className="text-white" buttonText={t("filter_content.apply_filters")} onClick={handleApplyFilters} />
       </div>
     </DrawerModal>

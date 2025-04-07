@@ -81,7 +81,6 @@ function SearchPassengerDropDown({ updatePassengerCount, passengerValues }: Sear
                     updatePassengerCount={updatePassengerCount}
                 />
                 <Button
-                    width={14}
                     variant='primary'
                     buttonText={t("ready")}
                 />

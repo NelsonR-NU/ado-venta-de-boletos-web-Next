@@ -9,7 +9,7 @@ import CheckBox from "@/components/CheckBox";
 import rightChevron from "@/assets/svg/right-chevron-purple.svg";
 import AddCouponCard from "@/components/AddCouponCard";
 
-interface ReservationSummaryProps {}
+interface ReservationSummaryProps { }
 
 const ReservationSummary: React.FC<ReservationSummaryProps> = () => {
   const t = useTranslations("reservationSummary");
@@ -70,12 +70,12 @@ const ReservationSummary: React.FC<ReservationSummaryProps> = () => {
         <Button
           variant="primary"
           disabled={!priceSummaryCheckboxChecked}
-          onClick={() => {}}
+          onClick={() => { }}
           iconPosition="right"
           buttonText={t("continue")}
         />
         <Button
-          onClick={() => {}}
+          onClick={() => { }}
           buttonText={t("purchaseDetail")}
           icon={<Image src={rightChevron} alt="right chevron" />}
           iconPosition="right"

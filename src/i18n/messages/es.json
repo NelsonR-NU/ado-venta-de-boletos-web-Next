@@ -242,5 +242,18 @@
     "ex_email": "Ej: mar.tg@gmail.com",
     "ex_firstName": "Ej: María",
     "ex_lastName": "Ej: Torres Gómez"
+  },
+  "ticket-confirmation": {
+    "confirm_details": "Confirma tus datos",
+    "ticket_share_link": "Los boletos se enviarán a",
+    "passsager_name": "Nombre del pasajero",
+    "one_way": "Asiento de ida",
+    "ticket_type": "Tipo de boleto",
+    "return_seat": "Asiento de regreso",
+    "totalAssitance": "Asistencia total",
+    "passsager_name_tab": "Nombre",
+    "one_way_tab": "Ida",
+    "ticket_type_tab": "Tipo",
+    "return_seat_tab": "Regreso"
   }
 }

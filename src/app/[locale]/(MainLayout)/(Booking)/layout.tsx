@@ -22,7 +22,7 @@ export default async function BookingLayout({
       <body>
         <Container>
           <div className="flex gap-3">
-            <div className="flex-1">{children}</div>
+            <div className="flex-1 ">{children}</div>
             {/* Summary Section */}
             <div className="flex-1 hidden md:flex max-w-[380px]">
               <ReservationSummary />

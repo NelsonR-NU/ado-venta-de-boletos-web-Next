@@ -62,7 +62,6 @@ function SearchCalendarCard({ width, ida, returnTrip, startDate, returnDate, car
 
                         <Button
                             variant='primary'
-                            width={14}
                             buttonText={t("ready")}
                         />
                     </div>

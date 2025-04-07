@@ -3,7 +3,7 @@ import banner from '@/assets/png/banner.png'
 import Image from "next/image";
 import Button from "../Button";
 
-interface PromoCardProps {
+type PromoCardProps = {
     imageUrl?: string;
     bannerTitle: string;
     bannerDescription: string;
@@ -11,7 +11,7 @@ interface PromoCardProps {
     btnColor: string;
     showImage?: boolean;
     handlePromotionAction: () => void;
-}
+};
 
 const PromoCard: React.FC<PromoCardProps> = ({
     imageUrl,
@@ -33,7 +33,7 @@ const PromoCard: React.FC<PromoCardProps> = ({
                     />
                 </div>
             )}
-            <div className="flex-1  border-0 flex flex-col justify-center pl-6  gap-3 sm:border rounded-r-lg sm:border-[#FF6633] sm:border-l-0 sm:border-[#FF6633]">
+            <div className="flex-1  border-0 flex flex-col justify-center px-4 py-6  gap-3 sm:border rounded-r-lg   sm:border-l-0 sm:border-[#FF6633]">
                 <h2 className="text-[20px] font-bold sm:text-[24px]">{bannerTitle}</h2>
                 <p className="text-gray-700 text-[14px] sm:text-[16px]">{bannerDescription}</p>
                 <Button
