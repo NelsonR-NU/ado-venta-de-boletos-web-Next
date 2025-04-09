@@ -55,11 +55,11 @@ const SearchResults: React.FC = () => {
             <div className="flex-col">
               <Filter date={selectedDate} />
               <PromoCard
-                imageUrl={""}
+                imageUrl=""
                 bannerTitle={tHome("promotion.title")}
                 bannerDescription={tHome("promotion.description")}
                 btnText={tHome("promotion.btnText")}
-                btnColor={"ado-btn-red"}
+                btnColor="ado-btn-red"
                 showImage={true}
                 handlePromotionAction={handlePromotionAction}
               />
