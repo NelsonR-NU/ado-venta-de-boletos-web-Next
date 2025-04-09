@@ -1,45 +1,37 @@
 "use client";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
-import Banner from "../../../../assets/png/searchBanner.png";
 import SearchBox from "@/components/SearchBox";
 import Container from "@/components/Container";
 import Filter from "@/components/Filter";
-import Button from "@/components/Button";
-import Modal from "@/components/Modal";
-import RegisterFormModal from "@/components/RegisterFormModal";
 import PromoCard from "@/components/PromoCard";
-import infoIcon from "@/assets/png/info.png";
-import AdoBus from "@/assets/png/adoBus.png";
-import { useTranslations } from "next-intl";
 import DateSlider from "@/components/HorizontalScrollBar";
-import BusSeats from "@/components/BusSeatsSelection";
+import RegisterFormModal from "@/components/RegisterFormModal";
+import AdoBus from "@/assets/png/adoBus.png";
+import Banner from "@/assets/png/searchBanner.png";
 
 interface FilterData {
   day: string;
   date: string;
 }
 
-function SearchResults() {
+const SearchResults: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<FilterData>({
     day: new Date().toLocaleDateString("en-US", { weekday: "short" }),
     date: new Date().toISOString().split("T")[0],
   });
 
-  const [open, setOpen] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState<boolean>(true);
 
   const tHome = useTranslations("searchResults");
-  const tbooking = useTranslations("booking");
   const tSearchResults = useTranslations("searchResults");
 
   const handleDateChange = (date: FilterData) => setSelectedDate(date);
 
-  const handlePromotionAction = () => setOpen(true);
+  const handlePromotionAction = () => {};
 
   const handleLoad = () => setIsLoaded(true);
-
-  const handleModalClose = () => setOpen(false);
 
   return (
     <div className="bg-ado-background w-full">
@@ -53,13 +45,13 @@ function SearchResults() {
       {isLoaded ? (
         <>
           <div className="bg-[#FAFAFA]">
-            <Container className={"max-[500px]:p-0 max-[500px]:m-0"}>
-              <div className="flex-col">
+            <Container className="max-[500px]:p-0 max-[500px]:m-0">
+              <div className="flex-col my-3">
                 <DateSlider onDateSelect={handleDateChange} />
               </div>
             </Container>
           </div>
-          <Container className={"max-[500px]:p-0 max-[500px]:m-0"}>
+          <Container className="max-[500px]:p-0 max-[500px]:m-0">
             <div className="flex-col">
               <Filter date={selectedDate} />
               <PromoCard
@@ -100,47 +92,11 @@ function SearchResults() {
         </div>
       )}
 
-      <Modal isOpen={open} onClose={handleModalClose} showCloseIcon={true}>
-        <div className="flex flex-col justify-center gap-y-2">
-          <div className="flex flex-col justify-center items-center">
-            <span className="text-yellow-500 w-fit text-2xl border border-ado-alert-border bg-ado-sandal rounded-[50%]">
-              <Image alt="date change" src={infoIcon} className="p-4" />
-            </span>
-          </div>
-
-          <h2 className="text-lg font-semibold text-center mt-2">{tbooking("authpopup.title")}</h2>
-          <p className="flex justify-center text-[14px]">{tbooking("authpopup.content")}</p>
-        </div>
-        <div className="flex justify-between mt-6 max-xs:flex-col pb-3">
-          <Button
-            buttonStyle="outline"
-            className={"w-[48%] max-xs:w-full"}
-            buttonText={tbooking("authpopup.guest_btn")}
-            onClick={() => {}}
-          />
-          <Button
-            className={"w-[48%] max-xs:w-full max-xs:mt-4 max-xs:ml-0"}
-            buttonText={tbooking("authpopup.login_btn")}
-            onClick={() => {}}
-          />
-        </div>
-      </Modal>
-      <BusSeats
-        activeTab="salida"
-        setActiveTab={() => {}}
-        tripInfo={{}}
-        setTripInfo={() => {}}
-        session={{ startTimer: false }}
-        setSession={() => {}}
-      />
-
-      <Container className={"max-[500px]:p-0 max-[500px]:m-0"}>
-        <h1>hello</h1>
-        {/* <BookingForm /> */}
+      <Container className="justify-start max-[500px]:p-0 max-[500px]:m-0">
         <RegisterFormModal />
       </Container>
     </div>
   );
-}
+};
 
 export default SearchResults;
