@@ -1,17 +1,15 @@
 "use client";
-
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
-import Banner from "../../../../assets/png/searchBanner.png";
 import SearchBox from "@/components/SearchBox";
 import Container from "@/components/Container";
 import Filter from "@/components/Filter";
 import PromoCard from "@/components/PromoCard";
-import AdoBus from "@/assets/png/adoBus.png";
-import { useTranslations } from "next-intl";
 import DateSlider from "@/components/HorizontalScrollBar";
 import RegisterFormModal from "@/components/RegisterFormModal";
-
+import AdoBus from "@/assets/png/adoBus.png";
+import Banner from "@/assets/png/searchBanner.png";
 
 interface FilterData {
   day: string;
@@ -23,29 +21,25 @@ const SearchResults: React.FC = () => {
     day: new Date().toLocaleDateString("en-US", { weekday: "short" }),
     date: new Date().toISOString().split("T")[0],
   });
-  const [open, setOpen] = useState<boolean>(false);
+
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
 
   const tHome = useTranslations("searchResults");
   const tSearchResults = useTranslations("searchResults");
 
-  const handleDateChange = (date: FilterData): void => {
-    setSelectedDate(date);
-  };
+  const handleDateChange = (date: FilterData) => setSelectedDate(date);
 
-  const handlePromotionAction = (): void => {
-    console.log("promotion interested");
-    setOpen(true);
-  };
+  const handlePromotionAction = () => {};
 
-  const handleModalClose = (): void => {
-    setOpen(false);
-  };
+  const handleLoad = () => setIsLoaded(true);
 
   return (
     <div className="bg-ado-background w-full">
       <div className="w-full h-[210px] relative">
         <Image src={Banner} alt="Banner Image" layout="fill" objectFit="cover" priority />
+        <div className="absolute bottom-4 rounded-lg w-full">
+          <SearchBox handleLoad={handleLoad} />
+        </div>
       </div>
 
       {isLoaded ? (
@@ -66,7 +60,7 @@ const SearchResults: React.FC = () => {
                 bannerDescription={tHome("promotion.description")}
                 btnText={tHome("promotion.btnText")}
                 btnColor="ado-btn-red"
-                showImage
+                showImage={true}
                 handlePromotionAction={handlePromotionAction}
               />
             </div>
@@ -75,7 +69,9 @@ const SearchResults: React.FC = () => {
       ) : (
         <div>
           <Container>
-            <p className="text-[24px] text-[#222222] font-[700]">{tSearchResults("searchResultsTitle")}</p>
+            <p className="text-[24px] text-[#222222] font-[700]">
+              {tSearchResults("searchResultsTitle")}
+            </p>
             <div className="mt-[20px] p-[40px] bg-[#F1F3F9] rounded-[8px] flex flex-col justify-center items-center">
               <p className="text-[#474A56] font-[400] text-[16px] text-center">
                 {tSearchResults("yourSearch")}
@@ -87,7 +83,9 @@ const SearchResults: React.FC = () => {
                 <br />
                 {tSearchResults("noSeatAvailability")}
               </p>
-              <p className="text-[18px] text-[#222222] font-[700] mt-[30px]">{tSearchResults("tryAnotherDate")}</p>
+              <p className="text-[18px] text-[#222222] font-[700] mt-[30px]">
+                {tSearchResults("tryAnotherDate")}
+              </p>
               <Image src={AdoBus} alt="Ado Bus" />
             </div>
           </Container>

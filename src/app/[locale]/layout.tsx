@@ -3,18 +3,30 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "../globals.css";
 import ClientProvider from "@/components/clientProvider";
+import { Locale } from "@/types/common/locale";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const gothamProFont = localFont({
+  src: [
+    {
+      path: "../../font/gothampro.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../font/gothampro_medium.ttf",
+      weight: "500",
+      style: "medium",
+    },
+    {
+      path: "../../font/gothampro_bold.ttf",
+      weight: "700",
+      style: "bold",
+    },
+  ],
+  variable: "--font-gotham-pro",
 });
 
 export const metadata: Metadata = {
@@ -24,26 +36,22 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
-}: Readonly<{
+  params: { locale },
+}: {
   children: React.ReactNode;
-  params: { locale: string };
-}>) {
-  const { locale } = await params;
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  params: { locale: Locale };
+}) {
+  if (!routing.locales.includes(await locale)) {
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
     <html lang={locale}>
-      <body className=' font-gotham-pro antialiased'>
+      <body className={`${gothamProFont.variable} antialiased`}>
         <ClientProvider>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider messages={messages} locale={locale}>
             {children}
           </NextIntlClientProvider>
         </ClientProvider>
