@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import ClientProvider from "@/components/clientProvider";
+import { Locale } from "@/types/common/locale";
 
 const gothamProFont = localFont({
   src: [
@@ -35,26 +36,24 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
-}: Readonly<{
+  params: { locale },
+}: {
   children: React.ReactNode;
-  params: { locale: string };
-}>) {
-  const { locale } = await params;
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  params: { locale: Locale };
+}) {
+  if (!routing.locales.includes(await locale)) {
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
     <html lang={locale}>
       <body className={`${gothamProFont.variable} antialiased`}>
         <ClientProvider>
-          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            {children}
+          </NextIntlClientProvider>
         </ClientProvider>
       </body>
     </html>
