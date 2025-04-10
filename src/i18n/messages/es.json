@@ -242,5 +242,42 @@
     "ex_email": "Ej: mar.tg@gmail.com",
     "ex_firstName": "Ej: María",
     "ex_lastName": "Ej: Torres Gómez"
+  },
+  "additional_services" : {
+    "origin" : "¿De dónde sales?",
+    "time" : "¿A qué hora sales?",
+    "origin_time" :"Elige un origen y un horario para tu viaje de conexión.",
+    "destination_time" :"Elige un destino y un horario para tu viaje de conexión.",
+    "eliminate" : "Eliminar",
+    "date":"Fecha",
+    "passengers" : "Pasajeros",
+    "select_time" : "Selecciona un origen",
+    "select_origin" : "Selecciona un horario",
+    "no_destination_selected" : "Sin destino seleccionado",
+    "destination_location_connect" :"Lugar de destino Conecta.",
+    "days": {
+      "Sun": ["Dom", "Domingo"],
+      "Mon": ["Lun", "Lunes"],
+      "Tue": ["Mar", "Martes"],
+      "Wed": ["Mié", "Miércoles"],
+      "Thu": ["Jue", "Jueves"],
+      "Thur": ["Jue", "Jueves"],
+      "Fri": ["Vie", "Viernes"],
+      "Sat": ["Sáb", "Sábado"]
+    },
+    "months": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ]
   }
 }

@@ -185,7 +185,7 @@
     "ex_email": "Ex: mar.tg@gmail.com",
     "ex_firstName": "Ex: Maria",
     "ex_lastName": "Ex: Torres Gomez",
-    "select":"Select",
+    "select": "Select",
     "authpopup": {
       "title": "Do you want to continue as a guest or log in?",
       "content": "If you log in, you'll be able to track and view your trip history.",
@@ -238,5 +238,42 @@
     "discountCoupon": "Discount coupon",
     "apply": "Aplicar",
     "continue": "Continuar"
+  },
+  "additional_services": {
+    "origin": "Where are you departing from?",
+    "time": "What time are you leaving?",
+    "origin_time": "Choose an origin and a time for your connecting trip.",
+    "destination_time": "Choose a destination and a time for your connecting trip.",
+    "eliminate": "Eliminate",
+    "date": "Date",
+    "passengers": "Passengers",
+    "select_time": "Select an origin",
+    "select_origin": "Select a time",
+    "no_destination_selected": "No destination selected",
+    "destination_location_connect": "Destination location Connect.",
+    "days": {
+      "Sun": ["Sun", "Sunday"],
+      "Mon": ["Mon", "Monday"],
+      "Tue": ["Tue", "Tuesday"],
+      "Wed": ["Wed", "Wednesday"],
+      "Thu": ["Thu", "Thursday"],
+      "Thur": ["Thu", "Thursday"],
+      "Fri": ["Fri", "Friday"],
+      "Sat": ["Sat", "Saturday"]
+    },
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
   }
 }
