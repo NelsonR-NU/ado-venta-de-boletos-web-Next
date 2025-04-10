@@ -224,6 +224,7 @@
     "termsAndConditions": "Términos y Condiciones",
     "privacyNotice": "Aviso de Privacidad",
     "purchaseDetail": "Detalle de compra",
+    "tripDetails": "Detalles del viaje",
     "discountCoupon": "Cupón de descuento",
     "apply": "Aplicar",
     "continue": "Continuar"
@@ -279,5 +280,18 @@
       "noviembre",
       "diciembre"
     ]
+  },
+  "ticket-confirmation": {
+    "confirm_details": "Confirma tus datos",
+    "ticket_share_link": "Los boletos se enviarán a",
+    "passsager_name": "Nombre del pasajero",
+    "one_way": "Asiento de ida",
+    "ticket_type": "Tipo de boleto",
+    "return_seat": "Asiento de regreso",
+    "totalAssitance": "Asistencia total",
+    "passsager_name_tab": "Nombre",
+    "one_way_tab": "Ida",
+    "ticket_type_tab": "Tipo",
+    "return_seat_tab": "Regreso"
   }
 }

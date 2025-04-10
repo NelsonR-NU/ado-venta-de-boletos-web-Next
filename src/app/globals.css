@@ -8,13 +8,13 @@
 }
 
 html {
-  /* span,
+  span,
   input,
   ul,
   li {
     @apply text-gray-800;
     @apply font-gotham-pro;
-  } */
+  }
 
   div,
   img,
@@ -30,6 +30,7 @@ html {
   }
 
   button {
+    transition: none;
     cursor: pointer;
   }
 
@@ -47,4 +48,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -1,7 +1,5 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import DownArrow from '../../assets/svg/downArrow.svg';
-import Image from 'next/image';
 import SearchDropDown from '../SearchDropDown';
 import SearchPassengerDropDown from '../SearchPassengerDropDown';
 
@@ -52,7 +50,7 @@ function SearchCard({ width, cardName, value, isOpen, isPassenger, toggleDropdow
 
       {/* Dropdown */}
       {isOpen && !isPassenger && (
-        <SearchDropDown 
+        <SearchDropDown
           recentSearches={recentearches}
           originTerminals={originTerminals}
           cardName={cardName}
@@ -61,7 +59,7 @@ function SearchCard({ width, cardName, value, isOpen, isPassenger, toggleDropdow
       )}
 
       {isOpen && isPassenger && (
-        <SearchPassengerDropDown 
+        <SearchPassengerDropDown
           updatePassengerCount={updatePassengerCount}
           passengerValues={passengerValues}
         />
