@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import SearchBox from "@/components/SearchBox";
-import Container from "@/components/Container";
+import Container from "@/components/Container/Container";
 import Filter from "@/components/Filter";
 import PromoCard from "@/components/PromoCard";
 import DateSlider from "@/components/HorizontalScrollBar";

@@ -1,7 +1,7 @@
 import React from "react";
 import banner from "@/assets/png/banner.png";
 import Image from "next/image";
-import Button from "../Button";
+import Button from "../ui/Button";
 
 type PromoCardProps = {
   imageUrl?: string;

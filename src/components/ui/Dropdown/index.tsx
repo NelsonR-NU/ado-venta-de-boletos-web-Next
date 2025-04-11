@@ -24,7 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   hoverColor = "hover:bg-ado-light-blue-gray",
   activeColor = "bg-gray-300",
   title,
-  className = ""
+  className = "",
 }) => {
   const [selected, setSelected] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -39,8 +39,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     <div className={`relative w-[258px]`}>
       <button
         className={`flex justify-between items-center w-full p-4 rounded-lg shadow-md ${bgColor} ${textColor}  ${className}`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
+        onClick={() => setIsOpen(!isOpen)}>
         {selected || placeholder}
         <Image
           src={isOpen ? upChevron : downChevron}
@@ -53,16 +52,14 @@ const Dropdown: React.FC<DropdownProps> = ({
 
       {isOpen && (
         <div
-          className={`absolute w-full mt-2 bg-white shadow-lg rounded-lg max-h-[326px] overflow-y-auto p-5 z-[999]`}
-        >
+          className={`absolute w-full mt-2 bg-white shadow-lg rounded-lg max-h-[326px] overflow-y-auto p-5 z-[999]`}>
           <span className="text-sm font-bold">{title}</span>
           <div className={`p-2 rounded-lg ${bgColor} ${title ? "mt-5" : ""}`}>
             {options.map((option, index) => (
               <div
                 key={index}
                 onClick={() => handleSelect(option)}
-                className={`p-2 ${hoverColor} cursor-pointer rounded`}
-              >
+                className={`p-2 ${hoverColor} cursor-pointer rounded`}>
                 <span className={`text-sm ${textColor}`}>{option}</span>
               </div>
             ))}

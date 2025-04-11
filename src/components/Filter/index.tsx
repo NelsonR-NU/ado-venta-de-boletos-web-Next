@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import FilterDrawer from "@/components/FilterDrawer";
-import Button from "../Button";
+import Button from "../ui/Button";
 import filterIcon from "@/assets/png/filter.png";
 import bottomArrow from "@/assets/png/bottomarrow.png";
 
@@ -17,9 +17,7 @@ type FilterProps = {
 const Filter: React.FC<FilterProps> = ({ date }) => {
   const t = useTranslations("home");
   const daysTrans = useTranslations("searchResults");
-  const [selectedSort, setSelectedSort] = useState<string>(
-    daysTrans("sortedTrip.First_to_depart")
-  );
+  const [selectedSort, setSelectedSort] = useState<string>(daysTrans("sortedTrip.First_to_depart"));
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [isSortDropdownOpen, setIsSortDropdownOpen] = useState<boolean>(false);
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState<boolean>(false);
@@ -57,7 +55,7 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
         <span className="text-[16px] sm:text-[18px] font-normal">{t("tripType")}</span>
         <span className="ml-1 text-[16px] sm:text-[18px] text-gray-900 font-bold">
           {daysTrans.raw(`days.${date.day}`)[0]},
-          {new Date(date.date).toLocaleDateString("es-ES", { day: "2-digit" })} de {" "}
+          {new Date(date.date).toLocaleDateString("es-ES", { day: "2-digit" })} de{" "}
           {new Date(date.date).toLocaleDateString("es-ES", { month: "short" })}
         </span>
       </p>
@@ -100,13 +98,15 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
                 {Object.entries(sortedTrip).map(([key, value]) => (
                   <li
                     key={key}
-                    className={`px-4 py-3 m-2 text-center cursor-pointer ${selectedSort === value ? "bg-ado-purple rounded-lg text-white font-semibold" : "hover:bg-gray-100"
-                      }`}
+                    className={`px-4 py-3 m-2 text-center cursor-pointer ${
+                      selectedSort === value
+                        ? "bg-ado-purple rounded-lg text-white font-semibold"
+                        : "hover:bg-gray-100"
+                    }`}
                     onClick={() => {
                       setSelectedSort(value);
                       setIsSortDropdownOpen(false);
-                    }}
-                  >
+                    }}>
                     {value}
                   </li>
                 ))}
