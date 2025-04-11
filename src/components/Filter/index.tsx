@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import React, { useState, useEffect, useRef } from "react";
 import FilterDrawer from "@/components/FilterDrawer";
-import Button from "../Button";
+import Button from "../ui/Button";
 import filterIcon from "@/assets/png/filter.png";
 import bottomArrow from "@/assets/png/bottomarrow.png";
 

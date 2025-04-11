@@ -10,7 +10,7 @@ import Image from 'next/image';
 import DisabledMinus from '../../assets/svg/disabledMinus.svg';
 import Add from '../../assets/svg/add.svg';
 import PassengerCard from '../PassengerCard';
-import Button from '@/components/Button'
+import Button from '@/components/ui/Button'
 
 
 type PassengerType = 'Adult' | 'Child' | 'INAPAM' | 'Teacher' | 'Student';

@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import CalendarPromo from '../../assets/svg/calendarPromo.svg';
 import Image from 'next/image';
 import Tick from '../../assets/svg/tick.svg';
-import Button from '@/components/Button'
+import Button from '@/components/ui/Button'
 import Calendar from '../Calendar';
 
 function SearchCalendarCard({ width, ida, returnTrip, startDate, returnDate, cardName, isOpen, toggleDropdown }: { width: number, ida: string, returnTrip: string, startDate: string, returnDate: string, cardName: string, isOpen: boolean, toggleDropdown: (cardName: string) => void }) {

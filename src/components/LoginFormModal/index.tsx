@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Modal from "@/components/Modal";
-import Button from "@/components/Button";
-import InputField from "@/components/Input";
+import Button from "@/components/ui/Button";
+import InputField from "@/components/ui/Input";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import RegisterFormModal from "@/components/RegisterFormModal";

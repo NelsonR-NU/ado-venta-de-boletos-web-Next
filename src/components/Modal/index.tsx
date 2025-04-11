@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import close from "@/assets/svg/close.svg";
 import Image from "next/image";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 
 type ModalProps = {
     isOpen?: boolean;

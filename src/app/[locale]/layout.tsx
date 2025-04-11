@@ -5,7 +5,7 @@ import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
-import ClientProvider from "@/components/clientProvider";
+import ClientProvider from "@/business-logic/provider";
 import { Locale } from "@/types/common/locale";
 
 const gothamProFont = localFont({

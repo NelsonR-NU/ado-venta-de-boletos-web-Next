@@ -4,8 +4,8 @@ import Slider from "@mui/material/Slider";
 import { useTranslations } from "next-intl";
 import DrawerModal from "@/components/Drawer";
 import adoBrandImage from "@/assets/png/adoBrandImage.png";
-import Button from "@/components/Button"
-import Checkbox from "@/components/CheckBox";
+import Button from "@/components/ui/Button"
+import Checkbox from "@/components/ui/CheckBox";
 
 interface FilterDrawerProps {
   isOpen: boolean;

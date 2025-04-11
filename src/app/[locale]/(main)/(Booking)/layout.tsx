@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import ReservationSummary from "@/components/ReservationSummary";
-import Container from "@/components/Container";
+import Container from "@/components/Container/Container";
 
 export default async function BookingLayout({
   children,

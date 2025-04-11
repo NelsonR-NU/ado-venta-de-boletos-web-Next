@@ -2,7 +2,7 @@ import * as React from "react";
 import Drawer from "@mui/material/Drawer";
 import Image from "next/image";
 import close from "@/assets/svg/close.svg";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import clsx from "clsx";
 
 type DrawerModalProps = {

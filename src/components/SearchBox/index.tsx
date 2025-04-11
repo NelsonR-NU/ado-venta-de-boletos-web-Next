@@ -2,12 +2,12 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import Container from '../Container';
+import Container from '../Container/Container';
 import SelectedBus from '../../assets/svg/selectedBus.svg';
 import UnSelectedBus from '../../assets/svg/unSelectedBus.svg';
 import Image from 'next/image';
 import SearchCard from '../SearchCard';
-import Button from '@/components/Button'
+import Button from '@/components/ui/Button'
 import SearchCalendarCard from '../SearchCalendarCard';
 import { Box } from '@mui/material';
 

@@ -7,7 +7,7 @@ import Modal from "@/components/Modal";
 import alertIcon from "@/assets/png/alert.png"
 import leftArrow from '@/assets/png/leftArrow.png'
 import rightArrow from '@/assets/png/rightArrow.png'
-import Button from '@/components/Button'
+import Button from '@/components/ui/Button'
 
 type DateItem = {
   date: string;

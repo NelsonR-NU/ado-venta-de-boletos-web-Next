@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 import "../src/app/globals.css";
 import { withNextIntl, withTailwind } from "./decorators";
-import theme from "./theme";
+import { themes } from "@storybook/theming/create";
 
 const preview: Preview = {
   parameters: {
@@ -13,11 +13,11 @@ const preview: Preview = {
       },
     },
     docs: {
-      theme,
+      theme: themes.light,
     },
     options: {
       storySort: {
-        order: ["Components", "Layouts", "Pages", "Features"],
+        order: ["UI Components", "Components", "Layouts", "Pages", "Features"],
       },
     },
     locale: "es",
