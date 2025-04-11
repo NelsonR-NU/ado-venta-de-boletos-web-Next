@@ -1,7 +1,303 @@
 {
-    "home": {
-      "title": "¡Bienvenido a nuestro sitio web!",
-      "description": "Haga clic para ver la página Acerca de"
+  "home": {
+    "title": "¡Bienvenido a nuestro sitio web!",
+    "description": "Haga clic para ver la página Acerca de",
+    "sortedBy": "Ordenado por",
+    "tripType": "Elige tu boleto de ida",
+    "filters": "Filtros"
+  },
+  "searchResults": {
+    "roundTrip": "Ida y regreso",
+    "oneWay": "Solo ida",
+    "origin": "Origen",
+    "destination": "Destino",
+    "dummyValueOne": "Central México Norte",
+    "dummyValueTwo": "Acapulco Costera, Gro",
+    "ida": "Ida",
+    "return": "Regreso",
+    "sampleDate": "Vier. 13 de nov.",
+    "sampleDate2": "Mar. 17 de nov.",
+    "passengers": "Pasajeros",
+    "adult": "1 adulto",
+    "modifyTrip": "Modificar viaje",
+    "dropDownText": "Te mostraremos las terminales disponibles de acuerdo al origen que elijas.",
+    "recentSearches": "Búsquedas recientes",
+    "originTerminals": "Terminales origen por estado",
+    "whoTravels": "¿Quiénes viajan?",
+    "adults": "Adulto",
+    "adultDescription": "Más de 12 años",
+    "children": "Niño",
+    "childrenDescription": "De 5 a 12 años",
+    "inapam": "INAPAM",
+    "inapamDescription": "Con credencial vigente",
+    "teacher": "Maestro",
+    "teacherDescription": "Con credencial vigente",
+    "student": "Estudiante",
+    "studentDescription": "Con credencial vigente",
+    "ready": "Listo",
+    "calendarTitle": "Selecciona la fecha de tu viaje",
+    "calendarPromo1": "Aprovecha tu compra anticipada",
+    "calendarPromo2": "y obten hasta un",
+    "calendarPromo3": "50% de descuento",
+    "calendarPromo4": "en tus viajes.",
+    "calendarCheckBox": "Quiero que mi fecha de ida sea la misma de regreso.",
+    "searchResultsTitle": "Resultado de búsqueda.",
+    "tryAnotherDate": "Intenta con otra fecha",
+    "yourSearch": "Tu búsqueda del",
+    "yourSearchOn": " 12 de Noviembre",
+    "yourSearchOn2": " de",
+    "yourSearchFrom": " Central México Norte",
+    "yourSearchOn3": " a",
+    "yourSearchTo": " Acapulco Costera, Gro.",
+    "noSeatAvailability": "No tiene disponibilidad de asientos.",
+    "days": {
+      "Sun": ["Dom", "Domingo"],
+      "Mon": ["Lun", "Lunes"],
+      "Tue": ["Mar", "Martes"],
+      "Wed": ["Mié", "Miércoles"],
+      "Thu": ["Jue", "Jueves"],
+      "Thur": ["Jue", "Jueves"],
+      "Fri": ["Vie", "Viernes"],
+      "Sat": ["Sáb", "Sábado"]
+    },
+    "months": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ],
+    "sortedTrip": {
+      "First_to_depart": "Primero en salir",
+      "Last_to_depart": "Último en salir",
+      "Lowest_price": "Precio más bajo",
+      "Highest_price": "Precio más alto",
+      "Shortest_trip": "Viaje más corto",
+      "Longest_trip": "Viaje más largo"
+    },
+    "filter_content": {
+      "filters": "Filtros",
+      "filter_results": "Filtrar resultados",
+      "close": "Cerrar",
+      "filter_by": "Filtrar por",
+      "by_promotion": "Por promoción",
+      "by_departure_time": "Por horario de salida",
+      "by_price": "Por precio",
+      "by_type_of_trip": "Por tipo de viaje",
+      "by_brand": "Por marca",
+      "source_terminal": "Terminal de origen",
+      "destination_terminal": "Terminal de destino",
+      "reset_filters": "Restablecer filtros",
+      "apply_filters": "Aplicar filtros",
+      "by_promotion_type": {
+        "discount": "Descuento"
+      },
+      "by_departure_time_type": {
+        "early_morning": {
+          "label": "Madrugada",
+          "time": "00:00 - 06:59"
+        },
+        "morning": {
+          "label": "Mañana",
+          "time": "07:00 - 11:59"
+        },
+        "afternoon": {
+          "label": "Tarde",
+          "time": "12:00 - 18:59"
+        },
+        "night": {
+          "label": "Noche",
+          "time": "19:00 - 23:59"
+        }
+      },
+      "by_price_type": {
+        "from": "Desde",
+        "to": "Hasta"
+      },
+      "by_type_of_trip_type": {
+        "local": {
+          "label": "Local",
+          "description": "La ruta del viaje comienza en este origen."
+        },
+        "transfer": {
+          "label": "Paso",
+          "description": "La ruta del viaje comenzó en otra terminal."
+        }
+      },
+      "source_terminal_type": {
+        "airport_national_arrivals": "Aeropuerto llegadas nacionales",
+        "central_mexico_north": "Central México Norte",
+        "executive_south": "Ejecutiva del sur",
+        "temporal_angel": "Temporales del Ángel",
+        "mexico_tapo": "México TAPO",
+        "santa_martha_acatitla": "Santa Martha Acatitla"
+      },
+      "destination_terminal_type": {
+        "veracruz": "Veracruz"
+      }
+    },
+    "promotion": {
+      "title": "Promoción de otoño",
+      "description": "Explora un lugar diferente y ahorra hasta un 20% en tu siguiente viaje.",
+      "btnText": "Me interesa"
+    },
+    "date_popup": {
+      "title": "Cambio de fecha",
+      "content": "Tu fecha de ida cambiará al",
+      "continue_link": "¿Quieres continuar?",
+      "cancel": "No, cancelar",
+      "continue_btn": "Sí, continuar"
     }
+  },
+  "calendar": {
+    "sunday": "DI",
+    "monday": "LU",
+    "tuesday": "MA",
+    "wednesday": "ME",
+    "thursday": "JE",
+    "friday": "VE",
+    "saturday": "SA"
+  },
+  "booking": {
+    "send_tickets_to": "Enviar tu(s) boleto(s) a:",
+    "email": "Correo electrónico*",
+    "confirm_email": "Confirmar correo electrónico*",
+    "register_passenger": "Registra a tu(s) pasajero(s)",
+    "what_is_total_assistance": "¿Qué es la asistencia total?",
+    "passenger": "Pasajero",
+    "adult": "Adulto",
+    "seat_departure": "Asiento de ida:",
+    "seat_return": "Asiento de regreso:",
+    "first_name": "Nombre",
+    "last_name": "Apellidos",
+    "add_total_assistance": "Agregar asistencia total",
+    "departure": "Ida",
+    "return": "Regreso",
+    "ticket_sent_to": "Los boletos se enviarán a:",
+    "Select_an_passenger": "Seleccionar un pasajero favorito",
+    "ex_email": "Ej: mar.tg@gmail.com",
+    "ex_firstName": "Ej: María",
+    "ex_lastName": "Ej: Torres Gómez",
+    "select": "Seleccionar",
+    "choose_seats": "Elige tu(s) asiento(s) de {direction}",
+    "selected": "Seleccionado",
+    "not_available": "No disponible",
+    "available": "Disponible",
+    "occupied": "Ocupado",
+    "seats_selected": "Asientos seleccionados",
+    "authpopup": {
+      "title": "¿Quieres continuar como invitado o iniciar sesión?",
+      "content": "Si inicias sesión, podrás seguir y consultar el historial de tus viajes.",
+      "guest_btn": "Continuar como invitado",
+      "login_btn": "Iniciar sesión"
+    }
+  },
+  "register": {
+    "register": "Regístrate",
+    "enter_details": "Ingresa tus datos para poder completar tu registro.",
+    "first_name": "Nombre",
+    "last_name": "Apellido",
+    "email": "Correo electrónico",
+    "receive_promotions": "Quiero recibir promociones exclusivas para viajar.",
+    "agree_terms": "De acuerdo con los",
+    "terms_conditions": "Términos y Condiciones",
+    "as_well_as_the": "así como el",
+    "privacy_notice": "Aviso de Privacidad",
+    "continue": "Continuar",
+    "ex_email": "Ej: mar.tg@gmail.com",
+    "ex_firstName": "Ej: María",
+    "ex_lastName": "Ej: Torres Gómez"
+  },
+  "reservationSummary": {
+    "purchaseSummary": "Resumen de compra",
+    "oneWayTrip": "Viaje de ida",
+    "returnTrip": "Viaje de regreso",
+    "tax": "IVA",
+    "totalAssitance": "Asistencia total",
+    "includesTax": "incluye IVA",
+    "currencySymbol": "$",
+    "currency": "MXN",
+    "total": "Total",
+    "accordingTo": "De acuerdo con los",
+    "asWellAs": "así como el",
+    "termsAndConditions": "Términos y Condiciones",
+    "privacyNotice": "Aviso de Privacidad",
+    "purchaseDetail": "Detalle de compra",
+    "tripDetails": "Detalles del viaje",
+    "discountCoupon": "Cupón de descuento",
+    "apply": "Aplicar",
+    "continue": "Continuar"
+  },
+  "login": {
+    "login_text": "Iniciar sesión",
+    "track_trip_history": "Inicia sesión para seguir y consultar el historial de tus viajes.",
+    "password": "Contraseña",
+    "email": "Correo electrónico",
+    "enter_password": "Ingresa tu contraseña",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "first_time": "¿Primera vez en ADO?",
+    "enter_as_guest": "Entrar como invitado",
+    "register": "Regístrate",
+    "continue": "Continuar",
+    "ex_email": "Ej: mar.tg@gmail.com",
+    "ex_firstName": "Ej: María",
+    "ex_lastName": "Ej: Torres Gómez"
+  },
+  "additional_services": {
+    "origin": "¿De dónde sales?",
+    "time": "¿A qué hora sales?",
+    "origin_time": "Elige un origen y un horario para tu viaje de conexión.",
+    "destination_time": "Elige un destino y un horario para tu viaje de conexión.",
+    "eliminate": "Eliminar",
+    "date": "Fecha",
+    "passengers": "Pasajeros",
+    "select_time": "Selecciona un origen",
+    "select_origin": "Selecciona un horario",
+    "no_destination_selected": "Sin destino seleccionado",
+    "destination_location_connect": "Lugar de destino Conecta.",
+    "days": {
+      "Sun": ["Dom", "Domingo"],
+      "Mon": ["Lun", "Lunes"],
+      "Tue": ["Mar", "Martes"],
+      "Wed": ["Mié", "Miércoles"],
+      "Thu": ["Jue", "Jueves"],
+      "Thur": ["Jue", "Jueves"],
+      "Fri": ["Vie", "Viernes"],
+      "Sat": ["Sáb", "Sábado"]
+    },
+    "months": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ]
+  },
+  "ticket-confirmation": {
+    "confirm_details": "Confirma tus datos",
+    "ticket_share_link": "Los boletos se enviarán a",
+    "passsager_name": "Nombre del pasajero",
+    "one_way": "Asiento de ida",
+    "ticket_type": "Tipo de boleto",
+    "return_seat": "Asiento de regreso",
+    "totalAssitance": "Asistencia total",
+    "passsager_name_tab": "Nombre",
+    "one_way_tab": "Ida",
+    "ticket_type_tab": "Tipo",
+    "return_seat_tab": "Regreso"
+  }
 }
-  
