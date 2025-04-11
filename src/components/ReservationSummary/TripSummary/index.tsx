@@ -11,9 +11,10 @@ import redTerminal from "@/assets/svg/red-terminal.svg";
 
 interface TripSummaryProps {
   isOneWayTrip?: boolean;
+  handleClick?: () => void;
 }
 
-const TripSummary: React.FC<TripSummaryProps> = ({ isOneWayTrip = true }) => {
+const TripSummary: React.FC<TripSummaryProps> = ({ isOneWayTrip = true, handleClick }) => {
   const t = useTranslations("reservationSummary");
 
   const origin = {
@@ -73,7 +74,7 @@ const TripSummary: React.FC<TripSummaryProps> = ({ isOneWayTrip = true }) => {
       </div>
 
       <Button
-        onClick={() => { }}
+        onClick={handleClick}
         buttonText={t("tripDetails")}
         icon={<Image src={rightChevron} alt="right chevron" />}
         iconPosition="right"

@@ -8,9 +8,11 @@ import Button from "@/components/ui/Button";
 import Checkbox from "@/components/ui/CheckBox";
 import rightChevron from "@/assets/svg/right-chevron-purple.svg";
 
-interface PriceSummaryProps {}
+interface PriceSummaryProps {
+  handleClick: () => void
+}
 
-const PriceSummary: React.FC<PriceSummaryProps> = () => {
+const PriceSummary: React.FC<PriceSummaryProps> = ({ handleClick }) => {
   const t = useTranslations("reservationSummary");
   const [priceSummaryCheckboxChecked, setPriceSummaryCheckboxChecked] = useState(false);
 
@@ -65,12 +67,12 @@ const PriceSummary: React.FC<PriceSummaryProps> = () => {
       <Button
         variant="primary"
         disabled={!priceSummaryCheckboxChecked}
-        onClick={() => {}}
+        onClick={() => { }}
         iconPosition="right"
         buttonText={t("continue")}
       />
       <Button
-        onClick={() => {}}
+        onClick={handleClick}
         buttonText={t("purchaseDetail")}
         icon={<Image src={rightChevron} alt="right chevron" />}
         iconPosition="right"

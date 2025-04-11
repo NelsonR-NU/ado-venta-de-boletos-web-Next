@@ -239,6 +239,11 @@
     "discountCoupon": "Discount coupon",
     "apply": "Aplicar",
     "continue": "Continuar",
+    "purchase_details": "Purchase detail",
+    "ticket_details": "Ticket detail",
+    "close": "Close",
+    "origen": "Origin",
+    "destination": "Destination" ,
   "origin_terminal" : "Origin terminal",
     "destination_terminal" : "Destination terminal"
   },

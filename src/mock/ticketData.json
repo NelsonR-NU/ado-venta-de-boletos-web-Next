@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Viaje de ida",
+    "total": "$1,000.00 MXN",
+    "details": [
+      {
+        "label": "1 Adulto(s)",
+        "amount": "$840.00 MXN"
+      },
+      {
+        "label": "IVA",
+        "amount": "$160.00 MXN"
+      }
+    ]
+  },
+  {
+    "title": "Viaje de regreso",
+    "total": "$1,000.00 MXN",
+    "details": [
+      {
+        "label": "1 Adulto(s)",
+        "amount": "$840.00 MXN"
+      },
+      {
+        "label": "IVA",
+        "amount": "$160.00 MXN"
+      }
+    ]
+  },
+  {
+    "title": "Asistencia total ida",
+    "total": "$15.00 MXN",
+    "details": [
+      {
+        "label": "Asistencia total",
+        "amount": "$15.00 MXN"
+      },
+      {
+        "label": "x1",
+        "amount": "$15.00 MXN"
+      }
+    ]
+  },
+  {
+    "title": "Asistencia total regreso",
+    "total": "$15.00 MXN",
+    "details": [
+      {
+        "label": "Asistencia total",
+        "amount": "$15.00 MXN"
+      },
+      {
+        "label": "x1",
+        "amount": "$15.00 MXN"
+      }
+    ]
+  }
+]
