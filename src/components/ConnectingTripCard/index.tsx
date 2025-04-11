@@ -1,7 +1,7 @@
 'use client';
 import Card from '@/components/Card';
 import { useTranslations } from 'next-intl';
-import React from 'react';
+import React, { useState } from 'react';
 import TripCardIda from '../TripCardIda';
 import TripCardRegreso from '../TripCardRegreso';
 
@@ -17,8 +17,12 @@ const TripCard: React.FC<TripCardProps> = ({ title, date, passengers, routes, ty
     const t = useTranslations("additional_services");
     const time = ['04:30 h', '05:30 h'];
     const isRegresso = type === 'regreso';
-    console.log(isRegresso)
     const displayRoutes = isRegresso ? [...routes].reverse() : routes;
+
+    const [selectedPlace, setSelectedPlace] = useState<string | null>(null);
+    const [selectedTime, setSelectedTime] = useState<string | null>(null);
+
+    const isBothSelected = selectedPlace && selectedTime;
 
     return (
         <Card className="w-[744px] !gap-2 mx-auto !bg-ado-text-white">
@@ -26,7 +30,9 @@ const TripCard: React.FC<TripCardProps> = ({ title, date, passengers, routes, ty
                 <h3 className="text-lg font-bold flex items-center gap-2">{title}</h3>
                 <div className='flex justify-between'>
                     <span className='text-sm'>{type === "ida" ? t('origin_time') : t('destination_time')}</span>
-                    <button className="text-ado-slate-gray font-bold text-base">{t('eliminate')}</button>
+                    <button className={`${isBothSelected ? 'text-ado-red' : 'text-ado-slate-gray'} font-bold text-base`}>
+                        {t('eliminate')}
+                    </button>
                 </div>
             </div>
 
@@ -40,19 +46,31 @@ const TripCard: React.FC<TripCardProps> = ({ title, date, passengers, routes, ty
                     <span className="font-bold text-ado-text-gray text-base">{passengers}</span>
                 </div>
             </div>
+
             <div>
                 {type === 'ida' && (
-                    <TripCardIda displayRoutes={displayRoutes} time={time} t={t} />
+                    <TripCardIda
+                        displayRoutes={displayRoutes}
+                        time={time}
+                        t={t}
+                        onPlaceSelect={setSelectedPlace}
+                        onTimeSelect={setSelectedTime}
+                    />
                 )}
 
                 {type === 'regreso' && (
-                    <TripCardRegreso displayRoutes={displayRoutes} time={time} t={t} />
+                    <TripCardRegreso
+                        displayRoutes={displayRoutes}
+                        time={time}
+                        t={t}
+                        onPlaceSelect={setSelectedPlace}
+                        onTimeSelect={setSelectedTime}
+                    />
                 )}
             </div>
-
-
         </Card>
     );
 };
+
 
 export default TripCard;

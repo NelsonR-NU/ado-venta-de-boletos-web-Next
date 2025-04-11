@@ -14,9 +14,11 @@ interface Props {
     displayRoutes: string[];
     time: string[];
     t: any;
+    onPlaceSelect?: (place: string) => void;
+    onTimeSelect?: (time: string) => void;
 }
 
-const TripCardIda: React.FC<Props> = ({ displayRoutes, time, t }) => {
+const TripCardIda: React.FC<Props> = ({ displayRoutes, time, t, onPlaceSelect, onTimeSelect }) => {
     return (
         <div className="mt-4 w-[696px] h-auto bg-ado-white p-4 rounded-lg flex">
             <div className="flex flex-col items-center justify-between gap-0">
@@ -45,6 +47,7 @@ const TripCardIda: React.FC<Props> = ({ displayRoutes, time, t }) => {
                             bgColor="bg-ado-date-background"
                             textColor="text-ado-steel-gray"
                             hoverColor="hover:bg-ado-light-blue-gray"
+                            onSelect={onPlaceSelect}
                         />
                         <Dropdown
                             options={time}
@@ -54,6 +57,7 @@ const TripCardIda: React.FC<Props> = ({ displayRoutes, time, t }) => {
                             bgColor="bg-ado-date-background"
                             textColor="text-ado-steel-gray"
                             hoverColor="hover:bg-ado-light-blue-gray"
+                            onSelect={onTimeSelect}
                         />
                     </div>
                 </div>

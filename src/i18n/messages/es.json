@@ -227,7 +227,9 @@
     "tripDetails": "Detalles del viaje",
     "discountCoupon": "Cupón de descuento",
     "apply": "Aplicar",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "origin_terminal" : "Terminal origen",
+    "destination_terminal" : "Terminal destino"
   },
   "login": {
     "login_text": "Iniciar sesión",

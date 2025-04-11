@@ -33,6 +33,7 @@ export default {
         "ado-sandal": "#FFF1DB",
         "ado-alert-border": "#FFD898",
         "ado-gray": "#E3E7F2",
+        "ado-lavendar" : "#AF90B3",
         "ado-charcoal": "#1D1F24",
         "ado-steel-gray": "#6F7587",
         "ado-frost-gray": "#E3E7F2",

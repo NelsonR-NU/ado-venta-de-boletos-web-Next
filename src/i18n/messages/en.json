@@ -238,7 +238,9 @@
     "tripDetails": "Trip details",
     "discountCoupon": "Discount coupon",
     "apply": "Aplicar",
-    "continue": "Continuar"
+    "continue": "Continuar",
+  "origin_terminal" : "Origin terminal",
+    "destination_terminal" : "Destination terminal"
   },
   "additional_services": {
     "origin": "Where are you departing from?",

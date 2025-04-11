@@ -10,7 +10,7 @@ export default function AdditionalServices() {
                 routes={[
                     "Central México Norte, CDMX",
                     "Central México Norte, CDMX",
-                    "Acapulco Costera, Gro."
+                    "Acapulco Costera, Gro",
                 ]}
                 type="ida"
             />
