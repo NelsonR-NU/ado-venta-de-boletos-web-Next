@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import InputField from "@/components/Input";
+import InputField from "@/components/ui/Input";
 import Card from "@/components/Card";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
 
 interface AddCouponCardProps {}

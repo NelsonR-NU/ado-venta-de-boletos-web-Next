@@ -44,8 +44,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       disabled={disabled}
       onClick={onClick}
-      className={`${baseStyles} ${disabled ? disabledStyles : variantStyles[variant]} ${buttonStyleClasses[buttonStyle]} ${className} ${className.includes("w-") ? "" : "w-auto"}`}
-    >
+      className={`${baseStyles} ${disabled ? disabledStyles : variantStyles[variant]} ${buttonStyleClasses[buttonStyle]} ${className} ${className.includes("w-") ? "" : "w-auto"}`}>
       <div className="flex items-center gap-2">
         {icon && iconPosition === "left" && icon}
         {buttonText}
@@ -54,6 +53,5 @@ const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-
 
 export default Button;

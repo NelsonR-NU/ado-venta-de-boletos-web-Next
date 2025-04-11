@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
-import React, { useState, useRef, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import Container from '../Container';
-import SelectedBus from '../../assets/svg/selectedBus.svg';
-import UnSelectedBus from '../../assets/svg/unSelectedBus.svg';
-import Image from 'next/image';
-import SearchCard from '../SearchCard';
-import Button from '@/components/Button'
-import SearchCalendarCard from '../SearchCalendarCard';
-import { Box } from '@mui/material';
+import React, { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import Container from "../Container/Container";
+import SelectedBus from "../../assets/svg/selectedBus.svg";
+import UnSelectedBus from "../../assets/svg/unSelectedBus.svg";
+import Image from "next/image";
+import SearchCard from "../SearchCard";
+import Button from "@/components/ui/Button";
+import SearchCalendarCard from "../SearchCalendarCard";
 
 function SearchBox({ handleLoad }: { handleLoad: () => void }) {
   const t = useTranslations("searchResults");
@@ -52,14 +51,13 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
 
     const mappedKey = keyMap[cardName] || cardName; // Fallback to original if not found
 
-    setSearchValues(prev => ({ ...prev, [mappedKey]: value }));
+    setSearchValues((prev) => ({ ...prev, [mappedKey]: value }));
     setOpenDropdown(null);
   };
 
-  type PassengerType = 'Adult' | 'Child' | 'INAPAM' | 'Teacher' | 'Student';
+  type PassengerType = "Adult" | "Child" | "INAPAM" | "Teacher" | "Student";
 
   const updatePassengerCount = (type: PassengerType, delta: number) => {
-
     const passengerKeyMap: Record<string, keyof typeof passengerValues> = {
       [t("adults")]: "Adult",
       [t("children")]: "Child",
@@ -70,9 +68,9 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
 
     const mappedKey = passengerKeyMap[type] || type;
 
-    setPassengerValues(prev => ({
+    setPassengerValues((prev) => ({
       ...prev,
-      [mappedKey]: Math.max(0, prev[mappedKey] + delta) // Ensure count doesn't go below 0
+      [mappedKey]: Math.max(0, prev[mappedKey] + delta), // Ensure count doesn't go below 0
     }));
 
     // setPassengerValues(prev => ({
@@ -80,7 +78,6 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
     //     [type]: Math.max(0, prev[mappedKey] + delta) // Ensure count doesn't go below 0
     // }));
   };
-
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -96,24 +93,34 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
   }, []);
 
   return (
-    <Container className='w-full'>
-      <div ref={dropdownRef} className='w-full bg-white/90 px-4 py-4 rounded-[8px] flex flex-col'>
+    <Container className="w-full">
+      <div ref={dropdownRef} className="w-full bg-white/90 px-4 py-4 rounded-[8px] flex flex-col">
         {/* Round Trip / One Way Selection */}
-        <div className='w-full bg-white border-2 border-ado-search-border flex items-center justify-between'>
-          <div className={`w-[49%] ${roundTrip && 'border-b-2 border-ado-selected'} flex justify-center items-center py-2 cursor-pointer`} onClick={handleTripClick}>
+        <div className="w-full bg-white border-2 border-ado-search-border flex items-center justify-between">
+          <div
+            className={`w-[49%] ${roundTrip && "border-b-2 border-ado-selected"} flex justify-center items-center py-2 cursor-pointer`}
+            onClick={handleTripClick}>
             <Image src={SelectedBus} alt="Bus Icon" />
-            <div className={`${roundTrip ? 'text-ado-selected' : 'text-[#959DB6]'} text-[12px] font-medium font-gotham-pro ml-[10px]`}>{t("roundTrip")}</div>
+            <div
+              className={`${roundTrip ? "text-ado-selected" : "text-[#959DB6]"} text-[12px] font-medium font-gotham-pro ml-[10px]`}>
+              {t("roundTrip")}
+            </div>
           </div>
           <div className="h-[20px] border-l-2 border-[#E3E7F2]"></div>
-          <div className={`w-[49%] ${!roundTrip && 'border-b-2 border-ado-selected'} flex justify-center items-center py-2 cursor-pointer`} onClick={handleTripClick}>
+          <div
+            className={`w-[49%] ${!roundTrip && "border-b-2 border-ado-selected"} flex justify-center items-center py-2 cursor-pointer`}
+            onClick={handleTripClick}>
             <Image src={UnSelectedBus} alt="Bus Icon" />
-            <div className={`${!roundTrip ? 'text-ado-selected' : 'text-[#959DB6]'} text-[12px] font-medium font-gotham-pro ml-[10px]`}>{t("oneWay")}</div>
+            <div
+              className={`${!roundTrip ? "text-ado-selected" : "text-[#959DB6]"} text-[12px] font-medium font-gotham-pro ml-[10px]`}>
+              {t("oneWay")}
+            </div>
           </div>
         </div>
 
         {/* Detail Search Card Filter */}
-        <div className='flex justify-between mt-1 items-end md:flex-wrap lg:flex-nowrap'>
-          <div className=' flex justify-between lg:w-[39%] md:w-[100%] ' >
+        <div className="flex justify-between mt-1 items-end md:flex-wrap lg:flex-nowrap">
+          <div className=" flex justify-between lg:w-[39%] md:w-[100%] ">
             <SearchCard
               width={49.5}
               cardName={t("origin")}
@@ -136,7 +143,7 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
             />
           </div>
 
-          <div className=' lg:w-[60%] md:w-[100%] flex justify-between items-end md:mt-[5px]' >
+          <div className=" lg:w-[60%] md:w-[100%] flex justify-between items-end md:mt-[5px]">
             <SearchCalendarCard
               width={42}
               ida={t("ida")}
@@ -159,7 +166,12 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
               passengerValues={passengerValues}
               updatePassengerCount={updatePassengerCount}
             />
-            <Button variant='primary' className='border border-ado-purple' buttonText={t("modifyTrip")} onClick={handleLoad} />
+            <Button
+              variant="primary"
+              className="border border-ado-purple"
+              buttonText={t("modifyTrip")}
+              onClick={handleLoad}
+            />
           </div>
         </div>
 
@@ -210,7 +222,7 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
         </div>*/}
       </div>
     </Container>
-  )
+  );
 }
 
 export default SearchBox;

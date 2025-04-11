@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Card from "@/components/Card";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import rightChevron from "@/assets/svg/right-chevron-purple.svg";
 import goldStarPlusBusIcon from "@/assets/svg/gold-star-plus-bus.svg";
 import terminal from "@/assets/svg/green-terminal.svg";

@@ -6,11 +6,11 @@ import TripCardIda from '../TripCardIda';
 import TripCardRegreso from '../TripCardRegreso';
 
 interface TripCardProps {
-    title: string;
-    date: string;
-    passengers: number;
-    routes: string[];
-    type: 'ida' | 'regreso';
+  title: string;
+  date: string;
+  passengers: number;
+  routes: string[];
+  type: "ida" | "regreso";
 }
 
 const TripCard: React.FC<TripCardProps> = ({ title, date, passengers, routes, type }) => {

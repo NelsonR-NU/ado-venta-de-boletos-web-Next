@@ -186,6 +186,12 @@
     "ex_firstName": "Ej: María",
     "ex_lastName": "Ej: Torres Gómez",
     "select": "Seleccionar",
+    "choose_seats": "Elige tu(s) asiento(s) de {direction}",
+    "selected": "Seleccionado",
+    "not_available": "No disponible",
+    "available": "Disponible",
+    "occupied": "Ocupado",
+    "seats_selected": "Asientos seleccionados",
     "authpopup": {
       "title": "¿Quieres continuar como invitado o iniciar sesión?",
       "content": "Si inicias sesión, podrás seguir y consultar el historial de tus viajes.",
