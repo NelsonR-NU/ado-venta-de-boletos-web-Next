@@ -30,8 +30,8 @@ html {
   }
 
   button {
-    transition: none;
     cursor: pointer;
+    transition: none;
   }
 
   .global-transition div {

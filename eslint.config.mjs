@@ -50,7 +50,7 @@ const eslintConfig = [
 
       "arrow-body-style": ["error", "as-needed"],
       "no-trailing-spaces": "error",
-      "no-unused-vars": "warn",
+      "no-unused-vars": "off",
       "unused-imports/no-unused-imports": "error",
 
       "unused-imports/no-unused-vars": [

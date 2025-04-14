@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import downChevron from "@/assets/svg/downArrow.svg";
-import upChevron from "@/assets/svg/upArrow.svg";
 
 interface DropdownProps {
   options: string[];
@@ -42,30 +41,32 @@ const Dropdown: React.FC<DropdownProps> = ({
         onClick={() => setIsOpen(!isOpen)}>
         {selected || placeholder}
         <Image
-          src={isOpen ? upChevron : downChevron}
+          src={downChevron}
           alt="Dropdown indicator"
           width={15}
           height={15}
-          className="transition-transform duration-200"
+          className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
 
-      {isOpen && (
-        <div
-          className={`absolute w-full mt-2 bg-white shadow-lg rounded-lg max-h-[326px] overflow-y-auto p-5 z-[999]`}>
-          <span className="text-sm font-bold">{title}</span>
-          <div className={`p-2 rounded-lg ${bgColor} ${title ? "mt-5" : ""}`}>
-            {options.map((option, index) => (
-              <div
-                key={index}
-                onClick={() => handleSelect(option)}
-                className={`p-2 ${hoverColor} cursor-pointer rounded`}>
-                <span className={`text-sm ${textColor}`}>{option}</span>
-              </div>
-            ))}
-          </div>
+      <div
+        className={`absolute w-full mt-2 bg-white shadow-lg rounded-lg max-h-[326px] overflow-y-auto z-[999] transition-all duration-300 ease-in-out ${
+          isOpen
+            ? `opacity-100 transform scale-y-100 origin-top`
+            : "opacity-0 transform scale-y-0 origin-top"
+        }`}>
+        <span className="text-sm font-bold">{title}</span>
+        <div className={`p-2 rounded-lg ${bgColor} ${title ? "mt-5" : ""}`}>
+          {options.map((option, index) => (
+            <div
+              key={index}
+              onClick={() => handleSelect(option)}
+              className={`p-2 ${hoverColor} cursor-pointer rounded`}>
+              <span className={`text-sm ${textColor}`}>{option}</span>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 };
