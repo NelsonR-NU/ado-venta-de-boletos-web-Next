@@ -6,8 +6,8 @@ import InfoIcon from "@/assets/svg/information.svg";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Checkbox from "@/components/ui/CheckBox";
-import Link from "next/link";
 import Dropdown from "@/components/ui/Dropdown";
+import { Link } from "@/i18n/routing";
 
 interface PassengerData {
   email: string;
@@ -78,12 +78,9 @@ const PassengerRegistrationForm: React.FC = () => {
       )}
 
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-2">
-        <h2 className="text-lg font-bold mb-4">{t("register_passenger")}</h2>
-        <Link
-          href="#"
-          className="font-bold text-ado-teal text-sm flex items-center gap-2 mt-2 sm:mt-0">
-          {t("what_is_total_assistance")}{" "}
-          <Image src={InfoIcon} alt="Info Icon" width={16} height={16} className="w-4 h-4" />
+        <h2 className="text-lg font-bold">{t("register_passenger")}</h2>
+        <Link href="#" className="font-bold text-ado-teal text-sm flex items-center gap-2 mt-2 sm:mt-0">
+          {t("what_is_total_assistance")} <Image src={InfoIcon} alt="Info Icon" />
         </Link>
       </div>
 

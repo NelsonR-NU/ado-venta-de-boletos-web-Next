@@ -1,16 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+
 import Image from "next/image";
 import Card from "@/components/Card";
 import Button from "@/components/ui/Button";
 import Checkbox from "@/components/ui/CheckBox";
 import rightChevron from "@/assets/svg/right-chevron-purple.svg";
+import { Link } from "@/i18n/routing";
 
-interface PriceSummaryProps {}
+interface PriceSummaryProps {
+  handleClick: () => void
+}
 
-const PriceSummary: React.FC<PriceSummaryProps> = () => {
+const PriceSummary: React.FC<PriceSummaryProps> = ({ handleClick }) => {
   const t = useTranslations("reservationSummary");
   const [priceSummaryCheckboxChecked, setPriceSummaryCheckboxChecked] = useState(false);
 
@@ -65,12 +68,12 @@ const PriceSummary: React.FC<PriceSummaryProps> = () => {
       <Button
         variant="primary"
         disabled={!priceSummaryCheckboxChecked}
-        onClick={() => {}}
+        onClick={() => { }}
         iconPosition="right"
         buttonText={t("continue")}
       />
       <Button
-        onClick={() => {}}
+        onClick={handleClick}
         buttonText={t("purchaseDetail")}
         icon={<Image src={rightChevron} alt="right chevron" />}
         iconPosition="right"

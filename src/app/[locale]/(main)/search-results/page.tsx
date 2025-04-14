@@ -7,7 +7,7 @@ import Container from "@/components/Container/Container";
 import Filter from "@/components/Filter";
 import PromoCard from "@/components/PromoCard";
 import DateSlider from "@/components/HorizontalScrollBar";
-import RegisterFormModal from "@/components/RegisterFormModal";
+import RegisterFormModal from "@/components/Forms/RegisterFormModal";
 import AdoBus from "@/assets/png/adoBus.png";
 import Banner from "@/assets/png/searchBanner.png";
 

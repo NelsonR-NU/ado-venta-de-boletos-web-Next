@@ -44,7 +44,7 @@ const messages = {
 };
 
 const meta = {
-  title: "Components/RegisterFormModal",
+  title: "Forms/RegisterFormModal",
   component: RegisterFormModal,
   parameters: {
     layout: "centered",

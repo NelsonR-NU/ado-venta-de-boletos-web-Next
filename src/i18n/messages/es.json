@@ -233,7 +233,14 @@
     "tripDetails": "Detalles del viaje",
     "discountCoupon": "Cupón de descuento",
     "apply": "Aplicar",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "origin_terminal" : "Terminal origen",
+    "destination_terminal" : "Terminal destino",
+    "close": "Cerrar",
+    "purchase_details": "Detalle compra",
+    "ticket_details": "Detalle boleto",
+    "origen": "Origen",
+    "destination": "Destino"
   },
   "login": {
     "login_text": "Iniciar sesión",
@@ -298,6 +305,10 @@
     "passsager_name_tab": "Nombre",
     "one_way_tab": "Ida",
     "ticket_type_tab": "Tipo",
-    "return_seat_tab": "Regreso"
+    "return_seat_tab": "Regreso",
+    "one_way_trip": "Viaje de ida",
+    "return_trip": "Viaje de regreso",
+    "one_way_assistance": "Asistencia total ida",
+    "return_assistance": "Asistencia total regreso"
   }
 }
