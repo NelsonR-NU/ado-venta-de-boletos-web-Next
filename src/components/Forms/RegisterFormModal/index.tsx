@@ -5,8 +5,8 @@ import Modal from "@/components/Modal";
 import Button from "@/components/ui/Button";
 import InputField from "@/components/ui/Input";
 import { useTranslations } from "next-intl";
-import Checkbox from "../ui/CheckBox";
-import Link from "next/link";
+import Checkbox from "../../ui/CheckBox";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import leftChevron from "@/assets/svg/left-chevron.svg";
 

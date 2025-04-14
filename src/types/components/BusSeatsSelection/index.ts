@@ -4,6 +4,22 @@ export interface Seat {
   asiento: string;
   estatus: string;
   seatId: SeatId;
+  tipo?: string;
+  columna?: number;
+  fila?: number;
+}
+
+export interface BusStructureItem {
+  tipo: string;
+  estatus: string;
+  asiento: number | null;
+  columna: number;
+  fila: number;
+}
+
+export interface BusStructure {
+  filas: number;
+  estructura: BusStructureItem[];
 }
 
 export interface TripInfo {
@@ -39,4 +55,5 @@ export interface BusSeatsProps {
   session: Session;
   setSession: (session: Session) => void;
   quantity?: number;
+  busStructure?: BusStructure | null;
 }

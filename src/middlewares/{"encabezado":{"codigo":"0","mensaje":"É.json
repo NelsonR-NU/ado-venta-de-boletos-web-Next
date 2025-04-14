@@ -1,0 +1,159 @@
+{
+  "encabezado": { "codigo": "0", "mensaje": "Éxito" },
+  "contenido": {
+    "tipoVenta": 12,
+    "cantAsientos": 44,
+    "asientosLibre": 43,
+    "indExcepcionIVA": "0",
+    "intermodalidad": { "tipo": 1, "descripcion": "ADO Conecta", "estatusIntermodalidad": 1 },
+    "autobus": {
+      "filas": 5,
+      "estructura": [
+        { "tipo": "regular", "estatus": "DP", "asiento": 4, "columna": 1, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 3, "columna": 1, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 1, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 2, "columna": 1, "fila": 4 },
+        { "tipo": "regularTV", "estatus": "DP", "asiento": 1, "columna": 1, "fila": 5 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 8, "columna": 2, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 7, "columna": 2, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 2, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 6, "columna": 2, "fila": 4 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 5, "columna": 2, "fila": 5 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 12, "columna": 3, "fila": 1 },
+        { "tipo": "regular", "estatus": "OC", "asiento": 11, "columna": 3, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 3, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 10, "columna": 3, "fila": 4 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 9, "columna": 3, "fila": 5 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 16, "columna": 4, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 15, "columna": 4, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 4, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 14, "columna": 4, "fila": 4 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 13, "columna": 4, "fila": 5 },
+        { "tipo": "regularTV", "estatus": "DP", "asiento": 20, "columna": 5, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 19, "columna": 5, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 5, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 18, "columna": 5, "fila": 4 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 17, "columna": 5, "fila": 5 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 24, "columna": 6, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 23, "columna": 6, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 6, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 22, "columna": 6, "fila": 4 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 21, "columna": 6, "fila": 5 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 28, "columna": 7, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 27, "columna": 7, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 7, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 26, "columna": 7, "fila": 4 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 25, "columna": 7, "fila": 5 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 32, "columna": 8, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 31, "columna": 8, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 8, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 30, "columna": 8, "fila": 4 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 29, "columna": 8, "fila": 5 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 36, "columna": 9, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 35, "columna": 9, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 9, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 34, "columna": 9, "fila": 4 },
+        { "tipo": "regularTV", "estatus": "DP", "asiento": 33, "columna": 9, "fila": 5 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 40, "columna": 10, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 39, "columna": 10, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 10, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 38, "columna": 10, "fila": 4 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 37, "columna": 10, "fila": 5 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 44, "columna": 11, "fila": 1 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 43, "columna": 11, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 11, "fila": 3 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 42, "columna": 11, "fila": 4 },
+        { "tipo": "regular", "estatus": "DP", "asiento": 41, "columna": 11, "fila": 5 },
+        { "tipo": "wc", "estatus": "OC", "asiento": null, "columna": 12, "fila": 1 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 12, "fila": 2 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 12, "fila": 3 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 12, "fila": 4 },
+        { "tipo": "espacio", "estatus": "OC", "asiento": null, "columna": 12, "fila": 5 }
+      ]
+    },
+    "boletos": {
+      "pasajeros": [
+        {
+          "id": 1,
+          "nombre": "Adulto",
+          "descripcion": "Para adultos con identificación oficial.",
+          "descripcionAlerta": "alerta",
+          "precios": [
+            {
+              "total": 914.0,
+              "idTipoBoleto": 1,
+              "iva": 126.07,
+              "asientosDisponibles": 43,
+              "precioSinIVA": 787.93,
+              "nombre": "Precio Normal"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "nombre": "Niño",
+          "descripcion": "Para niños de 5 a 12 años cumplidos.",
+          "descripcionAlerta": "Por seguridad, los menores de 18 años deberán viajar acompañados de un adultoO.",
+          "precios": [
+            {
+              "total": 457.0,
+              "idTipoBoleto": 2,
+              "iva": 63.04,
+              "asientosDisponibles": 20,
+              "precioSinIVA": 393.96,
+              "nombre": "Precio de niño"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "nombre": "INAPAM",
+          "descripcion": "Para adultos mayores con tarjeta INAPAM vigente y original.",
+          "descripcionAlerta": "Alerta",
+          "precios": [
+            {
+              "total": 457.0,
+              "idTipoBoleto": 3,
+              "iva": 63.04,
+              "asientosDisponibles": 6,
+              "precioSinIVA": 393.96,
+              "nombre": "Precio de INAPAM"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "nombre": "Alumno",
+          "descripcion": "Para alumnos con credencial escolar vigente y sello de ciclo en curso.",
+          "descripcionAlerta": "Solo aplica en periodo vacacional",
+          "precios": [
+            {
+              "total": 457.0,
+              "idTipoBoleto": 4,
+              "iva": 63.04,
+              "asientosDisponibles": 8,
+              "precioSinIVA": 393.96,
+              "nombre": "Precio de Alumno"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "nombre": "Maestro",
+          "descripcion": "Para maestros con credencial vigente y acreditación de la SEP, UNAM o IPN.",
+          "descripcionAlerta": "Descripción de alerta",
+          "precios": [
+            {
+              "total": 685.5,
+              "idTipoBoleto": 5,
+              "iva": 94.56,
+              "asientosDisponibles": 2,
+              "precioSinIVA": 590.94,
+              "nombre": "Precio de Maestro"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

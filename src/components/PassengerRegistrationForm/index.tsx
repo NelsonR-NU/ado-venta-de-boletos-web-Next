@@ -6,8 +6,8 @@ import InfoIcon from "@/assets/svg/information.svg";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Checkbox from "@/components/ui/CheckBox";
-import Link from "next/link";
 import Dropdown from "@/components/ui/Dropdown";
+import { Link } from "@/i18n/routing";
 
 interface PassengerData {
   email: string;

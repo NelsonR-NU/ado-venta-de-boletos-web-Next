@@ -19,27 +19,22 @@ const Checkbox: React.FC<CheckboxProps> = ({
   name,
   defaultChecked = false,
 }) => {
-  // Internal state for uncontrolled mode
   const [internalChecked, setInternalChecked] = useState(defaultChecked);
 
-  // Sync with external state if provided
   useEffect(() => {
     if (checked !== undefined) {
       setInternalChecked(checked);
     }
   }, [checked]);
 
-  // Determine if component is controlled or uncontrolled
   const isControlled = checked !== undefined;
   const isChecked = isControlled ? checked : internalChecked;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // In uncontrolled mode, update internal state
     if (!isControlled) {
       setInternalChecked(event.target.checked);
     }
 
-    // Always call external onChange if provided
     if (onChange) {
       onChange(event);
     }
@@ -49,9 +44,26 @@ const Checkbox: React.FC<CheckboxProps> = ({
     <FormControlLabel
       control={
         <MuiCheckbox
+          disableRipple
           sx={{
             color: "#6B7280",
+            cursor: "pointer",
             "&.Mui-checked": { color: "#6B21A8" },
+            "&:hover": {
+              color: "#6B7280CC",
+              "&.Mui-checked": { color: "#6B21A8CC" },
+            },
+            "& .MuiTouchRipple-root": {
+              display: "none",
+            },
+            "&.MuiCheckbox-root:hover": {
+              backgroundColor: "transparent",
+              cursor: "pointer",
+            },
+            "&.Mui-focusVisible": {
+              outline: "none",
+              boxShadow: "none",
+            },
           }}
           checked={isChecked}
           onChange={handleChange}

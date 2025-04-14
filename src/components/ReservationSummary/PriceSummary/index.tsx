@@ -1,12 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+
 import Image from "next/image";
 import Card from "@/components/Card";
 import Button from "@/components/ui/Button";
 import Checkbox from "@/components/ui/CheckBox";
 import rightChevron from "@/assets/svg/right-chevron-purple.svg";
+import { Link } from "@/i18n/routing";
 
 interface PriceSummaryProps {}
 

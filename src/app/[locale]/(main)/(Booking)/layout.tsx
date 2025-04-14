@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import ReservationSummary from "@/components/ReservationSummary";
 import Container from "@/components/Container/Container";
+import { Locale } from "@/types/common/locale";
 
 export default async function BookingLayout({
   children,
@@ -11,9 +12,7 @@ export default async function BookingLayout({
   params: { locale: string };
 }>) {
   const { locale } = await params;
-
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

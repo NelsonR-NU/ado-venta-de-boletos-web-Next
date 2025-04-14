@@ -41,7 +41,7 @@ const messages = {
 };
 
 const meta = {
-  title: "Components/LoginFormModal",
+  title: "Forms/LoginFormModal",
   component: LoginFormModal,
   parameters: {
     layout: "centered",

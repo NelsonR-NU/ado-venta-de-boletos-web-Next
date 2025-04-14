@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 import InputField from "@/components/ui/Input";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import RegisterFormModal from "@/components/RegisterFormModal";
+import RegisterFormModal from "@/components/Forms/RegisterFormModal";
 
 const LoginFormModal: React.FC = () => {
   const t = useTranslations("login");
