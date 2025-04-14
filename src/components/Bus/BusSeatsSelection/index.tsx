@@ -1,12 +1,17 @@
-import React, { FC, useEffect, useState } from "react";
+import React from "react";
+import { FC, useEffect, useState } from "react";
 import "react-loading-skeleton/dist/skeleton.css";
-import { BusSeatsProps, Seat } from "@/types/components/BusSeatsSelection";
+import { BusSeatsProps, Seat, TripInfo } from "@/types/components/BusSeatsSelection";
 import { useTranslations } from "next-intl";
 import { convertServerStructureToSeats, findTVPositions } from "@/utils/busStructureHelper";
 import BusHeader from "@/components/Bus/BusHeader/BusHeader";
 import SeatLegend from "@/components/Bus/SeatsLegend/SeatLegend";
 import BusLayout from "@/components/Bus/BusLayout/BusLayout";
-import { TVInfo } from "@/types/components/BusSeatsSelection/SeatsGrid/SeatsGrid";
+
+const dataMap = {
+  salida: "salida",
+  regreso: "regreso",
+} as const;
 
 const BusSeatsSelection: FC<BusSeatsProps> = ({
   activeTab,
@@ -16,84 +21,101 @@ const BusSeatsSelection: FC<BusSeatsProps> = ({
   session,
   setSession,
   quantity = 2,
+  // New prop to receive the bus structure from server
   busStructure = null,
 }) => {
-  const [busSeats, setBusSeats] = useState<Record<string, Seat[]>>({});
+  const [busSeats, setBusSeats] = useState<Record<string, Seat[]>>();
   const [isLoading, setIsLoading] = useState(true);
-  const [tvInfo, setTvInfo] = useState<TVInfo>({
-    columns: [],
-    positions: {},
-    tvColumnMappings: {},
-    tvPositionsInExpandedGrid: {},
-  });
-
+  const [tvInfo, setTvInfo] = useState<{
+    columns: number[];
+    positions: Record<number, number[]>;
+    tvColumnMappings: Record<number, number>;
+    tvPositionsInExpandedGrid: Record<number, number[]>;
+  }>({ columns: [], positions: {}, tvColumnMappings: {}, tvPositionsInExpandedGrid: {} });
   const [localSelectedSeats, setLocalSelectedSeats] = useState<
     Record<string, Array<{ seatNumber: number; seatId: string }>>
   >({
     salida: [],
     regreso: [],
   });
-
   const t = useTranslations("booking");
-  const trip = activeTab;
+
+  const trip = dataMap[activeTab];
+  // Get the translation key for the direction based on activeTab
   const tripDirection = activeTab === "salida" ? t("departure") : t("return");
 
-  // Sync selected seats with tripInfo
   useEffect(() => {
+    const salidaSeats = tripInfo?.salida?.selectedSeats;
+    const regresoSeats = tripInfo?.regreso?.selectedSeats;
+
     setLocalSelectedSeats({
-      salida: tripInfo?.salida?.selectedSeats || [],
-      regreso: tripInfo?.regreso?.selectedSeats || [],
+      salida: salidaSeats || [],
+      regreso: regresoSeats || [],
     });
   }, [tripInfo]);
 
-  // Process bus structure and load seats
   useEffect(() => {
-    const loadBusSeats = async () => {
-      if (!busStructure || busSeats[trip]) return;
-
+    const fetchBusSeats = async () => {
       setIsLoading(true);
       try {
-        // Process the bus structure
-        const seats = convertServerStructureToSeats(busStructure);
-        const tvPositions = findTVPositions(busStructure);
-        setTvInfo(tvPositions);
+        if (busStructure) {
+          // Process the bus structure from server
+          const seats = convertServerStructureToSeats(busStructure);
+          const { columns, positions, tvColumnMappings, tvPositionsInExpandedGrid } =
+            findTVPositions(busStructure);
 
-        // Mark seats that are already selected
-        const updatedSeats = seats.map((seat) => ({
-          ...seat,
-          estatus: localSelectedSeats[trip]?.some((s) => s.seatNumber === parseInt(seat.asiento))
-            ? "SE"
-            : seat.estatus,
-        }));
+          setTvInfo({ columns, positions, tvColumnMappings, tvPositionsInExpandedGrid });
 
-        setBusSeats((prev) => ({ ...prev, [trip]: updatedSeats }));
-      } catch {
-        setIsLoading(false);
+          // Mark seats that are already selected as "SE"
+          const updatedSeats = seats.map((seat) => {
+            const isSelected = localSelectedSeats[trip]?.some(
+              (s) => s.seatNumber === parseInt(seat.asiento)
+            );
+            return {
+              ...seat,
+              estatus: isSelected ? "SE" : seat.estatus,
+            };
+          });
+
+          setBusSeats({ ...busSeats, [trip]: updatedSeats });
+        }
       } finally {
         setIsLoading(false);
       }
     };
 
-    loadBusSeats();
-  }, [trip, busStructure, busSeats, localSelectedSeats]);
+    if (!busSeats?.[trip]) fetchBusSeats();
+  }, [activeTab, trip, busSeats, localSelectedSeats, busStructure]);
 
   const handleSeatSelection = (seat: Seat) => {
     if (seat.estatus === "OC") return;
 
+    // Start the timer when a seat is selected
     setSession({ ...session, startTimer: true });
 
     const currentTrip = tripInfo[trip] || { idCorrida: "" };
     const seatNumber = parseInt(seat.asiento);
+
     const selectedSeats = [...localSelectedSeats[trip]];
+
+    // Check if the seat is already selected
     const seatIndex = selectedSeats.findIndex((s) => s.seatId === seat.seatId);
     const isSelected = seatIndex !== -1;
 
+    // Initialize the updated selected seats array
     let updatedSelectedSeats: Array<{ seatNumber: number; seatId: string }>;
 
     if (quantity === 1) {
-      updatedSelectedSeats = isSelected ? [] : [{ seatNumber, seatId: seat.seatId }];
-    } else {
       if (isSelected) {
+        updatedSelectedSeats = [];
+      } else {
+        // If clicking a different seat, select it and unselect any previous seat
+        updatedSelectedSeats = [{ seatNumber, seatId: seat.seatId }];
+      }
+    } else {
+      // Multiple seat selection mode
+      if (isSelected) {
+        // If clicking an already selected seat, unselect it
         updatedSelectedSeats = selectedSeats.filter((s) => s.seatId !== seat.seatId);
       } else if (selectedSeats.length < quantity) {
         updatedSelectedSeats = [...selectedSeats, { seatNumber, seatId: seat.seatId }];
@@ -107,10 +129,12 @@ const BusSeatsSelection: FC<BusSeatsProps> = ({
       [trip]: updatedSelectedSeats,
     });
 
-    const selectedSeat = updatedSelectedSeats[0]?.seatNumber;
-    const seatId = updatedSelectedSeats[0]?.seatId;
+    const selectedSeat =
+      updatedSelectedSeats.length > 0 ? updatedSelectedSeats[0].seatNumber : undefined;
+    const seatId = updatedSelectedSeats.length > 0 ? updatedSelectedSeats[0].seatId : undefined;
 
-    setTripInfo({
+    // Update tripInfo with the selected seat(s)
+    const updatedTripInfo = {
       ...tripInfo,
       [trip]: {
         ...currentTrip,
@@ -118,22 +142,37 @@ const BusSeatsSelection: FC<BusSeatsProps> = ({
         seatId,
         selectedSeats: updatedSelectedSeats,
       },
-    });
+    };
 
-    if (trip === "salida" && !tripInfo.regreso?.selectedSeat && updatedSelectedSeats.length > 0) {
+    setTripInfo(updatedTripInfo);
+
+    if (
+      activeTab === "salida" &&
+      !tripInfo.regreso?.selectedSeat &&
+      updatedSelectedSeats.length > 0
+    ) {
       setActiveTab("regreso");
     }
 
-    if (busSeats[trip]) {
+    // Update the seat status in busSeats
+    if (busSeats?.[trip]) {
       const updatedSeats = busSeats[trip].map((s) => {
+        // Create a copy of the seat
+        const seatCopy = { ...s };
+
+        // Check if this seat is in the updated selection
         const isSeatSelected = updatedSelectedSeats.some(
           (selected) => selected.seatId === s.seatId
         );
 
-        return {
-          ...s,
-          estatus: isSeatSelected ? "SE" : s.estatus === "SE" ? "DI" : s.estatus,
-        };
+        if (isSeatSelected) {
+          seatCopy.estatus = "SE";
+        } else if (seatCopy.estatus === "SE") {
+          // Only reset if it was previously selected
+          seatCopy.estatus = "DI";
+        }
+
+        return seatCopy;
       });
 
       setBusSeats({
@@ -143,23 +182,36 @@ const BusSeatsSelection: FC<BusSeatsProps> = ({
     }
   };
 
-  const getSelectedSeat = (asiento: string) =>
-    localSelectedSeats[trip]?.some((s) => s.seatNumber === parseInt(asiento)) || false;
+  const getSelectedSeat = (asiento: string) => {
+    if (localSelectedSeats[trip]?.some((s) => s.seatNumber === parseInt(asiento))) {
+      return true;
+    }
+
+    const currentTrip = tripInfo[trip];
+    if (currentTrip?.selectedSeats?.some((s) => s.seatNumber === parseInt(asiento))) {
+      return true;
+    }
+
+    return (
+      currentTrip?.selectedSeat === parseInt(asiento) ||
+      busSeats?.[trip]?.find((s) => s.asiento === asiento)?.estatus === "SE"
+    );
+  };
 
   const selectedSeatsCount = localSelectedSeats[trip]?.length || 0;
 
   return (
-    <div className="w-full flex flex-col gap-4">
-      <BusHeader tripInfo={tripInfo} tripDirection={tripDirection} />
+    <div className="w-full flex flex-col gap-4 p-5">
+      <BusHeader tripDirection={tripDirection} />
       <SeatLegend quantity={quantity} selectedSeatsCount={selectedSeatsCount} />
       <BusLayout
         isLoading={isLoading}
-        seats={busSeats[trip]}
+        seats={busSeats?.[trip]}
         busStructure={busStructure}
         checkIfSelected={getSelectedSeat}
         quantity={quantity}
-        tripInfo={tripInfo}
-        trip={trip}
+        tripInfo={tripInfo as TripInfo}
+        trip={trip as "salida" | "regreso"}
         handleSeatSelection={handleSeatSelection}
         tvInfo={tvInfo}
       />

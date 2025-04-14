@@ -75,7 +75,7 @@ const visualReferenceMock: BusStructure = {
     { tipo: "regular", estatus: "DP", asiento: 9, columna: 3, fila: 5 },
 
     // Column 4 - R16, R15, X, R14, R13
-    { tipo: "regular", estatus: "DP", asiento: 16, columna: 4, fila: 1 },
+    { tipo: "regularTV", estatus: "DP", asiento: 16, columna: 4, fila: 1 },
     { tipo: "regular", estatus: "DP", asiento: 15, columna: 4, fila: 2 },
     { tipo: "espacio", estatus: "OC", asiento: null, columna: 4, fila: 3 },
     { tipo: "regular", estatus: "OC", asiento: 14, columna: 4, fila: 4 },

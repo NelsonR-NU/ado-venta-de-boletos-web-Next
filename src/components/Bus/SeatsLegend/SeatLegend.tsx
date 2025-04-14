@@ -1,6 +1,10 @@
 import React from "react";
 import { useTranslations } from "next-intl";
-import { SeatLegendProps } from "@/types/components/BusSeatsSelection/SeatLegend";
+
+interface SeatLegendProps {
+  quantity?: number;
+  selectedSeatsCount: number;
+}
 
 const SeatLegend: React.FC<SeatLegendProps> = ({ quantity = 1, selectedSeatsCount }) => {
   const t = useTranslations("booking");

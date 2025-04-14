@@ -1,7 +1,10 @@
 import React from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { formatCurrentDate } from "@/utils/date";
-import { BusHeaderProps } from "@/types/components/BusSeatsSelection/BusHeader";
+
+interface BusHeaderProps {
+  tripDirection: string;
+}
 
 const BusHeader: React.FC<BusHeaderProps> = ({ tripDirection }) => {
   const t = useTranslations("booking");
