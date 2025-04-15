@@ -7,45 +7,51 @@ import { NextIntlClientProvider } from "next-intl";
 
 // Define message types for the messages object
 type ReservationSummaryMessages = {
-  reservationSummary: {
-    oneWayTrip: string;
-    returnTrip: string;
-    tripDetails: string;
-    purchaseSummary: string;
-    total: string;
-    includesTax: string;
-    accordingTo: string;
-    termsAndConditions: string;
-    asWellAs: string;
-    privacyNotice: string;
-    continue: string;
-    purchaseDetail: string;
-    discountCoupon: string;
-    apply: string;
+  reservation_summary: {
+    one_way_trip: string;
+    return_trip: string;
     tax: string;
-    totalAssitance: string;
+    purchase_summary: string;
+    total: string;
+    includes_tax: string;
+    according_to: string;
+    as_well_as: string;
+    terms_and_conditions: string;
+    privacy_notice: string;
+    purchase_detail: string;
+    trip_details: string;
+    discount_coupon: string;
+    apply: string;
+    continue: string;
+    total_assitance: string;
+    origin_terminal: string;
+    destination_terminal: string;
+    close: string;
   };
 };
 
 // Mock translations needed for nested components
 const messages: ReservationSummaryMessages = {
-  reservationSummary: {
-    oneWayTrip: "One-way Trip",
-    returnTrip: "Return Trip",
-    tripDetails: "Trip Details",
-    purchaseSummary: "Purchase Summary",
-    total: "Total",
-    includesTax: "Includes Tax",
-    accordingTo: "According to ",
-    termsAndConditions: "Terms and Conditions",
-    asWellAs: " as well as the ",
-    privacyNotice: "Privacy Notice",
-    continue: "Continue",
-    purchaseDetail: "Purchase Details",
-    discountCoupon: "Discount Coupon",
-    apply: "Apply",
+  reservation_summary: {
+    one_way_trip: "One-way Trip",
+    return_trip: "Return Trip",
     tax: "Tax",
-    totalAssitance: "Total Assistance",
+    purchase_summary: "Purchase Summary",
+    total: "Total",
+    includes_tax: "Includes Tax",
+    according_to: "According to the",
+    as_well_as: "as well as the",
+    terms_and_conditions: "Terms and Conditions",
+    privacy_notice: "Privacy Notice",
+    purchase_detail: "Purchase details",
+    trip_details: "Trip details",
+    discount_coupon: "Discount coupon",
+    apply: "Apply",
+    continue: "Continue",
+    total_assitance: "Total Assistance",
+    origin_terminal: "Origin terminal",
+    destination_terminal: "Destination terminal",
+    close: "Close",
   },
 };
 

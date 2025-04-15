@@ -1,19 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import InputField from "@/components/ui/Input";
 import Card from "@/components/Card";
 import Button from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
 
-interface AddCouponCardProps {}
-
-const AddCouponCard: React.FC<AddCouponCardProps> = () => {
+const AddCouponCard: FC = () => {
   const t = useTranslations("reservationSummary");
   const [couponCode, setCouponCode] = useState<string>("");
 
   const handleApplyCoupon = () => {
     //TODO: Add the Logic to apply the coupon code
-    console.log("Applying coupon code:", couponCode);
   };
 
   return (

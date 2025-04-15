@@ -11,15 +11,15 @@ import Button from "@/components/ui/Button";
 import SearchCalendarCard from "../SearchCalendarCard";
 
 function SearchBox({ handleLoad }: { handleLoad: () => void }) {
-  const t = useTranslations("searchResults");
+  const t = useTranslations("search_results");
 
   const [roundTrip, setRoundTrip] = useState(true);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   // State to manage selected values for each SearchCard
   const [searchValues, setSearchValues] = useState({
-    Origin: t("dummyValueOne"),
-    Destination: t("dummyValueTwo"),
+    Origin: t("dummy_value_one"),
+    Destination: t("dummy_value_two"),
     Passengers: t("adult"),
   });
 
@@ -49,7 +49,7 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
       [t("passengers")]: "Passengers",
     };
 
-    const mappedKey = keyMap[cardName] || cardName; // Fallback to original if not found
+    const mappedKey = keyMap[cardName] || cardName;
 
     setSearchValues((prev) => ({ ...prev, [mappedKey]: value }));
     setOpenDropdown(null);
@@ -70,7 +70,7 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
 
     setPassengerValues((prev) => ({
       ...prev,
-      [mappedKey]: Math.max(0, prev[mappedKey] + delta), // Ensure count doesn't go below 0
+      [mappedKey]: Math.max(0, prev[mappedKey] + delta),
     }));
 
     // setPassengerValues(prev => ({
@@ -79,7 +79,6 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
     // }));
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -103,7 +102,7 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
             <Image src={SelectedBus} alt="Bus Icon" />
             <div
               className={`${roundTrip ? "text-ado-selected" : "text-[#959DB6]"} text-[12px] font-medium font-gotham-pro ml-[10px]`}>
-              {t("roundTrip")}
+              {t("round_trip")}
             </div>
           </div>
           <div className="h-[20px] border-l-2 border-[#E3E7F2]"></div>
@@ -113,7 +112,7 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
             <Image src={UnSelectedBus} alt="Bus Icon" />
             <div
               className={`${!roundTrip ? "text-ado-selected" : "text-[#959DB6]"} text-[12px] font-medium font-gotham-pro ml-[10px]`}>
-              {t("oneWay")}
+              {t("one_way")}
             </div>
           </div>
         </div>
@@ -169,7 +168,7 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
             <Button
               variant="primary"
               className="border border-ado-purple"
-              buttonText={t("modifyTrip")}
+              buttonText={t("modify_trip")}
               onClick={handleLoad}
             />
           </div>
@@ -218,7 +217,7 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
             passengerValues={passengerValues}
             updatePassengerCount={updatePassengerCount}
           />
-          <Button variant='primary' className='border border-ado-purple' buttonText={t("modifyTrip")} />
+          <Button variant='primary' className='border border-ado-purple' buttonText={t("modify_trip")} />
         </div>*/}
       </div>
     </Container>

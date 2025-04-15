@@ -79,7 +79,9 @@ const PassengerRegistrationForm: React.FC = () => {
 
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-2">
         <h2 className="text-lg font-bold">{t("register_passenger")}</h2>
-        <Link href="#" className="font-bold text-ado-teal text-sm flex items-center gap-2 mt-2 sm:mt-0">
+        <Link
+          href="#"
+          className="font-bold text-ado-teal text-sm flex items-center gap-2 mt-2 sm:mt-0">
           {t("what_is_total_assistance")} <Image src={InfoIcon} alt="Info Icon" />
         </Link>
       </div>

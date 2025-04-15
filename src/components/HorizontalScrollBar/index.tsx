@@ -55,7 +55,7 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [selectedDate, setSelectedDate] = useState<DateInfo | null>(null);
   const [showArrows, setShowArrows] = useState<boolean>(window.innerWidth > 640);
-  const t = useTranslations("searchResults");
+  const t = useTranslations("search_results");
 
   useLayoutEffect(() => {
     const handleResize = () => {
@@ -74,7 +74,7 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
         currentElement.scrollIntoView({ behavior: "smooth", inline: "center" });
       }
     }
-  }, []);
+  }, [dates]);
 
   const handleSelectDate = (index: number, day: string, date: number) => {
     if (dates[index].past) return;

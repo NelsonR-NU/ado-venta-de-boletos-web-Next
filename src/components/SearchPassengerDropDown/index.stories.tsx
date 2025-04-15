@@ -35,17 +35,17 @@ const SearchPassengerDropDownWrapper = () => {
 // Mock translations
 const messages = {
   searchResults: {
-    whoTravels: "Who travels?",
+    who_travels: "Who travels?",
     adults: "Adult",
-    adultDescription: "12+ years old",
+    adult_description: "12+ years old",
     teacher: "Teacher",
-    teacherDescription: "With valid credential",
+    teacher_description: "With valid credential",
     children: "Child",
-    childrenDescription: "3-11 years old",
+    children_description: "3-11 years old",
     student: "Student",
-    studentDescription: "With valid student ID",
+    student_description: "With valid student ID",
     inapam: "INAPAM",
-    inapamDescription: "National Institute for Older Persons",
+    inapam_description: "National Institute for Older Persons",
     ready: "Ready",
   },
 };
