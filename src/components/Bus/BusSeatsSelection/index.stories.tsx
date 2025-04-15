@@ -4,7 +4,7 @@ import { BusStructure, Session, TripInfo } from "@/types/components/BusSeatsSele
 import { Story } from "@/types/common/storybook";
 import { withNextIntl } from "@/storybook/decorators";
 import { fn } from "@storybook/test";
-import { findTVPositions } from "@/utils/busStructureHelper";
+import { findTVPositions } from "@/utils/busStructure";
 
 const meta = {
   title: "Components/Bus Seats Selection",

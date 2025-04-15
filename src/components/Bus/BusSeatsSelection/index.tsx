@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import { BusSeatsProps, Seat } from "@/types/components/BusSeatsSelection";
 import { useTranslations } from "next-intl";
-import { convertServerStructureToSeats, findTVPositions } from "@/utils/busStructureHelper";
+import { convertServerStructureToSeats, findTVPositions } from "@/utils/busStructure";
 import BusHeader from "@/components/Bus/BusHeader/BusHeader";
 import SeatLegend from "@/components/Bus/SeatsLegend/SeatLegend";
 import BusLayout from "@/components/Bus/BusLayout/BusLayout";
