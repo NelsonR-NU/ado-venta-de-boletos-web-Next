@@ -1,31 +1,22 @@
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import ClientProvider from "@/business-logic/provider";
 import { Locale } from "@/types/common/locale";
+import Providers from "@/providers";
+import { ReactNode } from "react";
 
 type RootLayoutProps = {
-  children: React.ReactNode;
-  params: {
+  children: ReactNode;
+  params: Promise<{
     locale: Locale;
-  };
+  }>;
 };
 
-export default async function RootLayout({ children, params }: RootLayoutProps) {
+export default async function LocaleLayout({ children, params }: RootLayoutProps) {
   const { locale } = await params;
 
   if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  const messages = await getMessages();
-
-  return (
-    <ClientProvider>
-      <NextIntlClientProvider messages={messages} locale={locale}>
-        {children}
-      </NextIntlClientProvider>
-    </ClientProvider>
-  );
+  return <Providers locale={locale}>{children}</Providers>;
 }
