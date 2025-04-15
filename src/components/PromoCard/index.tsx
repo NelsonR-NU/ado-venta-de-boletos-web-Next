@@ -14,11 +14,11 @@ type PromoCardProps = {
 };
 
 const PromoCard: React.FC<PromoCardProps> = ({
-  imageUrl,
+  //imageUrl,
   bannerTitle,
   bannerDescription,
   btnText,
-  btnColor,
+  //btnColor,
   showImage = true,
   handlePromotionAction,
 }) => (

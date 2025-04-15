@@ -24,8 +24,8 @@ const SearchResults: React.FC = () => {
 
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
 
-  const tHome = useTranslations("searchResults");
-  const tSearchResults = useTranslations("searchResults");
+  const tHome = useTranslations("search_results");
+  const tSearchResults = useTranslations("search_results");
 
   const handleDateChange = (date: FilterData) => setSelectedDate(date);
 

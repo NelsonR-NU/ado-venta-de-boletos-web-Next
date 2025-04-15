@@ -10,7 +10,7 @@ import rightChevron from "@/assets/svg/right-chevron-purple.svg";
 import { Link } from "@/i18n/routing";
 
 interface PriceSummaryProps {
-  handleClick: () => void
+  handleClick: () => void;
 }
 
 const PriceSummary: React.FC<PriceSummaryProps> = ({ handleClick }) => {
@@ -19,45 +19,46 @@ const PriceSummary: React.FC<PriceSummaryProps> = ({ handleClick }) => {
 
   return (
     <Card>
-      <div className="text-black">{t("purchaseSummary")}</div>
-      <div className="flex flex-col gap-4">
-        <div className="flex justify-between items-center">
-          <div className="text-sm">{t("oneWayTrip")}</div>
-          <div>$ 840.00 MXN</div>
-        </div>
-        <div className="flex justify-between">
-          <div className="text-sm">{t("returnTrip")}</div>
-          <div>$ 840.00 MXN</div>
-        </div>
-        <div className="flex justify-between">
-          <div className="text-sm">{t("tax")}</div>
-          <div>$ 840.00 MXN</div>
-        </div>
-        <div className="flex justify-between">
-          <div className="text-sm">
-            <b>(2)</b> {t("totalAssitance")}
-          </div>
-          <div>$ 840.00 MXN</div>
-        </div>
+      <div className="flex justify-between items-start mb-4">
+        <div className="text-black">{t("purchase_summary")}</div>
       </div>
-      <div className="border-t border-ado-neutral-light" />
-      <div className="flex justify-between items-center">
-        <div className="flex flex-col">
-          <div className="">{t("total")}</div>
-          <div className="text-xs">({t("includesTax")})</div>
+      <div className="flex justify-between mb-1">
+        <div className="text-sm">{t("one_way_trip")}</div>
+        <div className="text-sm">$1,092.00</div>
+      </div>
+      <div className="flex justify-between mb-2">
+        <div className="text-sm">{t("return_trip")}</div>
+        <div className="text-sm">$1,092.00</div>
+      </div>
+      <hr className="border-t border-dashed border-gray-300 mb-2" />
+      <div className="flex justify-between mb-1">
+        <div className="text-sm">{t("tax")}</div>
+        <div className="text-sm">$196.00</div>
+      </div>
+      <div className="flex justify-between mb-4">
+        <div className="text-sm">
+          <b>(2)</b> {t("total_assitance")}
         </div>
-        <div className="text-lg font-bold text-ado-purple">$ 840.00 MXN</div>
+        <div className="text-sm">$1,000.00</div>
+      </div>
+      <hr className="border-t border-gray-300 mb-4" />
+      <div className="flex justify-between mb-1">
+        <div className="font-bold">TOTAL</div>
+        <div className="flex flex-col items-end">
+          <div className="font-bold">$3,380.00</div>
+          <div className="text-xs">({t("includes_tax")})</div>
+        </div>
       </div>
       <Checkbox
         label={
           <p className="text-sm">
-            {t("accordingTo")}
+            {t("according_to")}
             <Link href="/terminos-y-condiciones" className="text-ado-purple font-bold">
-              {` ${t("termsAndConditions")} `}
+              {` ${t("terms_and_conditions")} `}
             </Link>
-            {t("asWellAs")}
+            {t("as_well_as")}
             <Link href="/aviso-de-privacidad" className="text-ado-purple font-bold">
-              {` ${t("privacyNotice")}`}
+              {` ${t("privacy_notice")}`}
             </Link>
           </p>
         }
@@ -68,13 +69,13 @@ const PriceSummary: React.FC<PriceSummaryProps> = ({ handleClick }) => {
       <Button
         variant="primary"
         disabled={!priceSummaryCheckboxChecked}
-        onClick={() => { }}
+        onClick={() => {}}
         iconPosition="right"
         buttonText={t("continue")}
       />
       <Button
         onClick={handleClick}
-        buttonText={t("purchaseDetail")}
+        buttonText={t("purchase_detail")}
         icon={<Image src={rightChevron} alt="right chevron" />}
         iconPosition="right"
         buttonStyle="outline"

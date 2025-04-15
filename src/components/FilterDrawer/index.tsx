@@ -20,7 +20,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
 
   const [selectedFilters, setSelectedFilters] = React.useState<Record<string, boolean>>({});
 
-  const t = useTranslations("searchResults");
+  const t = useTranslations("search_results");
 
   const sourceTerminal = t.raw("filter_content.source_terminal_type") as Record<string, string>;
   const tripTypes = t.raw("filter_content.by_type_of_trip_type") as Record<
@@ -36,7 +36,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
   };
 
   const handleApplyFilters = () => {
-    console.log("Selected Filters:", selectedFilters);
+    // TODO: Implement apply filters
   };
 
   const handlePriceChange = (_event: Event, newValue: number | number[]) => {
@@ -60,7 +60,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
               <div className="bg-ado-bg-gray p-5 rounded-lg shadow-md border flex-col">
                 <h2 className="text-lg font-semibold pb-2">{t("filter_content.by_promotion")}</h2>
                 <Checkbox
-                  onChange={(e) => handleCheckboxChange("discount")}
+                  onChange={() => handleCheckboxChange("discount")}
                   label={t("filter_content.by_promotion_type.discount")}
                 />
               </div>
