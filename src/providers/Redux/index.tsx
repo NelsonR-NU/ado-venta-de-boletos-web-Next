@@ -1,10 +1,10 @@
 "use client";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { persistor, store } from "../store/store";
+import { persistor, store } from "../../business-logic/store/store";
 import { FC, ReactNode } from "react";
 
-const ClientProvider: FC<{
+const RTKProvider: FC<{
   children: ReactNode;
 }> = ({ children }) => (
   <Provider store={store}>
@@ -14,4 +14,4 @@ const ClientProvider: FC<{
   </Provider>
 );
 
-export default ClientProvider;
+export default RTKProvider;
