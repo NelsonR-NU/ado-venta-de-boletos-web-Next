@@ -21,23 +21,26 @@ interface SearchCardProps {
     Teacher: number;
     Student: number;
   };
+  handlePassengersSelection?: () => void;
 }
 
-function SearchCard({
+const SearchCard: React.FC<SearchCardProps> = ({
   width,
   cardName,
   value,
   isOpen,
   isPassenger,
   toggleDropdown,
+  dropdownContent,
   onSelect,
   updatePassengerCount,
   passengerValues,
-}: SearchCardProps) {
+  handlePassengersSelection,
+}) => {
   const recentearches = ["Mérida Centro Histórico, Mér.", "Oaxaca de Juárez, Oax."];
   const originTerminals = ["Campeche", "Chiapas", "Ciudad de México", "Guerrero"];
 
-  const handleSelection = () => onSelect?.(cardName, value);
+  const handleSelection = (cardName: string, value: string) => onSelect?.(cardName, value);
 
   return (
     <div className="relative" style={{ width: `${width}%` }}>
@@ -65,10 +68,11 @@ function SearchCard({
         <SearchPassengerDropDown
           updatePassengerCount={updatePassengerCount}
           passengerValues={passengerValues}
+          handlePassengersSelection={handlePassengersSelection}
         />
       )}
     </div>
   );
-}
+};
 
 export default SearchCard;

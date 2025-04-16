@@ -10,12 +10,22 @@ import { DateRange } from "@mui/x-date-pickers-pro/models";
 import dayjs, { Dayjs } from "dayjs";
 import "dayjs/locale/es";
 
-function Calendar() {
+interface CalendarProps {
+  handleDateSelection: (sDate: Date, eDate: Date) => void;
+}
+
+const Calendar: React.FC<CalendarProps> = ({handleDateSelection}) => {
   const locale = useLocale();
 
   const [selectedDateRange, setSelectedDateRange] = useState<DateRange<Dayjs>>([null, null]);
 
-  const handleDateChange = (newValue: DateRange<Dayjs>) => setSelectedDateRange(newValue);
+  const handleDateChange = (newValue: DateRange<Dayjs>) => {
+    setSelectedDateRange(newValue);
+    const [startDate, endDate] = newValue;
+    if (startDate && endDate) {
+      handleDateSelection(startDate.toDate(), endDate.toDate());
+    }
+  };
 
   const dayJsLocale = locale || "en";
 
@@ -87,6 +97,6 @@ function Calendar() {
       </LocalizationProvider>
     </>
   );
-}
+};
 
 export default Calendar;

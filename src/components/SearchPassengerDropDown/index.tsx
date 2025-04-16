@@ -10,7 +10,7 @@ import Button from "@/components/ui/Button";
 
 type PassengerType = "Adult" | "Child" | "INAPAM" | "Teacher" | "Student";
 
-interface SearchPassengerDropDown {
+interface SearchPassengerDropDownProps {
   updatePassengerCount?: (type: PassengerType, delta: number) => void;
   passengerValues?: {
     Adult: number;
@@ -19,12 +19,14 @@ interface SearchPassengerDropDown {
     Teacher: number;
     Student: number;
   };
+  handlePassengersSelection?: () => void;
 }
 
-function SearchPassengerDropDown({
+const SearchPassengerDropDown: React.FC<SearchPassengerDropDownProps> = ({
   updatePassengerCount,
   passengerValues,
-}: SearchPassengerDropDown) {
+  handlePassengersSelection,
+}) => {
   const t = useTranslations("search_results");
 
   return (
@@ -74,10 +76,10 @@ function SearchPassengerDropDown({
           value={passengerValues?.INAPAM || 0}
           updatePassengerCount={updatePassengerCount}
         />
-        <Button variant="primary" buttonText={t("ready")} />
+        <Button variant="primary" buttonText={t("ready")} onClick={handlePassengersSelection} />
       </div>
     </div>
   );
-}
+};
 
 export default SearchPassengerDropDown;

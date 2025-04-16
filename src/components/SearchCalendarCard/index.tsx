@@ -7,16 +7,7 @@ import Tick from "../../assets/svg/tick.svg";
 import Button from "@/components/ui/Button";
 import Calendar from "../Calendar";
 
-function SearchCalendarCard({
-  width,
-  ida,
-  returnTrip,
-  startDate,
-  returnDate,
-  cardName,
-  isOpen,
-  toggleDropdown,
-}: {
+interface SearchCalendarCardProps {
   width: number;
   ida: string;
   returnTrip: string;
@@ -25,7 +16,22 @@ function SearchCalendarCard({
   cardName: string;
   isOpen: boolean;
   toggleDropdown: (cardName: string) => void;
-}) {
+  handleDateSelection: (sDate: Date, eDate: Date) => void;
+  closeDropdown: () => void;
+}
+
+const SearchCalendarCard: React.FC<SearchCalendarCardProps> = ({
+  width,
+  ida,
+  returnTrip,
+  startDate,
+  returnDate,
+  cardName,
+  isOpen,
+  toggleDropdown,
+  handleDateSelection,
+  closeDropdown,
+}) => {
   const t = useTranslations("search_results");
 
   const [selected, setSelected] = useState(false);
@@ -68,7 +74,7 @@ function SearchCalendarCard({
           </div>
           <hr className=" mt-4 border-t border-[#E3E7F2]" />
 
-          <Calendar />
+          <Calendar handleDateSelection={handleDateSelection} />
 
           <hr className=" mt-4 border-t border-[#E3E7F2]" />
           <div className=" w-full flex items-center justify-between mt-4 ">
@@ -85,12 +91,12 @@ function SearchCalendarCard({
               <p className=" text-[16px] text-[#1D1F24] ml-2 ">{t("calendar_check_box")}</p>
             </div>
 
-            <Button variant="primary" buttonText={t("ready")} />
+            <Button variant="primary" buttonText={t("ready")} onClick={closeDropdown} />
           </div>
         </div>
       )}
     </div>
   );
-}
+};
 
 export default SearchCalendarCard;

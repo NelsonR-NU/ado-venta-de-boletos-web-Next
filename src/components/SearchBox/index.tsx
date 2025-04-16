@@ -10,13 +10,55 @@ import SearchCard from "../SearchCard";
 import Button from "@/components/ui/Button";
 import SearchCalendarCard from "../SearchCalendarCard";
 
-function SearchBox({ handleLoad }: { handleLoad: () => void }) {
+interface SearchBoxProps {
+  handleLoad: () => void;
+}
+
+interface FormatDateOptions {
+  weekday: "short";
+  month: "short";
+  day: "numeric";
+}
+
+const SearchBox: React.FC<SearchBoxProps> = ({ handleLoad }) => {
   const t = useTranslations("search_results");
 
   const [roundTrip, setRoundTrip] = useState(true);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [passengers, setPassengers] = useState("1 adultos");
 
-  // State to manage selected values for each SearchCard
+  const formatDate = (date: Date): string => {
+    return date.toLocaleDateString("en-US", {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+    } as FormatDateOptions);
+  };
+
+  const generatePassengerText = (values: typeof passengerValues): string => {
+    const labels: Record<string, string> = {
+      Adult: "adultos",
+      Child: "niños",
+      INAPAM: "INAPAM",
+      Teacher: "maestros",
+      Student: "estudiantes",
+    };
+
+    const parts = Object.entries(values)
+      .filter(([_, count]) => count > 0)
+      .map(([key, count]) => `${count} ${labels[key]}`);
+
+    return parts.join(", ");
+  };
+
+  const [startDate, setStartDate] = useState(formatDate(new Date()));
+  const [returnDate, setReturnDate] = useState(formatDate(new Date()));
+
+  const handleDateSelection = (sDate: Date, eDate: Date): void => {
+    setStartDate(formatDate(sDate));
+    setReturnDate(formatDate(eDate));
+  };
+
   const [searchValues, setSearchValues] = useState({
     Origin: t("dummy_value_one"),
     Destination: t("dummy_value_two"),
@@ -35,6 +77,22 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
 
   const handleTripClick = () => {
     setRoundTrip(!roundTrip);
+    setOpenDropdown(null);
+    setPassengers("1 adultos");
+    setStartDate(formatDate(new Date()));
+    setReturnDate(formatDate(new Date()));
+    setSearchValues({
+      Origin: t("dummy_value_one"),
+      Destination: t("dummy_value_two"),
+      Passengers: t("adult"),
+    });
+    setPassengerValues({
+      Adult: 1,
+      Child: 0,
+      INAPAM: 0,
+      Teacher: 0,
+      Student: 0,
+    });
   };
 
   const toggleDropdown = (cardName: string) => {
@@ -72,11 +130,15 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
       ...prev,
       [mappedKey]: Math.max(0, prev[mappedKey] + delta),
     }));
+  };
 
-    // setPassengerValues(prev => ({
-    //     ...prev,
-    //     [type]: Math.max(0, prev[mappedKey] + delta) // Ensure count doesn't go below 0
-    // }));
+  const closeDropdown = () => {
+    setOpenDropdown(null);
+  };
+
+  const handlePassengersSelection = () => {
+    setPassengers(generatePassengerText(passengerValues));
+    closeDropdown();
   };
 
   useEffect(() => {
@@ -147,16 +209,18 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
               width={42}
               ida={t("ida")}
               returnTrip={t("return")}
-              startDate={t("sample_date")}
-              returnDate={t("sample_date2")}
+              startDate={startDate}
+              returnDate={returnDate}
               cardName={t("ida")}
               isOpen={openDropdown === "Ida"}
               toggleDropdown={toggleDropdown}
+              handleDateSelection={handleDateSelection}
+              closeDropdown={closeDropdown}
             />
             <SearchCard
               width={30}
               cardName={t("passengers")}
-              value={"1 adultos"}
+              value={passengers}
               isOpen={openDropdown === "Passengers" || openDropdown === "Pasajeros"}
               isPassenger={true}
               toggleDropdown={toggleDropdown}
@@ -164,6 +228,7 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
               // onSelect={updatePassengerCount}
               passengerValues={passengerValues}
               updatePassengerCount={updatePassengerCount}
+              handlePassengersSelection={handlePassengersSelection}
             />
             <Button
               variant="primary"
@@ -173,55 +238,9 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
             />
           </div>
         </div>
-
-        {/* <div className='flex justify-between mt-1 items-end'>
-          <SearchCard
-            width={19}
-            cardName={t("origin")}
-            value={searchValues.Origin}
-            isOpen={openDropdown === "Origin" || openDropdown === "Origen"}
-            isPassenger={false}
-            toggleDropdown={toggleDropdown}
-            dropdownContent={["New York", "Los Angeles", "Chicago"]}
-            onSelect={handleSelectValue}
-          />
-          <SearchCard
-            width={19}
-            cardName={t("destination")}
-            value={searchValues.Destination}
-            isOpen={openDropdown === "Destination" || openDropdown === "Destino"}
-            isPassenger={false}
-            toggleDropdown={toggleDropdown}
-            dropdownContent={["Miami", "San Francisco", "Houston"]}
-            onSelect={handleSelectValue}
-          />
-          <SearchCalendarCard
-            width={29}
-            ida={t("ida")}
-            returnTrip={t("return")}
-            startDate={t("sampleDate")}
-            returnDate={t("sampleDate2")}
-            cardName={t("ida")}
-            isOpen={openDropdown === "Ida"}
-            toggleDropdown={toggleDropdown}
-          />
-          <SearchCard
-            width={19}
-            cardName={t("passengers")}
-            value={"1 adultos"}
-            isOpen={openDropdown === "Passengers" || openDropdown === "Pasajeros"}
-            isPassenger={true}
-            toggleDropdown={toggleDropdown}
-            dropdownContent={["1 Adult", "2 Adults", "3 Adults"]}
-            // onSelect={updatePassengerCount}
-            passengerValues={passengerValues}
-            updatePassengerCount={updatePassengerCount}
-          />
-          <Button variant='primary' className='border border-ado-purple' buttonText={t("modify_trip")} />
-        </div>*/}
       </div>
     </Container>
   );
-}
+};
 
 export default SearchBox;
