@@ -114,7 +114,7 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
               key={date}
               className={` px-[8px] py-[16px] sm:px-4 sm:py-2 flex flex-col gap-[8px] items-center justify-center  transition-all bg-ado-gray   cursor-pointer sm:bg-ado-scroll-background   ${
                 selectedIndex === index
-                  ? "!bg-ado-date-select  border-b-4 sm:rounded-b-md border-green-500 font-semibold shadow-md !sm:bg-ado-date-background"
+                  ? "!bg-ado-white  border-b-4 sm:rounded-b-md border-ado-purple font-semibold shadow-md !sm:bg-ado-date-background"
                   : "hover:bg-gray-100 opacity-70"
               }`}
               onClick={() =>
