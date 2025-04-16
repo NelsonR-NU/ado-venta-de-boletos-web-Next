@@ -2,6 +2,7 @@ import type { Preview } from "@storybook/react";
 import "../src/app/globals.css";
 import { withNextIntl, withTailwind } from "./decorators";
 import { themes } from "@storybook/theming/create";
+import "../src/app/globals.css";
 
 const preview: Preview = {
   parameters: {
