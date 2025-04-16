@@ -3,16 +3,14 @@ import { routing } from "@/i18n/routing";
 import TicketList from "@/components/TicketList";
 import { useTranslations } from "next-intl";
 import { Locale } from "@/types/common/locale";
-import { ReactNode } from "react";
 
 interface BookingLayoutProps {
-  children: ReactNode;
   params: {
     locale: string;
   };
 }
 
-export default function BookingLayout({ children, params }: BookingLayoutProps) {
+export default function BookingLayout({ params }: BookingLayoutProps) {
   const { locale } = params;
 
   if (!routing.locales.includes(locale as Locale)) {

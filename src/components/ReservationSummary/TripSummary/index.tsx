@@ -19,19 +19,19 @@ const TripSummary: React.FC<TripSummaryProps> = ({ isOneWayTrip = true, handleCl
 
   const origin = {
     title: "Central México Norte, CDMX",
-    subtitle: t('origin_terminal'),
+    subtitle: t("origin_terminal"),
     time: "06:00 h",
   };
 
   const destination = {
     title: "Acapulco Costera, Gro.",
-    subtitle: t('destination_terminal'),
+    subtitle: t("destination_terminal"),
     time: "11:10 h",
   };
 
-  const [originPoint, destinationPoint] = isOneWayTrip ? [origin, destination] : [destination, origin];
-
-
+  const [originPoint, destinationPoint] = isOneWayTrip
+    ? [origin, destination]
+    : [destination, origin];
 
   const renderLocationBlock = (location: typeof origin) => (
     <div className="flex justify-between gap-2">
@@ -48,7 +48,7 @@ const TripSummary: React.FC<TripSummaryProps> = ({ isOneWayTrip = true, handleCl
       <div className="flex justify-between items-center">
         <div className="flex flex-col gap-4 text-ado-black">
           <div className="text-lg font-bold">
-            {isOneWayTrip ? t("oneWayTrip") : t("returnTrip")}
+            {isOneWayTrip ? t("one_way_trip") : t("return_trip")}
           </div>
           <div className="text-sm">Vier. 12 de nov.</div>
         </div>
@@ -60,7 +60,7 @@ const TripSummary: React.FC<TripSummaryProps> = ({ isOneWayTrip = true, handleCl
           <div className="flex flex-col items-center justify-end">
             <Image src={terminal} alt="Terminal" className="mb-[-2px]" width={28} height={28} />
             <div
-              className={`w-3 ${isOneWayTrip ? 'h-[90px]' : 'h-[105px]'} border-y-0 bg-ado-lavendar border-[3px] border-ado-gray`}
+              className={`w-3 ${isOneWayTrip ? "h-[90px]" : "h-[105px]"} border-y-0 bg-ado-lavendar border-[3px] border-ado-gray`}
             />
             <Image src={redTerminal} alt="Terminal" className="mt-[-2px]" width={28} height={28} />
           </div>
@@ -75,12 +75,12 @@ const TripSummary: React.FC<TripSummaryProps> = ({ isOneWayTrip = true, handleCl
 
       <Button
         onClick={handleClick}
-        buttonText={t("tripDetails")}
+        buttonText={t("trip_details")}
         icon={<Image src={rightChevron} alt="right chevron" />}
         iconPosition="right"
         buttonStyle="outline"
       />
-    </Card >
+    </Card>
   );
 };
 

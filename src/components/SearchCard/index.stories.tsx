@@ -4,7 +4,6 @@ import { useState } from "react";
 
 type PassengerType = "Adult" | "Child" | "INAPAM" | "Teacher" | "Student";
 
-// Wrapper component to manage state for the SearchCard in Storybook
 const SearchCardWrapper = (args: any) => {
   const [activeCard, setActiveCard] = useState("");
   const [passengerValues, setPassengerValues] = useState({
@@ -26,8 +25,8 @@ const SearchCardWrapper = (args: any) => {
     }));
   };
 
-  const onSelect = (cardName: string, value: string) => {
-    // Selected value handling
+  const onSelect = () => {
+    //TODO: Selected value handling
   };
 
   return (

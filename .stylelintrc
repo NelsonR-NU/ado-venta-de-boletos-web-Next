@@ -7,6 +7,21 @@
     "block-no-empty": true,
     "color-no-invalid-hex": true,
     "no-empty-source": true,
-    "at-rule-no-unknown": null
+    "at-rule-no-deprecated": null,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "apply",
+          "tailwind",
+          "screen",
+          "if",
+          "else",
+          "return",
+          "function",
+          "debug"
+        ]
+      }
+    ]
   }
 }

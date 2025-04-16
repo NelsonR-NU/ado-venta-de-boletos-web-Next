@@ -1,34 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Filter from "./index";
-import { NextIntlClientProvider } from "next-intl";
-
-// Mock translation messages for the component
-const messages = {
-  home: {
-    tripType: "Trip date:",
-    filters: "Filters",
-    sortedBy: "Sorted by:",
-  },
-  searchResults: {
-    days: {
-      Sun: ["Sun", "Sunday"],
-      Mon: ["Mon", "Monday"],
-      Tue: ["Tue", "Tuesday"],
-      Wed: ["Wed", "Wednesday"],
-      Thur: ["Thur", "Thursday"],
-      Fri: ["Fri", "Friday"],
-      Sat: ["Sat", "Saturday"],
-    },
-    sortedTrip: {
-      First_to_depart: "First to depart",
-      Last_to_depart: "Last to depart",
-      Lowest_price: "Lowest price",
-      Highest_price: "Highest price",
-      Shortest_trip: "Shortest trip",
-      Longest_trip: "Longest trip",
-    },
-  },
-};
+import { withNextIntl } from "@/storybook/decorators";
 
 const meta = {
   title: "Components/Filter",
@@ -37,15 +9,7 @@ const meta = {
     layout: "padded",
   },
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <NextIntlClientProvider locale="en" messages={messages as any} timeZone="UTC">
-        <div style={{ width: "100%", maxWidth: "1000px", margin: "0 auto" }}>
-          <Story />
-        </div>
-      </NextIntlClientProvider>
-    ),
-  ],
+  decorators: [withNextIntl],
 } satisfies Meta<typeof Filter>;
 
 export default meta;

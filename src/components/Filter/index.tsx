@@ -16,8 +16,10 @@ type FilterProps = {
 
 const Filter: React.FC<FilterProps> = ({ date }) => {
   const t = useTranslations("home");
-  const daysTrans = useTranslations("searchResults");
-  const [selectedSort, setSelectedSort] = useState<string>(daysTrans("sortedTrip.First_to_depart"));
+  const daysTrans = useTranslations("search_results");
+  const [selectedSort, setSelectedSort] = useState<string>(
+    daysTrans("sorted_trip.First_to_depart")
+  );
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [isSortDropdownOpen, setIsSortDropdownOpen] = useState<boolean>(false);
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState<boolean>(false);
@@ -47,12 +49,12 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
     setDrawerOpen(true);
   };
 
-  const sortedTrip: Record<string, string> = daysTrans.raw("sortedTrip");
+  const sortedTrip: Record<string, string> = daysTrans.raw("sorted_trip");
 
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:justify-between items-center max-sm:p-4">
       <p className="flex text-gray-700 text-[18px] text-center sm:text-left w-full">
-        <span className="text-[16px] sm:text-[18px] font-normal">{t("tripType")}</span>
+        <span className="text-[16px] sm:text-[18px] font-normal">{t("trip_type")}</span>
         <span className="ml-1 text-[16px] sm:text-[18px] text-gray-900 font-bold">
           {daysTrans.raw(`days.${date.day}`)[0]},
           {new Date(date.date).toLocaleDateString("es-ES", { day: "2-digit" })} de{" "}
@@ -84,7 +86,7 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
             aria-expanded={isSortDropdownOpen}
             buttonText={
               <>
-                <span className="hidden sm:inline font-light">{t("sortedBy")}</span>
+                <span className="hidden sm:inline font-light">{t("sorted_by")}</span>
                 <span className="font-semibold mx-1">{selectedSort}</span>
               </>
             }

@@ -26,7 +26,7 @@ function SearchCalendarCard({
   isOpen: boolean;
   toggleDropdown: (cardName: string) => void;
 }) {
-  const t = useTranslations("searchResults");
+  const t = useTranslations("search_results");
 
   const [selected, setSelected] = useState(false);
 
@@ -51,19 +51,19 @@ function SearchCalendarCard({
       </div>
       {isOpen && (
         <div className="absolute right-[-90] top-full bg-[#FAFAFA] mt-2 p-[24px] w-[700px] flex flex-col rounded-[8px] ">
-          <p className=" text-[#26282F] text-[16px] font-medium ">{t("calendarTitle")}</p>
+          <p className=" text-[#26282F] text-[16px] font-medium ">{t("calendar_title")}</p>
           <div className=" w-full p-[10px] bg-[#EBF7F6] border-[1px] border-[#B9E9E4] mt-2 rounded-[10px] flex items-center ">
             <Image src={CalendarPromo} alt="Promo Icon" />
             <div className="ml-[10px]">
               <span className=" text-[16px] font-medium text-[#26282F] ">
-                {t("calendarPromo1")}
+                {t("calendar_promo1")}
               </span>
-              <span className=" text-[14px] text-[#1D1F24] ml-[3px] "> {t("calendarPromo2")}</span>
+              <span className=" text-[14px] text-[#1D1F24] ml-[3px] "> {t("calendar_promo2")}</span>
               <span className=" text-[14px] font-medium text-[#1D1F24] ml-[3px] ">
                 {" "}
-                {t("calendarPromo3")}
+                {t("calendar_promo3")}
               </span>
-              <span className=" text-[14px] text-[#1D1F24] ml-[3px] "> {t("calendarPromo4")}</span>
+              <span className=" text-[14px] text-[#1D1F24] ml-[3px] "> {t("calendar_promo4")}</span>
             </div>
           </div>
           <hr className=" mt-4 border-t border-[#E3E7F2]" />
@@ -82,7 +82,7 @@ function SearchCalendarCard({
                 onClick={() => setSelected(!selected)}>
                 {selected && <Image src={Tick} alt="Promo Icon" />}
               </div>
-              <p className=" text-[16px] text-[#1D1F24] ml-2 ">{t("calendarCheckBox")}</p>
+              <p className=" text-[16px] text-[#1D1F24] ml-2 ">{t("calendar_check_box")}</p>
             </div>
 
             <Button variant="primary" buttonText={t("ready")} />

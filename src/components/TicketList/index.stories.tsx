@@ -1,21 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import TicketList from "./index";
-import { NextIntlClientProvider } from "next-intl";
-
-// Mock translations
-const messages = {
-  "ticket-confirmation": {
-    passsager_name: "Passenger Name",
-    passsager_name_tab: "Passenger",
-    one_way: "Departure Seat",
-    one_way_tab: "Departure",
-    ticket_type: "Ticket Type",
-    ticket_type_tab: "Type",
-    return_seat: "Return Seat",
-    return_seat_tab: "Return",
-    totalAssitance: "Assistance",
-  },
-};
+import { withNextIntl } from "@/storybook/decorators";
 
 const meta = {
   title: "Components/TicketList",
@@ -24,18 +9,7 @@ const meta = {
     layout: "padded",
   },
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <NextIntlClientProvider
-        locale="en"
-        messages={messages as unknown as Record<string, unknown>}
-        timeZone="UTC">
-        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
-          <Story />
-        </div>
-      </NextIntlClientProvider>
-    ),
-  ],
+  decorators: [withNextIntl],
 } satisfies Meta<typeof TicketList>;
 
 export default meta;

@@ -1,26 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import AddCouponCard from "@/components/ReservationSummary/AddCouponCard";
 import PriceSummary from "@/components/ReservationSummary/PriceSummary";
 import TripSummary from "@/components/ReservationSummary/TripSummary";
 import PurchaseDetailsDrawer from "@/components/ReservationSummary/PurchaseDetailsDrawer";
 import TicketDetailsDrawer from "@/components/ReservationSummary/TicketDetailsDrawer";
 
-interface ReservationSummaryProps { }
-
-const ReservationSummary: React.FC<ReservationSummaryProps> = () => {
-  const [open, setOpen] = useState<boolean>(false)
-  const [openDrawer, setOpenDrawer] = useState<boolean>(false)
+const ReservationSummary: FC = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const showApplyCouponSection = true;
 
-  const handleTripDetails = () => {
-    setOpenDrawer(true)
-  }
+  const handleTripDetails = () => setOpenDrawer(true);
 
-  const handlePurchaseDetails = () => {
-    console.log("handleClick")
-    setOpen(true)
-  }
+  const handlePurchaseDetails = () => setOpen(true);
 
   return (
     <div className="w-full flex flex-col gap-4">

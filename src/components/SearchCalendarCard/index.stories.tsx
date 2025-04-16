@@ -47,12 +47,12 @@ const SearchCalendarCardWrapper = (args: Partial<SearchCalendarCardProps>) => {
 // Define typed messages for the calendar
 interface CalendarMessages extends AbstractIntlMessages {
   searchResults: {
-    calendarTitle: string;
-    calendarPromo1: string;
-    calendarPromo2: string;
-    calendarPromo3: string;
-    calendarPromo4: string;
-    calendarCheckBox: string;
+    calendar_title: string;
+    calendar_promo1: string;
+    calendar_promo2: string;
+    calendar_promo3: string;
+    calendar_promo4: string;
+    calendar_check_box: string;
     ready: string;
   };
 }
@@ -60,12 +60,12 @@ interface CalendarMessages extends AbstractIntlMessages {
 // Mock translations
 const messages: CalendarMessages = {
   searchResults: {
-    calendarTitle: "Select your travel dates",
-    calendarPromo1: "Save up to 50%",
-    calendarPromo2: "on your trip by selecting",
-    calendarPromo3: "flexible dates",
-    calendarPromo4: "for your itinerary.",
-    calendarCheckBox: "I'm flexible with my travel dates",
+    calendar_title: "Select your travel dates",
+    calendar_promo1: "Save up to 50%",
+    calendar_promo2: "on your trip by selecting",
+    calendar_promo3: "flexible dates",
+    calendar_promo4: "for your itinerary.",
+    calendar_check_box: "I'm flexible with my travel dates",
     ready: "Ready",
   },
 };

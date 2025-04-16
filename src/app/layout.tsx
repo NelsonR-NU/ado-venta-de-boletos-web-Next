@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import ClientProvider from "@/business-logic/provider";
 import { ReactNode } from "react";
 
 const gothamProFont = localFont({
@@ -38,9 +37,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html>
-      <body className={`${gothamProFont.variable} font-sans antialiased`}>
-        <ClientProvider>{children}</ClientProvider>
-      </body>
+      <body className={`${gothamProFont.variable} font-sans antialiased`}>{children}</body>
     </html>
   );
 }

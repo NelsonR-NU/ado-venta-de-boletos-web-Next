@@ -25,25 +25,25 @@ function SearchPassengerDropDown({
   updatePassengerCount,
   passengerValues,
 }: SearchPassengerDropDown) {
-  const t = useTranslations("searchResults");
+  const t = useTranslations("search_results");
 
   return (
     <div className="absolute right-0 top-full bg-[#FAFAFA] border border-gray-300 w-[800px] mt-1 rounded-[8px] shadow-lg z-[9999] max-h-120 overflow-auto flex flex-col p-[16px]">
-      <p className=" text-[16px] font-medium font-gotham-pro ">{t("whoTravels")}</p>
+      <p className=" text-[16px] font-medium font-gotham-pro ">{t("who_travels")}</p>
       <hr className="border-t border-[#E3E7F2] mt-[10px] " />
 
       <div className=" mt-[10px] flex justify-between items-center ">
         <PassengerCard
           imageSrc={Adult}
           cardName={t("adults")}
-          cardDescription={t("adultDescription")}
+          cardDescription={t("adult_description")}
           value={passengerValues?.Adult || 0}
           updatePassengerCount={updatePassengerCount}
         />
         <PassengerCard
           imageSrc={Teacher}
           cardName={t("teacher")}
-          cardDescription={t("teacherDescription")}
+          cardDescription={t("teacher_description")}
           value={passengerValues?.Teacher || 0}
           updatePassengerCount={updatePassengerCount}
         />
@@ -53,14 +53,14 @@ function SearchPassengerDropDown({
         <PassengerCard
           imageSrc={Child}
           cardName={t("children")}
-          cardDescription={t("childrenDescription")}
+          cardDescription={t("children_description")}
           value={passengerValues?.Child || 0}
           updatePassengerCount={updatePassengerCount}
         />
         <PassengerCard
           imageSrc={Student}
           cardName={t("student")}
-          cardDescription={t("studentDescription")}
+          cardDescription={t("student_description")}
           value={passengerValues?.Student || 0}
           updatePassengerCount={updatePassengerCount}
         />
@@ -70,7 +70,7 @@ function SearchPassengerDropDown({
         <PassengerCard
           imageSrc={Inapam}
           cardName={t("inapam")}
-          cardDescription={t("inapamDescription")}
+          cardDescription={t("inapam_description")}
           value={passengerValues?.INAPAM || 0}
           updatePassengerCount={updatePassengerCount}
         />
