@@ -147,8 +147,8 @@ function SearchBox({ handleLoad }: { handleLoad: () => void }) {
               width={42}
               ida={t("ida")}
               returnTrip={t("return")}
-              startDate={t("sampleDate")}
-              returnDate={t("sampleDate2")}
+              startDate={t("sample_date")}
+              returnDate={t("sample_date2")}
               cardName={t("ida")}
               isOpen={openDropdown === "Ida"}
               toggleDropdown={toggleDropdown}

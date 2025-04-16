@@ -58,7 +58,7 @@ const SearchResults: React.FC = () => {
                 imageUrl=""
                 bannerTitle={tHome("promotion.title")}
                 bannerDescription={tHome("promotion.description")}
-                btnText={tHome("promotion.btnText")}
+                btnText={tHome("promotion.btn_text")}
                 btnColor="ado-btn-red"
                 showImage={true}
                 handlePromotionAction={handlePromotionAction}
@@ -70,21 +70,21 @@ const SearchResults: React.FC = () => {
         <div>
           <Container>
             <p className="text-[24px] text-[#222222] font-[700]">
-              {tSearchResults("searchResultsTitle")}
+              {tSearchResults("search_results.search_results_title")}
             </p>
             <div className="mt-[20px] p-[40px] bg-[#F1F3F9] rounded-[8px] flex flex-col justify-center items-center">
               <p className="text-[#474A56] font-[400] text-[16px] text-center">
-                {tSearchResults("yourSearch")}
-                <span className="font-[600] text-black">{tSearchResults("yourSearchOn")}</span>
-                {tSearchResults("yourSearchOn2")}
-                <span className="font-[600] text-black">{tSearchResults("yourSearchFrom")}</span>
-                {tSearchResults("yourSearchOn3")}
-                <span className="font-[600] text-black">{tSearchResults("yourSearchTo")}</span>
+                {tSearchResults("your_search")}
+                <span className="font-[600] text-black">{tSearchResults("your_search_on")}</span>
+                {tSearchResults("your_search_on_2")}
+                <span className="font-[600] text-black">{tSearchResults("your_search_from")}</span>
+                {tSearchResults("your_search_on_3")}
+                <span className="font-[600] text-black">{tSearchResults("your_search_to")}</span>
                 <br />
-                {tSearchResults("noSeatAvailability")}
+                {tSearchResults("no_seat_availability")}
               </p>
               <p className="text-[18px] text-[#222222] font-[700] mt-[30px]">
-                {tSearchResults("tryAnotherDate")}
+                {tSearchResults("try_another_date")}
               </p>
               <Image src={AdoBus} alt="Ado Bus" />
             </div>

@@ -24,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({
   iconPosition = "left",
 }) => {
   const baseStyles =
-    "flex items-center justify-center rounded-md text-[16px] font-medium px-6 py-2 transition-all duration-300 ease-in-out select-none active:scale-95 ";
+    "flex items-center justify-center rounded-[4px] text-[16px] font-medium px-6 py-2 transition-all duration-300 ease-in-out select-none active:scale-95 ";
 
   const variantStyles = {
     primary: "bg-ado-purple text-white hover:shadow-md",

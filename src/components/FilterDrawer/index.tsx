@@ -18,7 +18,7 @@ export default function FilterDrawer({ isOpen, onClose }: FilterDrawerProps) {
     maxPrice: 2120,
   });
 
-  const [selectedFilters, setSelectedFilters] = React.useState<Record<string, boolean>>({});
+  const [, setSelectedFilters] = React.useState<Record<string, boolean>>({});
 
   const t = useTranslations("search_results");
 

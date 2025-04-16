@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslations } from "next-intl";
 import SearchDropDown from "../SearchDropDown";
 import SearchPassengerDropDown from "../SearchPassengerDropDown";
 
@@ -31,17 +30,14 @@ function SearchCard({
   isOpen,
   isPassenger,
   toggleDropdown,
-  dropdownContent,
   onSelect,
   updatePassengerCount,
   passengerValues,
 }: SearchCardProps) {
-  const t = useTranslations("search_results");
-
   const recentearches = ["Mérida Centro Histórico, Mér.", "Oaxaca de Juárez, Oax."];
   const originTerminals = ["Campeche", "Chiapas", "Ciudad de México", "Guerrero"];
 
-  const handleSelection = (cardName: string, value: string) => onSelect?.(cardName, value);
+  const handleSelection = () => onSelect?.(cardName, value);
 
   return (
     <div className="relative" style={{ width: `${width}%` }}>
