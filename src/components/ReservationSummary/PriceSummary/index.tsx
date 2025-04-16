@@ -14,7 +14,7 @@ interface PriceSummaryProps {
 }
 
 const PriceSummary: React.FC<PriceSummaryProps> = ({ handleClick }) => {
-  const t = useTranslations("reservationSummary");
+  const t = useTranslations("reservation_summary");
   const [priceSummaryCheckboxChecked, setPriceSummaryCheckboxChecked] = useState(false);
 
   return (

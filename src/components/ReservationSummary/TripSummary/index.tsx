@@ -15,7 +15,7 @@ interface TripSummaryProps {
 }
 
 const TripSummary: React.FC<TripSummaryProps> = ({ isOneWayTrip = true, handleClick }) => {
-  const t = useTranslations("reservationSummary");
+  const t = useTranslations("reservation_summary");
 
   const origin = {
     title: "Central México Norte, CDMX",
