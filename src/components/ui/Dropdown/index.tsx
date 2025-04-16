@@ -21,7 +21,6 @@ const Dropdown: React.FC<DropdownProps> = ({
   bgColor = "bg-ado-snow-gray",
   textColor = "text-black",
   hoverColor = "hover:bg-ado-light-blue-gray",
-  activeColor = "bg-gray-300",
   title,
   className = "",
 }) => {
