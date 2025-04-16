@@ -19,35 +19,34 @@ const PriceSummary: React.FC<PriceSummaryProps> = ({ handleClick }) => {
 
   return (
     <Card>
-      <div className="flex justify-between items-start mb-4">
-        <div className="text-black">{t("purchase_summary")}</div>
-      </div>
-      <div className="flex justify-between mb-1">
-        <div className="text-sm">{t("one_way_trip")}</div>
-        <div className="text-sm">$1,092.00</div>
-      </div>
-      <div className="flex justify-between mb-2">
-        <div className="text-sm">{t("return_trip")}</div>
-        <div className="text-sm">$1,092.00</div>
-      </div>
-      <hr className="border-t border-dashed border-gray-300 mb-2" />
-      <div className="flex justify-between mb-1">
-        <div className="text-sm">{t("tax")}</div>
-        <div className="text-sm">$196.00</div>
-      </div>
-      <div className="flex justify-between mb-4">
-        <div className="text-sm">
-          <b>(2)</b> {t("total_assitance")}
+      <div className="text-black">{t("purchase_summary")}</div>
+      <div className="flex flex-col gap-4">
+        <div className="flex justify-between items-center">
+          <div className="text-sm">{t("one_way_trip")}</div>
+          <div>$ 840.00 MXN</div>
         </div>
-        <div className="text-sm">$1,000.00</div>
+        <div className="flex justify-between">
+          <div className="text-sm">{t("return_trip")}</div>
+          <div>$ 840.00 MXN</div>
+        </div>
+        <div className="flex justify-between">
+          <div className="text-sm">{t("tax")}</div>
+          <div>$ 840.00 MXN</div>
+        </div>
+        <div className="flex justify-between">
+          <div className="text-sm">
+            <b>(2)</b> {t("total_assitance")}
+          </div>
+          <div>$ 840.00 MXN</div>
+        </div>
       </div>
-      <hr className="border-t border-gray-300 mb-4" />
-      <div className="flex justify-between mb-1">
-        <div className="font-bold">TOTAL</div>
-        <div className="flex flex-col items-end">
-          <div className="font-bold">$3,380.00</div>
+      <div className="border-t border-ado-neutral-light" />
+      <div className="flex justify-between items-center">
+        <div className="flex flex-col">
+          <div className="">{t("total")}</div>
           <div className="text-xs">({t("includes_tax")})</div>
         </div>
+        <div className="text-lg font-bold text-ado-purple">$ 840.00 MXN</div>
       </div>
       <Checkbox
         label={

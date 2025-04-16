@@ -16,7 +16,7 @@ const AddCouponCard: FC = () => {
   return (
     <Card>
       <div className="flex flex-col gap-4">
-        <div className="text-black">{t("discountCoupon")}</div>
+        <div className="text-black">{t("discount_coupon")}</div>
         <InputField
           name="coupon"
           placeholder="Ej:01234ADOs"
