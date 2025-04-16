@@ -11,9 +11,16 @@ html {
   span,
   input,
   ul,
+  li,
+  div {
+    @apply font-gotham-pro;
+  }
+
+  span,
+  input,
+  ul,
   li {
     @apply text-gray-800;
-    @apply font-gotham-pro;
   }
 
   div,
