@@ -6,7 +6,7 @@ import { addDays, format, isAfter, isBefore, isSameDay } from "date-fns";
 import Modal from "@/components/Modal";
 import alertIcon from "@/assets/png/alert.png";
 import leftArrow from "@/assets/png/leftArrow.png";
-import rightArrow from "@/assets/png/rightArrow.png";
+import rightArrow from "@/assets/svg/right-arrow.svg";
 import Button from "@/components/ui/Button";
 
 type DateItem = {
@@ -137,7 +137,7 @@ const DateSlider: React.FC<DateSliderProps> = ({ onDateSelect }) => {
           buttonStyle="outline"
           className="!p-2 border text-gray-600 !border-ado-gray shadow-green hover:bg-gray-200 !rounded-full hidden md:flex"
           onClick={() => scrollRef.current?.scrollBy({ left: 120, behavior: "smooth" })}
-          icon={<Image src={rightArrow} alt="right arrow" className="w-[15px]" />}
+          icon={<Image src={rightArrow} alt="right arrow" width={15} height={15} />}
         />
       )}
       <Modal isOpen={open} showCloseIcon={true} onClose={handleModalClose}>

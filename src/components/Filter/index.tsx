@@ -56,7 +56,7 @@ const Filter: React.FC<FilterProps> = ({ date }) => {
       <p className="flex text-gray-700 text-[18px] text-center sm:text-left w-full">
         <span className="text-[16px] sm:text-[18px] font-normal">{t("trip_type")}</span>
         <span className="ml-1 text-[16px] sm:text-[18px] text-gray-900 font-bold">
-          {daysTrans.raw(`days.${date.day}`)[0]},
+          {daysTrans.raw(`days.${date.day}`)[0]},{" "}
           {new Date(date.date).toLocaleDateString("es-ES", { day: "2-digit" })} de{" "}
           {new Date(date.date).toLocaleDateString("es-ES", { month: "short" })}
         </span>
