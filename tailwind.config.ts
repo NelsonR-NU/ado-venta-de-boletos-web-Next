@@ -47,6 +47,7 @@ export default {
         "ado-blueish-grey": "#F4F6F9FF",
         "ado-bg-black-40": "#00000066",
         "ado-black": "#000000",
+        "ado-accessibility-bar-bg": "#31343C",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
