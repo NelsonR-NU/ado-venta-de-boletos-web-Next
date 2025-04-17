@@ -4,6 +4,8 @@ import { Locale } from "@/types/common/locale";
 import Providers from "@/providers";
 import { ReactNode } from "react";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import AccessibilityBar from "@/components/AccessibilityBar";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -21,6 +23,8 @@ export default async function LocaleLayout({ children, params }: RootLayoutProps
 
   return (
     <Providers locale={locale}>
+      <AccessibilityBar />
+      <Header />
       {children}
       <Footer />
     </Providers>
