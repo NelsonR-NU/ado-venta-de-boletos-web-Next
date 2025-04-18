@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import { useTranslations } from "next-intl";
 import React from "react";
 import Info from "../../assets/svg/info.svg";
 import DisabledMinus from "../../assets/svg/disabledMinus.svg";
@@ -6,7 +7,7 @@ import Add from "../../assets/svg/add.svg";
 
 type PassengerType = "Adult" | "Child" | "INAPAM" | "Teacher" | "Student";
 
-interface PassengerCard {
+interface PassengerCardProps {
   imageSrc: StaticImageData;
   cardName: string;
   cardDescription: string;
@@ -14,13 +15,14 @@ interface PassengerCard {
   updatePassengerCount?: (type: PassengerType, delta: number) => void;
 }
 
-function PassengerCard({
+const PassengerCard: React.FC<PassengerCardProps> = ({
   imageSrc,
   cardName,
   cardDescription,
   value,
   updatePassengerCount,
-}: PassengerCard) {
+}) => {
+  const t = useTranslations("search_results");
   return (
     <div className=" w-[350px] flex justify-between ">
       <div className=" w-[50%] flex ">
@@ -57,6 +59,6 @@ function PassengerCard({
       </div>
     </div>
   );
-}
+};
 
 export default PassengerCard;

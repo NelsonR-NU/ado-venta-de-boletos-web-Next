@@ -33,7 +33,7 @@ const TicketDetailsDrawer: React.FC<TicketDetailsDrawer> = ({
   isOpen,
   onClose,
 }: TicketDetailsDrawer) => {
-  const t = useTranslations("reservationSummary");
+  const t = useTranslations("reservation_summary");
   const [showStops, setShowStops] = React.useState<boolean>(false);
 
   const stops = [

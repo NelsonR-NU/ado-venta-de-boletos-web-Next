@@ -10,12 +10,12 @@ interface SearchDropDownProps {
   onSelect: (cardName: string, value: string) => void;
 }
 
-function SearchDropDown({
+const SearchDropDown: React.FC<SearchDropDownProps> = ({
   recentSearches,
   originTerminals,
   cardName,
   onSelect,
-}: SearchDropDownProps) {
+}) => {
   const t = useTranslations("search_results");
 
   return (
@@ -60,6 +60,6 @@ function SearchDropDown({
       </div>
     </div>
   );
-}
+};
 
 export default SearchDropDown;

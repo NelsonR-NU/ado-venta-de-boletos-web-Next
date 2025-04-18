@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ReactNode } from "react";
-
+import Providers from "@/providers";
+import { Locale } from "@/types/common/locale";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import AccessibilityBar from "@/components/AccessibilityBar";
 const gothamProFont = localFont({
   src: [
     {
@@ -34,10 +38,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: ReactNode;
+  params: { locale: Locale };
+}) {
+  const { locale } = await params;
+
   return (
     <html>
-      <body className={`${gothamProFont.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${gothamProFont.variable} antialiased`}>
+        <Providers locale={locale}>
+          <AccessibilityBar />
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
+      </body>
     </html>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import SearchBox from "@/components/SearchBox";
 import Container from "@/components/Container/Container";
 import Filter from "@/components/Filter";
@@ -10,13 +10,15 @@ import DateSlider from "@/components/HorizontalScrollBar";
 import RegisterFormModal from "@/components/Forms/RegisterFormModal";
 import AdoBus from "@/assets/png/adoBus.png";
 import Banner from "@/assets/png/searchBanner.png";
+import TicketCard from "@/components/TicketCard";
+import adoLogo from "@/assets/svg/ado-logo-purple.svg";
 
 interface FilterData {
   day: string;
   date: string;
 }
 
-const SearchResults: React.FC = () => {
+const SearchResults: FC = () => {
   const [selectedDate, setSelectedDate] = useState<FilterData>({
     day: new Date().toLocaleDateString("en-US", { weekday: "short" }),
     date: new Date().toISOString().split("T")[0],
@@ -52,8 +54,11 @@ const SearchResults: React.FC = () => {
             </Container>
           </div>
           <Container className="max-[500px]:p-0 max-[500px]:m-0">
-            <div className="flex-col">
+            <div className="flex flex-col gap-10">
               <Filter date={selectedDate} />
+              <TicketCard logo={adoLogo} onClickMoreInfo={() => {}} onCardSelection={() => {}} />
+              <TicketCard logo={adoLogo} onClickMoreInfo={() => {}} onCardSelection={() => {}} />
+              <TicketCard logo={adoLogo} onClickMoreInfo={() => {}} onCardSelection={() => {}} />
               <PromoCard
                 imageUrl=""
                 bannerTitle={tHome("promotion.title")}

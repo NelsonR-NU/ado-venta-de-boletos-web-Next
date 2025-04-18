@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
 
 const AddCouponCard: FC = () => {
-  const t = useTranslations("reservationSummary");
+  const t = useTranslations("reservation_summary");
   const [couponCode, setCouponCode] = useState<string>("");
 
   const handleApplyCoupon = () => {
@@ -16,7 +16,7 @@ const AddCouponCard: FC = () => {
   return (
     <Card>
       <div className="flex flex-col gap-4">
-        <div className="text-black">{t("discountCoupon")}</div>
+        <div className="text-black">{t("discount_coupon")}</div>
         <InputField
           name="coupon"
           placeholder="Ej:01234ADOs"
