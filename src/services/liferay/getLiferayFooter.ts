@@ -1,5 +1,5 @@
 import { ENDPOINTS } from "@/constants/endpoints";
-import { liferayApi } from "@/services/liferayApi";
+import { liferayApi } from "@/services/liferay/liferayApi";
 
 const getLiferayFooter = async (): Promise<string> => {
   try {

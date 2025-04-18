@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import Image from "next/image";
@@ -13,7 +13,7 @@ interface PriceSummaryProps {
   handleClick: () => void;
 }
 
-const PriceSummary: React.FC<PriceSummaryProps> = ({ handleClick }) => {
+const PriceSummary: FC<PriceSummaryProps> = ({ handleClick }) => {
   const t = useTranslations("reservation_summary");
   const [priceSummaryCheckboxChecked, setPriceSummaryCheckboxChecked] = useState(false);
 
