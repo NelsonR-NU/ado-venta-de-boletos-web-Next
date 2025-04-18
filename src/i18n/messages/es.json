@@ -310,5 +310,9 @@
     "return_trip": "Viaje de regreso",
     "one_way_assistance": "Asistencia total ida",
     "return_assistance": "Asistencia total regreso"
+  },
+  "payment_info": {
+    "card_prompt": "Si ya cuentas con un SALDO MAX, proporciona tu número de tarjeta y NIP para poder usarla.",
+    "card_number_balance_msg": "Número de tarjeta SALDO MAX"
   }
 }

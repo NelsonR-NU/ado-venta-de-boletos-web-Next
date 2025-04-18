@@ -9,6 +9,7 @@ interface InputFieldProps {
   placeholder?: string;
   required?: boolean;
   className?: string;
+  width?: number;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -19,6 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({
   onChange,
   placeholder,
   required,
+  width,
   className = "",
 }) => (
   <div className="flex-1">
@@ -29,7 +31,7 @@ const InputField: React.FC<InputFieldProps> = ({
       value={value || ""}
       onChange={onChange}
       required={required}
-      className={`mt-1 w-full p-2 border rounded-lg bg-white placeholder-ado-steel-gray focus:outline-none ${className}`}
+      className={`min-w-[300px] min-h-[45px] rounded-[4px] border pt-[14px] pr-[16px] pb-[14px] pl-[16px] gap-[8px] focus:outline-none ${width ? width : 'min-w-[327px]'} ${className}`}
       placeholder={placeholder}
     />
   </div>

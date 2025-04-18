@@ -296,5 +296,9 @@
     "one_way_tab": "Departure",
     "ticket_type_tab": "Type",
     "return_seat_tab": "Return"
+  },
+  "payment_info": {
+    "card_prompt": "If you already have a MAX BALANCE, provide your card number and PIN to be able to use it.",
+    "card_number_balance_msg" :"Card number MAX BALANCE"
   }
 }
