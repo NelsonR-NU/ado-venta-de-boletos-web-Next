@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import SearchBox from "@/components/SearchBox";
 import Container from "@/components/Container/Container";
 import Filter from "@/components/Filter";
@@ -18,7 +18,7 @@ interface FilterData {
   date: string;
 }
 
-const SearchResults: React.FC = () => {
+const SearchResults: FC = () => {
   const [selectedDate, setSelectedDate] = useState<FilterData>({
     day: new Date().toLocaleDateString("en-US", { weekday: "short" }),
     date: new Date().toISOString().split("T")[0],

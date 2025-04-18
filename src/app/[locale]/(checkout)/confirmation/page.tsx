@@ -17,7 +17,7 @@ export default function BookingLayout({ params }: BookingLayoutProps) {
     notFound();
   }
 
-  const t = useTranslations("ticket-confirmation");
+  const t = useTranslations("ticket_confirmation");
 
   return (
     <div className="flex flex-col gap-2 lg:gap-6">
