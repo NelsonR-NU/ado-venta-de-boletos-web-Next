@@ -6,6 +6,20 @@
     "sorted_by": "Sorted by",
     "filters": "Filters"
   },
+  "accessibility_bar": {
+    "customer_service": "Customer Service HOLA",
+    "size": "Size",
+    "currencies": {
+      "mxn": "MXN",
+      "usd": "USD",
+      "eur": "EUR"
+    },
+    "languages": {
+      "spanish": "Spanish",
+      "english": "English",
+      "french": "French"
+    }
+  },
   "search_results": {
     "round_trip": "Round Trip",
     "one_way": "One Way",
@@ -144,7 +158,7 @@
       }
     },
     "promotion": {
-      "title": "autumn promotion",
+      "title": "Autumn promotion",
       "description": "Explore a different place and save up to 20% on your next trip.",
       "btn_text": "I'm interested"
     },

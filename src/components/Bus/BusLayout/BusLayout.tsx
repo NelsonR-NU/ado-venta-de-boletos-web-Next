@@ -38,24 +38,20 @@ const BusLayout: React.FC<BusLayoutProps> = ({
         </div>
       </div>
       <div className="flex flex-col rounded-r-2xl px-2 py-3 items-center justify-between ml-4 bg-black bg-opacity-10">
-        <div className="bg-white p-2 rounded-lg w-[48px] h-[48px] flex items-center justify-center">
-          <Image
-            alt="gender-man"
-            src={GenderMan}
-            width={28}
-            height={28}
-            className="text-ado-purple"
-          />
-        </div>
-        <div className="bg-white p-2 rounded-lg w-[48px] h-[48px] flex items-center justify-center">
-          <Image
-            alt="gender-woman"
-            src={GenderWoman}
-            width={28}
-            height={28}
-            className="text-ado-purple"
-          />
-        </div>
+        <Image
+          alt="gender-man"
+          src={GenderMan}
+          width={42}
+          height={42}
+          className="text-ado-purple"
+        />
+        <Image
+          alt="gender-woman"
+          src={GenderWoman}
+          width={42}
+          height={42}
+          className="text-ado-purple"
+        />
       </div>
     </div>
   </div>

@@ -6,6 +6,20 @@
     "trip_type": "Elige tu boleto de ida",
     "filters": "Filtros"
   },
+  "accessibility_bar": {
+    "customer_service": "Atención a clientes HOLA",
+    "size": "Tamaño",
+    "currencies": {
+      "mxn": "MXN",
+      "usd": "USD",
+      "eur": "EUR"
+    },
+    "languages": {
+      "spanish": "Español",
+      "english": "English",
+      "french": "Français"
+    }
+  },
   "search_results": {
     "round_trip": "Ida y regreso",
     "one_way": "Solo ida",
