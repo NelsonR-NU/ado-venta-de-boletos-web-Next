@@ -3,10 +3,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ReactNode } from "react";
 import Providers from "@/providers";
-import { Locale } from "@/types/common/locale";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import AccessibilityBar from "@/components/AccessibilityBar";
+import { Locale } from "@/types/common/locale";
+
 const gothamProFont = localFont({
   src: [
     {

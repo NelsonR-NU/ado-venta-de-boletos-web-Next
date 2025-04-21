@@ -21,8 +21,8 @@ const Seat: React.FC<SeatProps> = ({ seat, isSelected, onSeatSelect }) => {
         className="select-none transition-all duration-500 ease-in-out"
         alt={`seat-${seat.asiento}`}
         src={isOccupied ? SeatOccupied : isSelected ? SeatSelected : SeatAvailable}
-        width={38}
-        height={38}
+        width={32}
+        height={32}
       />
       <span
         className={`

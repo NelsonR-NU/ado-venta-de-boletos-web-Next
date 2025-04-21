@@ -51,7 +51,7 @@ const SeatsGrid: React.FC<SeatsGridProps> = ({
 
 function renderLoadingSkeleton(rowCount: number): ReactNode[] {
   const elements: ReactNode[] = [];
-  const colCount = 12;
+  const colCount = 10;
 
   for (let i = 0; i < rowCount * colCount; i++) {
     elements.push(

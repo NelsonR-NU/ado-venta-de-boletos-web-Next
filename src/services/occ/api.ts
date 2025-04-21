@@ -1,4 +1,4 @@
-import { createApiClient } from "./index";
+import { createApiClient } from "../index";
 import { config } from "@/config";
 
 export const api = createApiClient({

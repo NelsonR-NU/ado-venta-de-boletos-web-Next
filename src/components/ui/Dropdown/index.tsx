@@ -1,13 +1,16 @@
 import Image from "next/image";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import downChevron from "@/assets/svg/downArrow.svg";
 
 interface DropdownProps {
   options: string[];
   placeholder?: string;
+  customHeader?: ReactNode;
+  customIcon?: string;
   onSelect?: (option: string) => void;
   bgColor?: string;
   textColor?: string;
+  hoverTextColor?: string;
   hoverColor?: string;
   activeColor?: string;
   title?: string;
@@ -17,10 +20,13 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({
   options,
   placeholder = "",
+  customHeader,
+  customIcon,
   onSelect,
   bgColor = "bg-ado-snow-gray",
   textColor = "text-black",
   hoverColor = "hover:bg-ado-light-blue-gray",
+  hoverTextColor = "hover:text-black",
   title,
   className = "",
 }) => {
@@ -38,9 +44,9 @@ const Dropdown: React.FC<DropdownProps> = ({
       <button
         className={`flex justify-between items-center w-full p-4 rounded-lg shadow-md ${bgColor} ${textColor}  ${className}`}
         onClick={() => setIsOpen(!isOpen)}>
-        {selected || placeholder}
+        {customHeader ? customHeader : selected || placeholder}
         <Image
-          src={downChevron}
+          src={customIcon || downChevron}
           alt="Dropdown indicator"
           width={15}
           height={15}
@@ -60,8 +66,8 @@ const Dropdown: React.FC<DropdownProps> = ({
             <div
               key={index}
               onClick={() => handleSelect(option)}
-              className={`p-2 ${hoverColor} cursor-pointer rounded`}>
-              <span className={`text-sm ${textColor}`}>{option}</span>
+              className={`p-2 ${hoverColor} cursor-pointer rounded ${hoverTextColor}`}>
+              <span className={`text-sm cursor-pointer ${textColor}`}>{option}</span>
             </div>
           ))}
         </div>

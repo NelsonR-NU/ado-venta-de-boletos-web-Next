@@ -8,7 +8,6 @@ import { useTranslations } from "next-intl";
 import Checkbox from "@/components/ui/CheckBox";
 import Dropdown from "@/components/ui/Dropdown";
 import { Link } from "@/i18n/routing";
-
 interface PassengerData {
   email: string;
   confirmEmail: string;
@@ -41,7 +40,7 @@ const PassengerRegistrationForm: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 p-4 md:w-[100%] w-full">
+    <div className="flex flex-col gap-6 md:w-[100%] w-full">
       {!isAuthenticated ? (
         <Card className="bg-ado-ice-blue">
           <h2 className="text-lg font-semibold mb-4">{t("send_tickets_to")}</h2>

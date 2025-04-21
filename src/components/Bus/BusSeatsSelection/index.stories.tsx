@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
-import BusSeatsSelection from "./index";
-import { BusStructure, Session, TripInfo } from "@/types/components/BusSeatsSelection";
+import BusSeatsSelection, { mockTripInfo, visualReferenceMock } from "./index";
+import { BusStructure, Session } from "@/types/components/BusSeatsSelection";
 import { Story } from "@/types/common/storybook";
 import { withNextIntl } from "@/storybook/decorators";
 import { fn } from "@storybook/test";
@@ -30,113 +30,8 @@ const meta = {
 
 export default meta;
 
-const mockTripInfo: TripInfo = {
-  salida: {
-    idCorrida: "mock-corrida-id-salida",
-    selectedSeat: undefined,
-    seatId: undefined,
-    selectedSeats: [],
-  },
-  regreso: {
-    idCorrida: "mock-corrida-id-regreso",
-    selectedSeat: undefined,
-    seatId: undefined,
-    selectedSeats: [],
-  },
-};
-
 const mockSession: Session = {
   startTimer: false,
-};
-
-// Visual reference mock that matches the provided layout
-const visualReferenceMock: BusStructure = {
-  filas: 5,
-  estructura: [
-    // Column 1 - R4, R3, X, R2, T1
-    { tipo: "regular", estatus: "DP", asiento: 4, columna: 1, fila: 1 },
-    { tipo: "regular", estatus: "DP", asiento: 3, columna: 1, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 1, fila: 3 },
-    { tipo: "regular", estatus: "DP", asiento: 2, columna: 1, fila: 4 },
-    { tipo: "regularTV", estatus: "DP", asiento: 1, columna: 1, fila: 5 },
-
-    // Column 2 - R8, R7, X, R6, R5
-    { tipo: "regular", estatus: "OC", asiento: 8, columna: 2, fila: 1 },
-    { tipo: "regular", estatus: "DP", asiento: 7, columna: 2, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 2, fila: 3 },
-    { tipo: "regular", estatus: "OC", asiento: 6, columna: 2, fila: 4 },
-    { tipo: "regular", estatus: "OC", asiento: 5, columna: 2, fila: 5 },
-
-    // Column 3 - R12, O11, X, R10, R9
-    { tipo: "regular", estatus: "DP", asiento: 12, columna: 3, fila: 1 },
-    { tipo: "regular", estatus: "OC", asiento: 11, columna: 3, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 3, fila: 3 },
-    { tipo: "regular", estatus: "DP", asiento: 10, columna: 3, fila: 4 },
-    { tipo: "regular", estatus: "DP", asiento: 9, columna: 3, fila: 5 },
-
-    // Column 4 - R16, R15, X, R14, R13
-    { tipo: "regular", estatus: "DP", asiento: 16, columna: 4, fila: 1 },
-    { tipo: "regular", estatus: "DP", asiento: 15, columna: 4, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 4, fila: 3 },
-    { tipo: "regular", estatus: "OC", asiento: 14, columna: 4, fila: 4 },
-    { tipo: "regularTV", estatus: "DP", asiento: 13, columna: 4, fila: 5 },
-
-    // Column 5 - T20, R19, X, R18, R17
-    { tipo: "regularTV", estatus: "DP", asiento: 20, columna: 5, fila: 1 },
-    { tipo: "regular", estatus: "OC", asiento: 19, columna: 5, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 5, fila: 3 },
-    { tipo: "regular", estatus: "DP", asiento: 18, columna: 5, fila: 4 },
-    { tipo: "regular", estatus: "DP", asiento: 17, columna: 5, fila: 5 },
-
-    // Column 6 - R24, R23, X, R22, R21
-    { tipo: "regular", estatus: "DP", asiento: 24, columna: 6, fila: 1 },
-    { tipo: "regular", estatus: "DP", asiento: 23, columna: 6, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 6, fila: 3 },
-    { tipo: "regular", estatus: "OC", asiento: 22, columna: 6, fila: 4 },
-    { tipo: "regular", estatus: "DP", asiento: 21, columna: 6, fila: 5 },
-
-    // Column 7 - R28, R27, X, R26, R25
-    { tipo: "regular", estatus: "DP", asiento: 28, columna: 7, fila: 1 },
-    { tipo: "regular", estatus: "OC", asiento: 27, columna: 7, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 7, fila: 3 },
-    { tipo: "regular", estatus: "DP", asiento: 26, columna: 7, fila: 4 },
-    { tipo: "regular", estatus: "DP", asiento: 25, columna: 7, fila: 5 },
-
-    // Column 8 - R32, R31, X, R30, R29
-    { tipo: "regular", estatus: "DP", asiento: 32, columna: 8, fila: 1 },
-    { tipo: "regular", estatus: "DP", asiento: 31, columna: 8, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 8, fila: 3 },
-    { tipo: "regular", estatus: "DP", asiento: 30, columna: 8, fila: 4 },
-    { tipo: "regular", estatus: "OC", asiento: 29, columna: 8, fila: 5 },
-
-    // Column 9 - R36, R35, X, R34, T33
-    { tipo: "regular", estatus: "OC", asiento: 36, columna: 9, fila: 1 },
-    { tipo: "regular", estatus: "DP", asiento: 35, columna: 9, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 9, fila: 3 },
-    { tipo: "regular", estatus: "DP", asiento: 34, columna: 9, fila: 4 },
-    { tipo: "regularTV", estatus: "DP", asiento: 33, columna: 9, fila: 5 },
-
-    // Column 10 - R40, R39, X, R38, R37
-    { tipo: "regular", estatus: "DP", asiento: 40, columna: 10, fila: 1 },
-    { tipo: "regular", estatus: "DP", asiento: 39, columna: 10, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 10, fila: 3 },
-    { tipo: "regular", estatus: "DP", asiento: 38, columna: 10, fila: 4 },
-    { tipo: "regular", estatus: "DP", asiento: 37, columna: 10, fila: 5 },
-
-    // Column 11 - R44, R43, X, R42, R41
-    { tipo: "regular", estatus: "DP", asiento: 44, columna: 11, fila: 1 },
-    { tipo: "regular", estatus: "DP", asiento: 43, columna: 11, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 11, fila: 3 },
-    { tipo: "regular", estatus: "DP", asiento: 42, columna: 11, fila: 4 },
-    { tipo: "regular", estatus: "DP", asiento: 41, columna: 11, fila: 5 },
-
-    // Column 12 - WC and empty spaces
-    { tipo: "wc", estatus: "OC", asiento: null, columna: 12, fila: 1 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 12, fila: 2 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 12, fila: 3 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 12, fila: 4 },
-    { tipo: "espacio", estatus: "OC", asiento: null, columna: 12, fila: 5 },
-  ],
 };
 
 // Storybook initializers to properly set TVs for the mock structure

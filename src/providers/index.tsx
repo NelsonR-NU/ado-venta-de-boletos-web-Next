@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { FC } from "react";
 import RTKProvider from "./Redux";
-import NextIntlProvider from "./NextIntl";
+import NextIntlProvider from "@/providers/NextIntl";
 import { Locale } from "@/types/common/locale";
 
 const Providers: FC<{ children: ReactNode; locale: Locale }> = ({ children, locale }) => (
