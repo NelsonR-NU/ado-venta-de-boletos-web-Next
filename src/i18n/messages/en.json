@@ -310,5 +310,24 @@
     "one_way_tab": "Departure",
     "ticket_type_tab": "Type",
     "return_seat_tab": "Return"
+  },
+  "payment_info": {
+    "card_prompt": "If you already have a MAX BALANCE, provide your card number and PIN to be able to use it.",
+    "card_number_balance_msg": "Card number MAX BALANCE",
+    "pay_by_saldomax": "Pay with SALDO MAX",
+    "saldomax_form_content": "If you already have a SALDO MAX , provide your wallet number and PIN to be able to use it.",
+    "saldomax_form_label": "SALDO MAX Wallet Number*",
+    "saldomax_card_content": "Pay with your SALDO MAX wallet and enjoy the benefits.",
+    "active": "Active",
+    "card_expire": "Expiration Date",
+    "card_balance": "Balance",
+    "card_number": "Card Number",
+    "last_transaction": "Last Transaction",
+    "max_balance": "Max Balance of",
+    "additional_payement_title": "Additional Payment",
+    "additional_payement_label": "You don't have enough balance in your SALDO MAX",
+    "additional_payement_content": "to complete your purchase. You can use another credit or debit card to cover the remaining amount. Do you want to continue?",
+    "additional_payement_cancel": "No, cancel",
+    "additional_payement_continue": "Yes, continue"
   }
 }

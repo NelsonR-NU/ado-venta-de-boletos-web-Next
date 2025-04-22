@@ -1,9 +1,14 @@
-import PaymentInfo from "@/components/PaymentInfo";
+"use client"
+
+import PaymentDetails from "@/components/Payments/PaymentDetails";
+import PaymentMethodTabs from "@/components/Payments/PaymentMethodTabs";
 
 export default function Payment() {
+
   return (
-    <div>
-      <PaymentInfo />
+    <div className="w-full flex gap-[18px]">
+      <PaymentMethodTabs />
+      <PaymentDetails />
     </div>
   );
 }

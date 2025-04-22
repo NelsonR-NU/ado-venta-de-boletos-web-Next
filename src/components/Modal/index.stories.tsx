@@ -16,7 +16,7 @@ const ModalWrapper = ({
   showCloseIcon?: boolean;
   initialState?: boolean;
 }) => {
-  const [isOpen, setIsOpen] = useState(initialState);
+  const [isOpen, setIsOpen] = useState<boolean>(initialState);
 
   return (
     <div>
@@ -77,7 +77,7 @@ export const Default: StoryType = {
         <div className="flex justify-end">
           <Button
             buttonText="Close"
-            onClick={() => {}}
+            onClick={() => { }}
             variant="secondary"
             data-testid="close-button"
           />
@@ -136,7 +136,7 @@ export const WithoutCloseIcon: StoryType = {
         <div className="flex justify-end">
           <Button
             buttonText="Close Modal"
-            onClick={() => {}}
+            onClick={() => { }}
             variant="primary"
             data-testid="custom-close-button"
           />
@@ -203,13 +203,13 @@ export const WithForm: StoryType = {
           <div className="flex justify-end gap-2">
             <Button
               buttonText="Cancel"
-              onClick={() => {}}
+              onClick={() => { }}
               variant="secondary"
               data-testid="cancel-button"
             />
             <Button
               buttonText="Submit"
-              onClick={() => {}}
+              onClick={() => { }}
               variant="primary"
               data-testid="submit-button"
             />

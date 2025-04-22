@@ -138,6 +138,7 @@ const TicketDetailsDrawer: React.FC<TicketDetailsDrawer> = ({
                     <div className="text-end min-w-12 text-sm">06:00 h</div>
                   </div>
                   <div
+                    role="button"
                     onClick={() => setShowStops((show) => !show)}
                     className="flex border-b border-ado-gray pl-2 py-3 cursor-pointer">
                     <div className="flex items-center gap-2 ">

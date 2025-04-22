@@ -2,10 +2,12 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { sessionReducer } from "./session";
+import { paymentReducer } from "./payment";
 
 // Combine all reducers
 const rootReducer = combineReducers({
   session: sessionReducer,
+  payment: paymentReducer,
 });
 
 // Persist the entire root reducer
