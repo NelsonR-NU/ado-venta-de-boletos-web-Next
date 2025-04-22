@@ -287,18 +287,33 @@
   "ticket_confirmation": {
     "confirm_details": "Confirm your details",
     "ticket_share_link": "The tickets will be sent to",
-    "passsager_name": "Passenger name",
-    "one_way": "Departure seat",
+    "passenger_name": "Passenger name",
+    "departure_seat": "Departure seat",
     "ticket_type": "Ticket type",
     "return_seat": "Return seat",
-    "total_assitance": "Total assistance",
-    "passsager_name_tab": "Name",
+    "total_assistance": "Total assistance",
+    "passenger_name_tab": "Name",
     "one_way_tab": "Departure",
     "ticket_type_tab": "Type",
     "return_seat_tab": "Return"
   },
   "payment_info": {
     "card_prompt": "If you already have a MAX BALANCE, provide your card number and PIN to be able to use it.",
-    "card_number_balance_msg" :"Card number MAX BALANCE"
+    "card_number_balance_msg": "Card number MAX BALANCE",
+    "pin" : "PIN",
+    "close" : "Close",
+    "title": "Payment with SALDO MAX",
+    "description": "You have sufficient balance to purchase your tickets.",
+    "totalPayable": "Total to pay",
+    "currentBalance": "Current balance in SALDO MAX",
+    "finalBalance": "Final balance in SALDO MAX",
+    "enterPin": "Enter your PIN",
+    "forgotPin": "Forgot your PIN?",
+    "clickHere": "Click here",
+    "pay": "Pay",
+    "needHelp": "Need help?",
+    "contactUs": "Contact us here",
+    "continue": "Continue",
+    "saldo_title": "Sufficient balance"
   }
 }

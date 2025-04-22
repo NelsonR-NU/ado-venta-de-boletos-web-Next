@@ -1,9 +1,10 @@
 import PaymentInfo from "@/components/PaymentInfo";
+import Container from "@/components/Container/Container"
 
 export default function Payment() {
   return (
-    <div>
+    <Container>
       <PaymentInfo />
-    </div>
+    </Container>
   );
 }

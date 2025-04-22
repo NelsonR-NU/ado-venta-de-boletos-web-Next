@@ -5,12 +5,6 @@ import { ReactNode } from "react";
 // import Header from "@/components/header";
 // import Footer from "@/components/footer";
 
-// TODO: Add Metadata for SEO
-// export const metadata: Metadata = {
-//   title: "Checkout ADO",
-//   description: "Checkout ADO",
-// };
-
 export default function Layout({
   children,
 }: Readonly<{
@@ -18,9 +12,9 @@ export default function Layout({
 }>) {
   return (
     <>
-      {/* <Header /> */}
+      {/* <CheckoutHeader /> */}
       {children}
-      {/* <Footer /> */}
+      {/* <CheckoutFooter /> */}
     </>
   );
 }

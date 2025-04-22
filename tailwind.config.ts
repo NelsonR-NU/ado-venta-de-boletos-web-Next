@@ -10,6 +10,8 @@ export default {
     extend: {
       colors: {
         "ado-background": "#FFFFFF",
+        "ado-teal-blue": "#EBF7F6",
+        "ado-teal-border" :"#B9E9E4",
         "ado-border-green": "#87CE77",
         "ado-date-select": "#E7F7E4",
         "ado-date-background": "#FAFAFA",
@@ -47,6 +49,7 @@ export default {
         "ado-blueish-grey": "#F4F6F9FF",
         "ado-bg-black-40": "#00000066",
         "ado-black": "#000000",
+        "ado-accessibility-bar-bg": "#31343C",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

@@ -297,12 +297,12 @@
   "ticket_confirmation": {
     "confirm_details": "Confirma tus datos",
     "ticket_share_link": "Los boletos se enviarán a",
-    "passsager_name": "Nombre del pasajero",
-    "one_way": "Asiento de ida",
+    "passenger_name": "Nombre del pasajero",
+    "departure_seat": "Asiento de ida",
     "ticket_type": "Tipo de boleto",
     "return_seat": "Asiento de regreso",
-    "total_assitance": "Asistencia total",
-    "passsager_name_tab": "Nombre",
+    "total_assistance": "Asistencia total",
+    "passenger_name_tab": "Nombre",
     "one_way_tab": "Ida",
     "ticket_type_tab": "Tipo",
     "return_seat_tab": "Regreso",
@@ -313,6 +313,21 @@
   },
   "payment_info": {
     "card_prompt": "Si ya cuentas con un SALDO MAX, proporciona tu número de tarjeta y NIP para poder usarla.",
-    "card_number_balance_msg": "Número de tarjeta SALDO MAX"
+    "card_number_balance_msg": "Número de tarjeta SALDO MAX",
+    "title": "Pago con SALDO MAX",
+    "description": "Cuentas con saldo suficiente para comprar tus boletos.",
+    "totalPayable": "Total a pagar",
+    "currentBalance": "Saldo actual en SALDO MAX",
+    "finalBalance": "Saldo final en SALDO MAX",
+    "enterPin": "Ingresa tu NIP",
+    "forgotPin": "¿Olvidaste tu NIP?",
+    "clickHere": "Da clic aquí",
+    "pay": "Pagar",
+    "continue": "Continuar",
+    "needHelp": "¿Necesitas ayuda?",
+    "contactUs": "Contáctanos aquí",
+    "saldo_title": "Saldo suficiente",
+    "pin" : "NIP",
+    "close" : "Cerrar"
   }
 }

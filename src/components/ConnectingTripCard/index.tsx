@@ -56,7 +56,6 @@ const TripCard: React.FC<TripCardProps> = ({ title, date, passengers, routes, ty
             <TripCardIda
               displayRoutes={displayRoutes}
               time={time}
-              t={t}
               onPlaceSelect={setSelectedPlace}
               onTimeSelect={setSelectedTime}
             />
@@ -66,7 +65,6 @@ const TripCard: React.FC<TripCardProps> = ({ title, date, passengers, routes, ty
             <TripCardRegreso
               displayRoutes={displayRoutes}
               time={time}
-              t={t}
               onPlaceSelect={setSelectedPlace}
               onTimeSelect={setSelectedTime}
             />

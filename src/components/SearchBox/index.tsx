@@ -27,13 +27,12 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleLoad }) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [passengers, setPassengers] = useState("1 adultos");
 
-  const formatDate = (date: Date): string => {
-    return date.toLocaleDateString("en-US", {
+  const formatDate = (date: Date): string => (
+    date.toLocaleDateString("en-US", {
       weekday: "short",
       month: "short",
       day: "numeric",
-    } as FormatDateOptions);
-  };
+    } as FormatDateOptions));
 
   const generatePassengerText = (values: typeof passengerValues): string => {
     const labels: Record<string, string> = {
@@ -130,8 +129,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleLoad }) => {
       ...prev,
       [mappedKey]: Math.max(0, prev[mappedKey] + delta),
     }));
-  };
-
+  }
   const closeDropdown = () => {
     setOpenDropdown(null);
   };
@@ -204,7 +202,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleLoad }) => {
             />
           </div>
 
-          <div className=" lg:w-[60%] md:w-[100%] flex justify-between items-end md:mt-[5px]">
+          <div className=" lg:w-[60.5%] md:w-[100%] flex justify-between items-end md:mt-[5px]">
             <SearchCalendarCard
               width={42}
               ida={t("ida")}
@@ -218,7 +216,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleLoad }) => {
               closeDropdown={closeDropdown}
             />
             <SearchCard
-              width={30}
+              width={34}
               cardName={t("passengers")}
               value={passengers}
               isOpen={openDropdown === "Passengers" || openDropdown === "Pasajeros"}

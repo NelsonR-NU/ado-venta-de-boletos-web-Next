@@ -24,7 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   hoverColor = "hover:bg-ado-light-blue-gray",
   title,
   className = "",
-  width = '258px'
+  width = '290px'
 }) => {
   const [selected, setSelected] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -54,9 +54,8 @@ const Dropdown: React.FC<DropdownProps> = ({
     };
   }, []);
 
-  console.log(`relative w-[${width}px]`)
   return (
-    <div ref={dropdownRef} className="relative" style={{ width: `${width}px` }}>
+    <div ref={dropdownRef} className="relative" style={{ width: `${width}` }}>
       <button
         className={`flex justify-between items-center w-full p-4 rounded-lg shadow-md ${bgColor} ${textColor} ${className}`}
         onClick={() => setIsOpen(!isOpen)}

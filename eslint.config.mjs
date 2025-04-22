@@ -82,7 +82,7 @@ const eslintConfig = [
           ignoreMemberSort: false,
           memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
         },
-      ],
+      ]
     },
   },
 ];
