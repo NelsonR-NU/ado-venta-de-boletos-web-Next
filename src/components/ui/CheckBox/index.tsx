@@ -19,7 +19,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   name,
   defaultChecked = false,
 }) => {
-  const [internalChecked, setInternalChecked] = useState(defaultChecked);
+  const [internalChecked, setInternalChecked] = useState<boolean>(defaultChecked);
 
   useEffect(() => {
     if (checked !== undefined) {

@@ -24,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({
   iconPosition = "left",
 }) => {
   const baseStyles =
-    "flex items-center justify-center rounded-[4px] text-[16px] font-medium px-6 py-2 transition-all duration-300 ease-in-out select-none active:scale-95 ";
+    "flex items-center justify-center rounded-[4px] text-[16px] font-medium px-6 py-2 ";
 
   const variantStyles = {
     primary: "bg-ado-purple text-white hover:shadow-md",
@@ -37,15 +37,15 @@ const Button: React.FC<ButtonProps> = ({
     none: "border-none bg-transparent hover:text-ado-royal-purple",
   };
 
-  const disabledStyles = "bg-gray-300 text-gray-500 cursor-not-allowed";
+  const disabledStyles = "bg-gray-300 text-gray-500 cursor-not-allowed hover:bg-gray-300";
 
   return (
     <button
       type={type}
       disabled={disabled}
       onClick={onClick}
-      className={`${baseStyles} ${disabled ? disabledStyles : variantStyles[variant]} ${buttonStyleClasses[buttonStyle]} ${className} ${className.includes("w-") ? "" : "w-auto"}`}>
-      <div className="flex items-center gap-2 transition-transform duration-300 ease-in-out">
+      className={`${baseStyles} ${buttonStyleClasses[buttonStyle]} ${className} ${className.includes("w-") ? "" : "w-auto"} ${disabled ? disabledStyles : variantStyles[variant]} `}>
+      <div className="flex items-center gap-2">
         {icon && iconPosition === "left" && icon}
         {buttonText}
         {icon && iconPosition === "right" && icon}

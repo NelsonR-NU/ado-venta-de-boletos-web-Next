@@ -13,7 +13,7 @@ export default function Layout({
     <>
       {/* <BookingHeader /> */}
       <Container>
-        <div className="flex gap-6">
+        <div className="flex gap-[18px]">
           <div className="flex-1">{children}</div>
           <div className="flex-1 hidden md:flex max-w-[356px] lg:max-w-[380px]">
             <ReservationSummary />
