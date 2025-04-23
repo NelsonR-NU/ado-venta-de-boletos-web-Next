@@ -2,7 +2,7 @@ import ConnectingTripCard from "@/components/ConnectingTripCard";
 
 export default function AdditionalServices() {
   return (
-    <div className="space-y-[46px]">
+    <div className="space-y-[46px] max-w-[678px]">
       <ConnectingTripCard
         title="Conecta de ida"
         date="Vie. 12 de nov."

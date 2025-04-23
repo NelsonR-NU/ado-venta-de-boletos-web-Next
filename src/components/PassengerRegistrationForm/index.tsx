@@ -28,7 +28,7 @@ const PassengerRegistrationForm: React.FC = () => {
     assistanceRegreso: false,
   });
 
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   const passengers = ["Jimena Vinat", "Raúl Martínez López", "Marisol Gutiérrez-Rodriguez"];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,6 +52,7 @@ const PassengerRegistrationForm: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Ej: mar.tg@gmail.com"
+              className="w-[290px]"
               required
             />
             <InputField
@@ -62,6 +63,7 @@ const PassengerRegistrationForm: React.FC = () => {
               onChange={handleChange}
               placeholder="Ej: mar.tg@gmail.com"
               required
+              className="w-[290px]"
             />
           </form>
         </Card>
